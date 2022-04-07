@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="824" height="296" viewBox="0 0 824 296">
+  <defs>
+    <clipPath id="clip-path">
+      <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="412" cy="148" rx="412" ry="148" transform="translate(-0.439 167)" fill="#0a1f30"/>
+    </clipPath>
+    <filter id="Rectangle_13" x="108" y="42" width="592" height="382" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.4"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Mask_Group_1" data-name="Mask Group 1" transform="translate(0.439 -167)" clip-path="url(#clip-path)">
+    <g transform="matrix(1, 0, 0, 1, -0.44, 167)" filter="url(#Rectangle_13)">
+      <g id="Rectangle_13-2" data-name="Rectangle 13" transform="translate(123 54)" fill="#0a1f30" stroke="#0a1f30" stroke-width="1">
+        <rect width="562" height="352" rx="48" stroke="none"/>
+        <rect x="0.5" y="0.5" width="561" height="351" rx="47.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,203 @@
+/* $name: ; to make aomething that can be used everywhere*/
+
+/* Nesting like html with { &:{ } } // :: for after*/
+
+/* import header and sidebar with @import "./url";*/
+
+/* @mixin name {} lets you use a paragraph of styles*/
+
+/* @mixin name($differentname) {} */
+
+/* @extend nameofotherthing; you can add other styles on top*/
+
+/* display: grid; */
+
+/* grid-template-columns: px px px px columns*/
+
+/* fr can be used instead of px. It devides the screen*/
+
+/* repeat(multiply number, px number)*/
+
+/* grid-auto-rows: basic value; creates as many rows as possible in that size*/
+
+/* grid-auto-rows: minmax(start size, auto); gives minimum value and auto max value*/
+
+/* grid-gap: puts gaps between rows and columns*/
+
+/* grid-template-area: "header header"
+"sidebar content"
+"sidebar content"*/
+
+/* grid-column-start: & grid-column-end: use for individual items to show how far they'll span*/
+
+/* justify-content: aligns content on page*/
+
+/* align-items: aligns in the grid*/
+
+/*@import url(styles\sidebar.scss);*/
+
+.grid {
+    display: grid;
+
+    /*24 columns*/
+    grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
+    32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
+    32px 32px 32px 32px;
+
+    /*32 rows*/
+    grid-template-rows: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
+    32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
+    32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
+    32px 32px;
+}
+
+$primaryYellow: #FFDA5D;
+$primaryBlue: #0A1F30;
+$primaryGrey: #EFEFEF;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: calibri;
+}
+
+.sidebar {
+    grid-column: 1/4;
+    grid-row: 1/-1;
+    background: $primaryYellow;
+    color: $primaryBlue;
+    text-align: center;
+    line-height: 90px;
+}
+
+@mixin navOptions {
+    vertical-align: top;
+    display: block;
+    text-align: center;
+    line-height: 16px;
+}
+
+@mixin navText {
+    display: block;
+}
+
+.nav_option {
+    @include navOptions();
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: $primaryBlue;
+    letter-spacing: 0.7px;
+
+    .nav_text {
+        @include navText();
+    }
+}
+
+@mixin content {
+    grid-column: 4/-1;
+}
+
+.background-design {
+    position: inline-block;
+}
+
+@mixin header {
+    top: 32px;
+    position:absolute
+}
+
+//sidebar is 96px. Width without sidebar is 672
+
+.logo {
+    @include header();
+    left: 132px;
+}
+
+.basket {
+    @include header();
+    right: 64px;
+    top: 24px;
+}
+
+.header_text {
+    left: 336px;
+    top: 128px;
+    position: absolute;
+    font-style: italic;
+    font-size: 45px;
+    color: white;
+
+}
+
+
+
+/*
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 15vw;
+    height: 100vh;
+    background: $primaryYellow;
+    color: $primaryBlue;
+    text-align: center;
+    line-height: 90px;
+}
+
+@mixin navOptions {
+    vertical-align: top;
+    display: block;
+    text-align: center;
+    line-height: 16px;
+}
+
+@mixin navText {
+    display: block;
+}
+
+.nav_option {
+    @include navOptions();
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: $primaryBlue;
+    letter-spacing: 0.7px;
+
+    .nav_text {
+        @include navText();
+    }
+}
+
+@mixin pageContent {
+    width: 75vw;
+    margin-left: 15vw;
+}
+
+@mixin content {
+    width: 75vw;
+    margin-left: 15vw;
+}
+
+
+
+.content_container {
+    @include content();
+    position:relative;
+}
+
+.main_content {
+    position: absolute;
+    top:8px;
+
+}
+.background_design {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
