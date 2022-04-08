@@ -36,24 +36,28 @@
 
 /*@import url(styles\sidebar.scss);*/
 
-.grid {
+/*.grid {
     display: grid;
 
-    /*24 columns*/
+    /*24 columns
     grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
     32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
     32px 32px 32px 32px;
 
-    /*32 rows*/
+    /*32 rows
     grid-template-rows: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
     32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
     32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
     32px 32px;
-}
+}*/
 
+$primaryRed: #F05A35;
 $primaryYellow: #FFDA5D;
 $primaryBlue: #0A1F30;
-$primaryGrey: #EFEFEF;
+$primaryLightGrey: #EFEFEF;
+$primaryDarkGrey: #555758;
+$primaryFont: britannic;
+$lightFont: lighter;
 
 * {
     margin: 0;
@@ -62,16 +66,22 @@ $primaryGrey: #EFEFEF;
 
 body {
     font-family: calibri;
+    position: absolute;
+    left: 116px;
+    color: $primaryBlue;
 }
 
 .sidebar {
-    grid-column: 1/4;
-    grid-row: 1/-1;
+    left: 0;
+    top: 0;
+    width: 116px;
+    height: 100vh;
+    position: fixed;
     background: $primaryYellow;
-    color: $primaryBlue;
     text-align: center;
     line-height: 90px;
 }
+
 
 @mixin navOptions {
     vertical-align: top;
@@ -108,14 +118,16 @@ body {
 
 @mixin header {
     top: 32px;
-    position:absolute
+    position: absolute
 }
 
 //sidebar is 96px. Width without sidebar is 672
 
 .logo {
     @include header();
-    left: 132px;
+    left: 42px;
+    top: 40px;
+    position: absolute;
 }
 
 .basket {
@@ -125,14 +137,163 @@ body {
 }
 
 .header_text {
-    left: 336px;
+    left: 236px;
     top: 128px;
     position: absolute;
     font-style: italic;
     font-size: 45px;
     color: white;
-
 }
+
+@mixin mainFoodImage {
+    width: 283px;
+    top: 203px;
+    left: 178px;
+    position: absolute;
+}
+
+.kale {
+    @include mainFoodImage;
+}
+
+h3 {
+    top: 483px;
+    left: 216px;
+    position: absolute;
+    color: $primaryYellow;
+    font-family: $primaryFont;
+    font-size: 38px;
+}
+
+@mixin centre {
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+}
+
+.food_price {
+    color: white;
+    top: 532px;
+    font-size: 29px;
+    font-weight: $lightFont;
+    @include centre();
+}
+
+@mixin presalePrice {
+    top: 538px;
+    position: absolute;
+    color: $primaryRed;
+    font-size: 20px;
+    text-decoration: line-through;
+}
+
+.presale {
+    left: 227px;
+    @include presalePrice();
+}
+
+@mixin bigDescription {
+    font-size: 29px;
+    @include centre();
+}
+
+
+.kale_description {
+    @include bigDescription();
+    top: 617px;
+    white-space: nowrap;
+}
+
+.diet_details {
+    @include centre();
+    top: 647px;
+    color: $primaryDarkGrey;
+    font-size: 22px;
+    font-weight: $lightFont;
+}
+
+.quantity {
+    top: 701px;
+    @include centre();
+    font-size: 27px;
+}
+
+$dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
+
+.change_quantity {
+    @include centre();
+    height: 68px;
+    width: 183px;
+    border: none;
+    box-shadow: $dropShadow;
+    top: 741px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+@mixin quantityButtons {
+    background: $primaryYellow;
+    border-radius: 10px;
+    display: inline-block;
+    height: 51px;
+    width: 51px;
+    border: none;
+    font-size: 32px;
+}
+
+.minus {
+    @include quantityButtons();
+    background: $primaryLightGrey;
+}
+
+
+.plus {
+    @include quantityButtons();
+}
+
+.root_quantity {
+    @include quantityButtons();
+    background: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.add {
+    color: $primaryBlue;
+    @include centre();
+    top:866px;
+    border-radius: 10px;
+    background: $primaryBlue;
+    width: 300px;
+    height: 78px;
+    border: none;
+    box-shadow:$dropShadow;
+    .basket {
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top:0px;
+        left:0px;
+        @include quantityButtons();
+        height: 65px;
+        width: 65px;
+    }
+    .add_text{
+        font-size: 27px;
+        color: white;
+        padding-left: 27px;
+        padding-right: 27px;
+        letter-spacing:0.11px;
+    }
+}
+
+
 
 
 

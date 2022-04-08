@@ -36,113 +36,114 @@
 
         <div class="content_container">
             <!--Blue background-->
-            <img class="background_design"src="images\mustTryBackground.svg" alt="Background pattern"></div>
+            <img class="background_design" src="images\mustTryBackground.svg" alt="Background pattern">
+        </div>
 
-            <div class="main_content">
-                <!--Logo-->
-                <img class="logo" src="images\logo.svg" alt="Scopa Pizzeria logo">
+        <div class="main_content">
+            <!--Logo-->
+            <img class="logo" src="images\logo.svg" alt="Scopa Pizzeria logo">
 
-                <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+            <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
 
+            <h2 class="header_text">Must Try</h2>
 
-                <h2 class="header_text">Must Try</h2>
-
-                <div class="casousel">
-                    <!--Left carousel button-->
-                    <button class="carousel_button">
-                        <img src="...." alt="">
-                    </button>
-                    <!--Carousel items-->
-                    <div class="casousel_track_container">
-                        <ul class="carousel_track">
-                            <li class="casousel_slide">
-                                <img src="...." alt="">
-                                <h3>Kale Caesar</h3>
-                                <div class="price">
-                                    <span>NOW $10</span>
+            <div class="casousel">
+                <!--Left carousel button-->
+                <button class="carousel_button">
+                    <img src="...." alt="">
+                </button>
+                <!--Carousel items-->
+                <div class="casousel_track_container">
+                    <ul class="carousel_track">
+                        <li class="casousel_slide">
+                            <img class="kale" src="images\kale.png" alt="">
+                            <h3>Kale Caesar</h3>
+                            <span class="presale">$15 </span><span class="food_price">NOW $10</span>
+                            <p class="kale_description">Toasted bread crumbs, Caesar dressing, parmesan.</p>
+                                <span class="diet_details">* nut free, vegetarian</span>
+                                <span class="quantity">Quantity</span>
+                                <div class="change_quantity">
+                                    <button class="minus" type="button" onclick="decrement()">-</button>
+                                    <div class="root_quantity"><span>1</span></div>
+                                    <button class="plus" type="button" onclick="increment()">+</button>
                                 </div>
-                                <div class="description">
-                                    <p>Toasted bread crumbs, Caesar dressing, parmesan.</p>
-                                </div>
-                                <div class="diet_details">
-                                    <span>* nut free, vegetarian</span>
-                                </div>
-                                <div class="quantity">
-                                    <span>Quantity</span>
-                                    <div class="change_quantity">
-                                        <button class="minus" type="button" onclick="decrement()">-</button>
-                                        <div class="root_quantity"></div>
-                                        <button class="minus" type="button" onclick="increment()">+</button>
-                                    </div>
-                                </div>
-                                <!--Add to basket button-->
-                                <button class="add" onclick="toggleItemAdded()"><i class="......"></i></button>
-                            </li>
-
-                            <!--Add other carousel slides here-->
-                        </ul>
-                    </div>
-                    <!--Right carousel button-->
-                    <button class="carousel_button">
-                        <img src="...." alt="">
-                    </button>
-                </div>
-
-                <!--Item added-->
-                <div class="item_added">
-                    <h2>Item Added!</h2>
-                    <img src="...." alt="Margeritta pizza">
-                    <div class="add_quantity">
-                        <span>x</span>
-                        <div class="root_quantity"></div>
-                        <span>Margheritta Pizza</span>
-                    </div>
-                    <div class="price">
-                        <span>Basket Total:</span>
-                        <div class="price_calculation"></div>
-                    </div>
-                    <div class="back_nav">
-                        <button class="return" type="button"></button>
-                        <button class="go_basket" type="button"></button>
-                    </div>
-                </div>
-
-                <!--Basket icon-->
-                <i class="basket-icon"></i>
-
-                <!--Basket-->
-                <div class="basket">
-                    <span>BASKET</span>
-                    <button class="basket" onclick="toggleBasket()"><i class="......"></i></button>
-
-                    <div class="item_details">
-                        <div class="item_count">
-                            <div class="quantity_calculation"></div>
-                            <span>Items</span>
-                        </div>
-                        <div class="price_count">
-                            <span>TOTAL: </span>
-                            <div class="price_calculation"></div>
-                        </div>
-                    </div>
-                    <div class="basket_item">
-                        <div class="delete"><i class="......"></i></div>
-                        <img src="......." alt=".......">
-                        <div class="pizza_name"></div>
-                        <span>$</span>
-                        <div class="item_basket_price"></div>
-                        <div class="quantity_basket">
-                            <div class="change_basket_quantity">
-                                <button class="minus" type="button" onclick="decrement()">-</button>
-                                <div class="root_quantity"></div>
-                                <button class="minus" type="button" onclick="increment()">+</button>
                             </div>
-                        </div>
-                    </div>
-                    <button class="basket" onclick="toggleBasket()"></button>
+                            <!--Add to basket button-->
+                            <button class="add" onclick="toggleItemAdded()">
+                                <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                                <span class="add_text">Add to basket</span>
+                            </button>
+                        </li>
+
+                        <!--Add other carousel slides here-->
+                    </ul>
+                </div>
+                <!--Right carousel button-->
+                <button class="carousel_button">
+                    <img src="...." alt="">
+                </button>
+            </div>
+
+
+
+
+            </div>
+
+            <!--Item added-->
+            <div class="item_added">
+                <h2>Item Added!</h2>
+                <img src="...." alt="Margeritta pizza">
+                <div class="add_quantity">
+                    <span>x</span>
+                    <div class="root_quantity"></div>
+                    <span>Margheritta Pizza</span>
+                </div>
+                <div class="price">
+                    <span>Basket Total:</span>
+                    <div class="price_calculation"></div>
+                </div>
+                <div class="back_nav">
+                    <button class="return" type="button"></button>
+                    <button class="go_basket" type="button"></button>
                 </div>
             </div>
+
+            <!--Basket icon-->
+            <i class="basket-icon"></i>
+
+            <!--Basket-->
+            <div class="basket">
+                <span>BASKET</span>
+                <button class="basket" onclick="toggleBasket()"><i class="......"></i></button>
+
+                <div class="item_details">
+                    <div class="item_count">
+                        <div class="quantity_calculation"></div>
+                        <span>Items</span>
+                    </div>
+                    <div class="price_count">
+                        <span>TOTAL: </span>
+                        <div class="price_calculation"></div>
+                    </div>
+                </div>
+                <div class="basket_item">
+                    <div class="delete"><i class="......"></i></div>
+                    <img src="......." alt=".......">
+                    <div class="pizza_name"></div>
+                    <span>$</span>
+                    <div class="item_basket_price"></div>
+                    <div class="quantity_basket">
+                        <div class="change_basket_quantity">
+                            <button class="basket_minus" type="button" onclick="decrement()">-</button>
+                            <div class="root_quantity"></div>
+                            <button class="basket_plus" type="button" onclick="increment()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="basket" onclick="toggleBasket()"></button>
+            </div>
         </div>
+    </div>
     </div>
 
 
