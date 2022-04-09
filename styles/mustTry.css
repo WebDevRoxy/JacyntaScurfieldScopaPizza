@@ -394,18 +394,100 @@ h3 {
   background: radial-gradient(112% 555px at 50% -30px, #0A1F30 75%, transparent 75%);
 }
 
+/*
 .page {
-  -webkit-filter: blur(8px);
-          filter: blur(8px);
+    filter: blur(8px);
 }
 
-.blur_filter {
-  height: 768px;
-  width: 1024px;
-  background-color: #0A1F30;
-  z-index: 14;
+.blur_filter{
+    height: 768px;
+    width: 1024px;
+    background-color: $primaryBlue;
+    z-index: 14;
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+
+*/
+.item_added h2 {
+  color: #FFDA5D;
+  top: 45px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   position: absolute;
-  top: 0px;
-  left: 0px;
+  font-family: britannic;
+  font-size: 44px;
+  letter-spacing: 0.66px;
+  z-index: 16;
+  position: absolute;
+}
+
+.item_added img {
+  top: 115px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+}
+
+.item_added .added_name {
+  top: 300px;
+  color: white;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+  font-size: 24px;
+  letter-spacing: 0.14px;
+}
+
+.item_added .price {
+  top: 420px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+  font-style: italic;
+  letter-spacing: 0.12px;
+  font-size: 29px;
+}
+
+.item_added .price .total {
+  padding-right: 51px;
+}
+
+.return {
+  left: 50px;
+  background-color: #EFEFEF;
+  position: absolute;
+  border-radius: 20px;
+  width: 183px;
+  height: 68px;
+  -webkit-box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
+          box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
+  border: none;
+  top: 490px;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 0.11px;
+}
+
+.go_basket {
+  right: 50px;
+  background-color: #FFDA5D;
+  position: absolute;
+  border-radius: 20px;
+  width: 183px;
+  height: 68px;
+  -webkit-box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
+          box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
+  border: none;
+  top: 490px;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 0.11px;
 }
 /*# sourceMappingURL=mustTry.css.map */

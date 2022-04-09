@@ -336,8 +336,8 @@ $averageBorder: 10px;
 
 @mixin navText {
     padding-bottom: 70px;
-        font-size: 25px;
-        letter-spacing: 0.17px;
+    font-size: 25px;
+    letter-spacing: 0.17px;
 }
 
 @mixin lowerNavText {
@@ -363,19 +363,23 @@ $averageBorder: 10px;
 
 .nav_option {
     @include navOption();
+
     .nav_text {
         @include navText();
     }
+
     .nav_text_feedback {
         @include navText();
         @include lowerNavText();
         top: 140px;
     }
+
     .nav_text_help {
         @include navText();
         @include lowerNavText();
         top: 200px;
     }
+
     .selected {
         color: #F05A35;
     }
@@ -386,7 +390,7 @@ $averageBorder: 10px;
 
 .item_added {
     top: 212px;
-    position:absolute;
+    position: absolute;
     width: 561px;
     height: 600px;
     border-radius: 48px;
@@ -403,6 +407,7 @@ $averageBorder: 10px;
     background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
 }
 
+/*
 .page {
     filter: blur(8px);
 }
@@ -417,5 +422,70 @@ $averageBorder: 10px;
     left:0px;
 }
 
+*/
+
+.item_added {
+    h2 {
+        color: $primaryYellow;
+        top: 45px;
+        @include centre();
+        font-family: $primaryFont;
+        font-size: 44px;
+        letter-spacing: 0.66px;
+        z-index: 16;
+        position: absolute;
+    }
+
+    img {
+        top: 115px;
+        position: absolute;
+        @include centre();
+    }
+
+    .added_name {
+        top: 300px;
+        color: white;
+        @include centre();
+        font-size: 24px;
+        letter-spacing: 0.14px;
+    }
+
+    .price {
+        top: 420px;
+        @include centre();
+        font-style: italic;
+        letter-spacing: 0.12px;
+        font-size: 29px;
+
+        .total {
+            padding-right: 51px;
+        }
+    }
+}
+
+@mixin backNavBtns {
+    border-radius: 20px;
+    width: 183px;
+    height: 68px;
+    box-shadow: drop-shadow(.5rem .5rem 1rem $primaryDarkGrey);
+    border: none;
+    top:490px;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 0.11px;
+}
 
 
+.return {
+    left: 50px;
+    background-color: $primaryLightGrey;
+    position: absolute;
+    @include backNavBtns();
+}
+
+.go_basket {
+    right: 50px;
+    background-color: $primaryYellow;
+    position: absolute;
+    @include backNavBtns();
+}
