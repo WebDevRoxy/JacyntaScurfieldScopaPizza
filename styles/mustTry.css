@@ -374,27 +374,94 @@ h3 {
   color: #F05A35;
 }
 
+/*
 .item_added {
-  top: 212px;
-  position: absolute;
-  width: 561px;
-  height: 600px;
-  border-radius: 48px;
-  background: white;
-  -webkit-box-shadow: 0em 0.15em 0.35em #555758;
-          box-shadow: 0em 0.15em 0.35em #555758;
-  z-index: 15;
+    top: 212px;
+    position: absolute;
+    width: 561px;
+    height: 600px;
+    border-radius: 48px;
+    background: white;
+    box-shadow: $dropShadow;
+    z-index: 15;
 }
 
 .item_added_decoration {
-  width: 561px;
-  height: 600px;
-  border-radius: 48px;
-  z-index: 15;
-  background: radial-gradient(112% 555px at 50% -30px, #0A1F30 75%, transparent 75%);
+    width: 561px;
+    height: 600px;
+    border-radius: 48px;
+    z-index: 15;
+    background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
 }
 
-/*
+.item_added {
+    h2 {
+        color: $primaryYellow;
+        top: 45px;
+        @include centre();
+        font-family: $primaryFont;
+        font-size: 44px;
+        letter-spacing: 0.66px;
+        z-index: 16;
+        position: absolute;
+    }
+
+    img {
+        top: 115px;
+        position: absolute;
+        @include centre();
+    }
+
+    .added_name {
+        top: 300px;
+        color: white;
+        @include centre();
+        font-size: 24px;
+        letter-spacing: 0.14px;
+    }
+
+    .price {
+        top: 420px;
+        @include centre();
+        font-style: italic;
+        letter-spacing: 0.12px;
+        font-size: 29px;
+
+        .total {
+            padding-right: 51px;
+        }
+    }
+}
+
+@mixin backNavBtns {
+    border-radius: 20px;
+    width: 183px;
+    height: 68px;
+    box-shadow: drop-shadow(.5rem .5rem 1rem $primaryDarkGrey);
+    border: none;
+    top:490px;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 0.11px;
+}
+
+
+.return {
+    left: 50px;
+    background-color: $primaryLightGrey;
+    position: absolute;
+    @include backNavBtns();
+}
+
+.go_basket {
+    right: 50px;
+    background-color: $primaryYellow;
+    position: absolute;
+    @include backNavBtns();
+}
+
+/* background blur
+
 .page {
     filter: blur(8px);
 }
@@ -410,84 +477,176 @@ h3 {
 }
 
 */
-.item_added h2 {
-  color: #FFDA5D;
-  top: 45px;
+.basket_container {
+  top: 0px;
+  right: 0px;
+  position: absolute;
+  width: 376px;
+  height: 1024px;
+  background: #0A1F30;
+  z-index: 17;
+  border: none;
+}
+
+.basket_name {
+  color: white;
+  top: 39px;
+  left: 36px;
+  font-size: 33px;
+  letter-spacing: 1.45px;
+  z-index: 18;
+  position: absolute;
+}
+
+.delete {
+  color: white;
+  top: 39px;
+  right: 36px;
+  position: relative;
+}
+
+.item_amount {
+  left: 36px;
+  top: 100px;
+  font-size: 24px;
+  z-index: 18;
+  position: absolute;
+  color: white;
+}
+
+.total_amount {
+  right: 36px;
+  top: 100px;
+  font-size: 24px;
+  z-index: 18;
+  position: absolute;
+  color: white;
+}
+
+.basket_item {
+  padding-top: 155px;
+  z-index: 18;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   position: absolute;
+}
+
+.pizza_name {
+  z-index: 18;
   font-family: britannic;
-  font-size: 44px;
-  letter-spacing: 0.66px;
-  z-index: 16;
-  position: absolute;
-}
-
-.item_added img {
-  top: 115px;
-  position: absolute;
+  color: #FFDA5D;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   position: absolute;
+  padding-top: 10px;
+  font-size: 29px;
+  letter-spacing: 0.12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.item_added .added_name {
-  top: 300px;
+.dollar_sign {
+  z-index: 18;
   color: white;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   position: absolute;
+  top: 380px;
   font-size: 24px;
-  letter-spacing: 0.14px;
+  letter-spacing: 0.12px;
 }
 
-.item_added .price {
-  top: 420px;
+.delete span {
+  color: #F05A35;
+  font-size: 40px;
+  left: 218px;
+  position: absolute;
+}
+
+.basket_item img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.change_basket_quantity {
+  background: white;
+  border-radius: 13px;
+  width: 131px;
+  height: 45px;
+  border: none;
+  top: 432px;
+  position: absolute;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   position: absolute;
-  font-style: italic;
-  letter-spacing: 0.12px;
-  font-size: 29px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.item_added .price .total {
-  padding-right: 51px;
-}
-
-.return {
-  left: 50px;
-  background-color: #EFEFEF;
-  position: absolute;
-  border-radius: 20px;
-  width: 183px;
-  height: 68px;
-  -webkit-box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
-          box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
+.change_basket_quantity .basket_minus {
+  background: #FFDA5D;
+  border-radius: 10px;
+  display: inline-block;
+  height: 51px;
+  width: 51px;
   border: none;
-  top: 490px;
-  font-weight: bold;
-  font-size: 24px;
-  letter-spacing: 0.11px;
+  font-size: 32px;
+  background: #EFEFEF;
+  width: 34px;
+  height: 34px;
+  left: 20px;
 }
 
-.go_basket {
-  right: 50px;
-  background-color: #FFDA5D;
-  position: absolute;
-  border-radius: 20px;
-  width: 183px;
-  height: 68px;
-  -webkit-box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
-          box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
+.change_basket_quantity .basket_plus {
+  background: #FFDA5D;
+  border-radius: 10px;
+  display: inline-block;
+  height: 51px;
+  width: 51px;
   border: none;
-  top: 490px;
+  font-size: 32px;
+  width: 34px;
+  height: 34px;
+}
+
+.place_order {
+  background: #FFDA5D;
+  width: 218px;
+  height: 68px;
+  border-radius: 20px;
+  text-decoration: none;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 27px;
   letter-spacing: 0.11px;
+  color: #0A1F30;
+  top: 870px;
 }
 /*# sourceMappingURL=mustTry.css.map */

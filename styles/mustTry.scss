@@ -268,11 +268,13 @@ $averageBorder: 10px;
     font-size: 27px;
 }
 
+$orderBorder: 20px;
+
 .add {
     color: $primaryBlue;
     @include centre();
     top: 866px;
-    border-radius: 20px;
+    border-radius: $orderBorder;
     background: $primaryBlue;
     width: 300px;
     height: 78px;
@@ -388,6 +390,7 @@ $averageBorder: 10px;
 
 //Item added pop up
 
+/*
 .item_added {
     top: 212px;
     position: absolute;
@@ -406,23 +409,6 @@ $averageBorder: 10px;
     z-index: 15;
     background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
 }
-
-/*
-.page {
-    filter: blur(8px);
-}
-
-.blur_filter{
-    height: 768px;
-    width: 1024px;
-    background-color: $primaryBlue;
-    z-index: 14;
-    position: absolute;
-    top:0px;
-    left:0px;
-}
-
-*/
 
 .item_added {
     h2 {
@@ -488,4 +474,181 @@ $averageBorder: 10px;
     background-color: $primaryYellow;
     position: absolute;
     @include backNavBtns();
+}
+
+/* background blur
+
+.page {
+    filter: blur(8px);
+}
+
+.blur_filter{
+    height: 768px;
+    width: 1024px;
+    background-color: $primaryBlue;
+    z-index: 14;
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+
+*/
+
+
+
+// Basket
+
+.basket_container {
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    width: 376px;
+    height: 1024px;
+    background: $primaryBlue;
+    z-index: 17;
+    border: none;
+}
+
+$basketMargin: 36px;
+
+
+@mixin basketHeader {
+    color: white;
+    top: 39px;
+}
+
+.basket_name {
+    @include basketHeader();
+    left: $basketMargin;
+    font-size: 33px;
+    letter-spacing: 1.45px;
+    z-index: 18;
+    position: absolute;
+}
+
+
+.delete {
+    @include basketHeader();
+    right: $basketMargin;
+    position: relative;
+}
+
+$basketZ: 18;
+
+@mixin rowTwoBasket {
+    top: 100px;
+    font-size: 24px;
+    z-index: $basketZ;
+    position: absolute;
+    color: white;
+}
+
+.item_amount {
+    left: $basketMargin;
+    @include rowTwoBasket();
+}
+
+.total_amount {
+    right: $basketMargin;
+    @include rowTwoBasket();
+}
+
+.basket_item {
+    padding-top: 155px;
+    z-index: $basketZ;
+    @include centre();
+}
+
+.pizza_name {
+    z-index: $basketZ;
+    font-family: $primaryFont;
+    color: $primaryYellow;
+    @include centre();
+    padding-top: 10px;
+    font-size: 29px;
+    letter-spacing: 0.12px;
+    display: flex;
+}
+
+//fix alignment below
+
+.dollar_sign {
+    z-index: $basketZ;
+    color: white;
+    @include centre();
+    top: 380px;
+    font-size: 24px;
+    letter-spacing: 0.12px;
+}
+
+.delete {
+    span {
+        color: $primaryRed;
+        font-size: 40px;
+        left: 218px;
+        position: absolute;
+    }
+}
+
+.basket_item {
+    img {
+        display: flex;
+    }
+}
+
+.change_basket_quantity {
+    background: white;
+    border-radius: 13px;
+    width: 131px;
+    height: 45px;
+    border: none;
+    top: 432px;
+    position: absolute;
+    @include centre();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .basket_minus {
+        @include quantityButtons();
+        background: $primaryLightGrey;
+        width: 34px;
+        height: 34px;
+        left: 20px;
+    }
+
+    .basket_plus {
+        @include quantityButtons();
+        width: 34px;
+        height: 34px;
+
+    }
+}
+
+@mixin quantityButtons {
+    background: $primaryYellow;
+    border-radius: $averageBorder;
+    display: inline-block;
+    height: 51px;
+    width: 51px;
+    border: none;
+    font-size: 32px;
+}
+
+.place_order {
+    background: $primaryYellow;
+    width: 218px;
+    height: 68px;
+    border-radius: $orderBorder;
+    text-decoration: none;
+    position: sticky;
+    @include centre();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 27px;
+    letter-spacing: 0.11px;
+    color: $primaryBlue;
+    top: 870px;
 }

@@ -94,8 +94,7 @@
             <h2>Item Added!</h2>
             <img src="images\pizza.png" alt="Margeritta pizza">
             <div class="add_quantity">
-                <span>x</span>
-                <div class="root_quantity"></div>
+                <div class="root_quantity">1</div>
                 <span class="added_name">Margheritta Pizza</span>
             </div>
             <div class="price">
@@ -118,39 +117,39 @@
     <i class="basket-icon"></i>
 
     <!--Basket-->
-    <div class="basket">
-        <span>BASKET</span>
-        <button class="basket" onclick="toggleBasket()"><i class="......"></i></button>
-
+    <div class="basket_container">
+        <span class="basket_name">BASKET</span>
+        <button class="basket" onclick="toggleBasket()"><i class="fa-light fa-circle-x"></i></button>
         <div class="item_details">
             <div class="item_count">
                 <div class="quantity_calculation"></div>
-                <span>Items</span>
+                <span class="item_amount">Items</span>
             </div>
             <div class="price_count">
-                <span>TOTAL: </span>
+                <span class="total_amount">TOTAL: </span>
                 <div class="price_calculation"></div>
             </div>
         </div>
         <div class="basket_item">
-            <div class="delete"><i class="......"></i></div>
-            <img src="......." alt=".......">
-            <div class="pizza_name"></div>
-            <span>$</span>
-            <div class="item_basket_price"></div>
-            <div class="quantity_basket">
-                <div class="change_basket_quantity">
-                    <button class="basket_minus" type="button" onclick="decrement()">-</button>
-                    <div class="root_quantity"></div>
-                    <button class="basket_plus" type="button" onclick="increment()">+</button>
-                </div>
-            </div>
+            <div class="delete"><span>x</span><!--<i class="fa-solid fa-xmark-large"></i>!--></div>
+            <img src="images\pizza.png" alt="Margherita pizza">
+            <span class="pizza_name">Margherita
+        </div>
+        <span class="dollar_sign">$</span>
+        <div class="item_basket_price"></div>
+        <div class="change_basket_quantity">
+            <button class="basket_minus" type="button" onclick="decrement()">-</button>
+            <div class="root_quantity">1</div>
+            <button class="basket_plus" type="button" onclick="increment()">+</button>
         </div>
         <button class="basket" onclick="toggleBasket()"></button>
+        <a class="place_order" href="confirmOrder.html">PLACE ORDER</a>
     </div>
-    </div>
-    </div>
-    </div>
+    
+
+
+
+
 
 
 </body>
