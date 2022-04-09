@@ -68,7 +68,7 @@ $selected: #F4C938;
 body {
     font-family: calibri;
     position: absolute;
-    left: 116px;
+    // left: 116px;
     color: $primaryBlue;
 }
 
@@ -271,6 +271,9 @@ $averageBorder: 10px;
 $orderBorder: 20px;
 
 .add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: $primaryBlue;
     @include centre();
     top: 866px;
@@ -390,7 +393,7 @@ $orderBorder: 20px;
 
 //Item added pop up
 
-/*
+
 .item_added {
     top: 212px;
     position: absolute;
@@ -476,13 +479,13 @@ $orderBorder: 20px;
     @include backNavBtns();
 }
 
-/* background blur
+//background blur
 
 .page {
     filter: blur(8px);
+    padding-left: 116px;
 }
-
-.blur_filter{
+/* .blur_filter{
     height: 768px;
     width: 1024px;
     background-color: $primaryBlue;
@@ -490,14 +493,14 @@ $orderBorder: 20px;
     position: absolute;
     top:0px;
     left:0px;
-}
+} */
 
-*/
+
 
 
 
 // Basket
-
+/*
 .basket_container {
     top: 0px;
     right: 0px;
@@ -652,3 +655,5 @@ $basketZ: 18;
     color: $primaryBlue;
     top: 870px;
 }
+
+*/
