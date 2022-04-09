@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
     <link rel="stylesheet" href="styles\mustTry.css" />
     <script src="https://kit.fontawesome.com/82be183e51.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="styles\js\mustTry.js"></script>
+
     <title>Scopa Pizzeria -- Must Try</title>
 </head>
 
@@ -52,6 +56,7 @@
                     <img src="images\Icon ionic-ios-arrow-back.svg" alt="">
                 </button>
                 <!--Carousel items-->
+
                 <div class="casousel_track_container">
                     <ul class="carousel_track">
                         <li class="casousel_slide">
@@ -67,12 +72,9 @@
                                 <div class="root_quantity"><span>1</span></div>
                                 <button class="plus" type="button" onclick="increment()">+</button>
                             </div>
+                        </li>
+                    </ul>
                 </div>
-                <!--Add to basket button-->
-                <button class="add" onclick="toggleItemAdded()">
-                    <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-                    <span class="add_text">Add to basket</span>
-                </button>
                 </li>
 
                 <!--Add other carousel slides here-->
@@ -86,11 +88,11 @@
     </div>
 
 
-
     <!--Item added-->
-    <div class="blur_filter"></div>
     <div class="item_added">
-        <div class="item_added_decoration">
+        <div class="overlay"></div>
+        <div class="white_background"></div>
+        <div class="item_added_content">
             <h2>Item Added!</h2>
             <img src="images\pizza.png" alt="Margeritta pizza">
             <div class="add_quantity">
@@ -103,15 +105,17 @@
                 <div class="price_calculation"></div>
             </div>
             <div class="back_nav">
-                <button class="return" type="button">Return</button>
+                <button class="return" onclick="toggleItemAdded()">Return</button>
                 <button class="go_basket" type="button">Go to basket</button>
             </div>
         </div>
     </div>
 
-
-
-
+    <!--Add to basket button-->
+    <button class="add" onclick="toggleItemAdded()">
+        <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+        <span class="add_text">Add to basket</span>
+    </button>
 
     <!--Basket icon-->
     <i class="basket-icon"></i>
@@ -131,7 +135,9 @@
             </div>
         </div>
         <div class="basket_item">
-            <div class="delete"><span>x</span><!--<i class="fa-solid fa-xmark-large"></i>!--></div>
+            <div class="delete"><span>x</span>
+                <!--<i class="fa-solid fa-xmark-large"></i>!-->
+            </div>
             <img src="images\pizza.png" alt="Margherita pizza">
             <span class="pizza_name">Margherita
         </div>
@@ -145,8 +151,9 @@
         <button class="basket" onclick="toggleBasket()"></button>
         <a class="place_order" href="confirmOrder.html">PLACE ORDER</a>
     </div>
-    
 
+    <!--Blur the background-->
+    <div class="blur_filter"></div>
 
 
 

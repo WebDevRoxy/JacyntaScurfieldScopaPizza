@@ -36,20 +36,14 @@
 
 /*@import url(styles\sidebar.scss);*/
 
-/*.grid {
+.page {
     display: grid;
+    //24
+    grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
 
-    /*24 columns
-    grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
-    32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
-    32px 32px 32px 32px;
-
-    /*32 rows
-    grid-template-rows: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
-    32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
-    32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
-    32px 32px;
-}*/
+    //32 rows
+    grid-template-rows: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
+}
 
 $primaryRed: #F05A35;
 $primaryYellow: #FFDA5D;
@@ -158,6 +152,25 @@ body {
     transform: translate(-50%);
     position: absolute;
 }
+
+//slider
+/*
+.swiper {
+    width: 600px;
+    height: 300px;
+  }
+
+.swiper-wrapper {
+    height: 500px;
+}
+
+.swiper_slide {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:60px;
+
+}*/
 
 .kale {
     @include mainFoodImage;
@@ -393,25 +406,63 @@ $orderBorder: 20px;
 
 //Item added pop up
 
-
 .item_added {
-    top: 212px;
-    position: absolute;
-    width: 561px;
-    height: 600px;
-    border-radius: 48px;
-    background: white;
-    box-shadow: $dropShadow;
-    z-index: 15;
+    .overlay {
+        position: fixed;
+        top: 0px;
+        left:0px;
+        width:768px;
+        height:1024px;
+        background: rgba(0,0,0,0.7);
+        z-index: 10;
+    }
 }
 
-.item_added_decoration {
+.item_added_content {
+    position: fixed;
+    top: 212px;
+    @include centre();
     width: 561px;
     height: 600px;
     border-radius: 48px;
     z-index: 15;
     background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
 }
+
+.white_background {
+    @include centre();
+    position: absolute;
+    top: 212px;
+    width: 561px;
+    height: 600px;
+    border-radius: 48px;
+    background: white;
+    box-shadow: $dropShadow;
+    z-index: 14;
+}
+
+/*
+
+.item_added {
+    position: absolute;
+    top: 212px;
+    width: 561px;
+    height: 600px;
+    border-radius: 48px;
+    background: white;
+    box-shadow: $dropShadow;
+    z-index: 15;
+    .overlay {
+        filter: blur(8px);
+        top:0px;
+        left:0px;
+        width: 100vw;
+        height:100vw;
+        z-index: 10;
+    }
+}*/
+
+
 
 .item_added {
     h2 {
@@ -458,12 +509,11 @@ $orderBorder: 20px;
     height: 68px;
     box-shadow: drop-shadow(.5rem .5rem 1rem $primaryDarkGrey);
     border: none;
-    top:490px;
+    top: 490px;
     font-weight: bold;
     font-size: 24px;
     letter-spacing: 0.11px;
 }
-
 
 .return {
     left: 50px;
@@ -480,7 +530,7 @@ $orderBorder: 20px;
 }
 
 //background blur
-
+/*
 .page {
     filter: blur(8px);
     padding-left: 116px;
