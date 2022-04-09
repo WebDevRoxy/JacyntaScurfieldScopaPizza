@@ -394,6 +394,10 @@ h3 {
   color: #F05A35;
 }
 
+.item_added {
+  display: none;
+}
+
 .item_added .overlay {
   position: fixed;
   top: 0px;
@@ -432,6 +436,10 @@ h3 {
   -webkit-box-shadow: 0em 0.15em 0.35em #555758;
           box-shadow: 0em 0.15em 0.35em #555758;
   z-index: 14;
+}
+
+.item_added.active {
+  display: block;
 }
 
 /*

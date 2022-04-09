@@ -1,4 +1,11 @@
-const swiper = new Swiper('.swiper', {
+function toggleItemAdded(){
+  document.getElementById('item_added').classList.toggle('active');
+}
+
+
+
+
+/*const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'vertical',
   loop: true,
@@ -18,4 +25,4 @@ const swiper = new Swiper('.swiper', {
   scrollbar: {
     el: '.swiper-scrollbar',
   },
-});
+});*/

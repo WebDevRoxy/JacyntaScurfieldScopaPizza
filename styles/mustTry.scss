@@ -407,6 +407,7 @@ $orderBorder: 20px;
 //Item added pop up
 
 .item_added {
+    display: none;
     .overlay {
         position: fixed;
         top: 0px;
@@ -440,6 +441,11 @@ $orderBorder: 20px;
     box-shadow: $dropShadow;
     z-index: 14;
 }
+
+.item_added.active {
+    display:block;
+}
+
 
 /*
 
