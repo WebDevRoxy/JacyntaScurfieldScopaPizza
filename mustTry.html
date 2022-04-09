@@ -14,24 +14,23 @@
     <div class="grid">
         <!--Sidebar navigation-->
         <ul class="sidebar">
-            <li class="nav_option" selected><a href="mustTry.html"><img src="images\Icon material-favorite.svg"
-                        alt="Heart icon"></i>
-                    <span class="nav_text">Must Try</span></a></li>
+            <div class="nav_option_selected_top">
+                <li class="nav_option"><a href="mustTry.html"><img src="images\Icon material-favorite.svg"
+                            alt="Heart icon"></i>
+                        <span class="nav_text">Must Try</span></a></li>
+            </div>
             <li class="nav_option"><a href="pizza.html"><img src="images\Icon ionic-ios-pizza.svg" alt="Pizza icon"></i>
                     <span class="nav_text">Pizza</span></a></li>
             <li class="nav_option"><a href="drinks.html"><img src="images\Icon ionic-ios-wine.svg" alt="Wine icon"></i>
                     <span class="nav_text">Drinks</span></a></li>
             <li class="nav_option"><a href="dessert.html"><img src="images\Icon ionic-ios-ice-cream.svg"
-                        alt="Ice cream icon"></li>
-            <span class="nav_text">Dessert</span></a>
-            </li>
+                        alt="Ice cream icon"></i>
+                    <span class="nav_text">Dessert</span></a></li>
             <li class="nav_option"><a href="others.html"><img src="images\Icon awesome-hamburger.svg"
-                        alt="Hamburger icon"></li>
-            <span class="nav_text">Others</span></a>
-            </li>
-
-            <li><a href="feedback.html">Feedback</a></li>
-            <li><a href="help.html">Help</a></li>
+                        alt="Hamburger icon"></i>
+                    <span class="nav_text">Others</span></a></li>
+            <li class="nav_option"><a href="feedback.html"><span class="nav_text_feedback">Feedback</span></a></li>
+            <li class="nav_option"><a href="help.html"><span class="nav_text_help">Help</span></a></li>
         </ul>
 
         <div class="content_container">
@@ -49,100 +48,101 @@
 
             <div class="casousel">
                 <!--Left carousel button-->
-                <button class="carousel_button">
-                    <img src="...." alt="">
+                <button class="carousel_button_left">
+                    <img src="images\Icon ionic-ios-arrow-back.svg" alt="">
                 </button>
                 <!--Carousel items-->
                 <div class="casousel_track_container">
                     <ul class="carousel_track">
                         <li class="casousel_slide">
+                            <span class="deal">DEAL!</span>
                             <img class="kale" src="images\kale.png" alt="">
                             <h3>Kale Caesar</h3>
                             <span class="presale">$15 </span><span class="food_price">NOW $10</span>
                             <p class="kale_description">Toasted bread crumbs, Caesar dressing, parmesan.</p>
-                                <span class="diet_details">* nut free, vegetarian</span>
-                                <span class="quantity">Quantity</span>
-                                <div class="change_quantity">
-                                    <button class="minus" type="button" onclick="decrement()">-</button>
-                                    <div class="root_quantity"><span>1</span></div>
-                                    <button class="plus" type="button" onclick="increment()">+</button>
-                                </div>
+                            <span class="diet_details">* nut free, vegetarian</span>
+                            <span class="quantity">Quantity</span>
+                            <div class="change_quantity">
+                                <button class="minus" type="button" onclick="decrement()">-</button>
+                                <div class="root_quantity"><span>1</span></div>
+                                <button class="plus" type="button" onclick="increment()">+</button>
                             </div>
-                            <!--Add to basket button-->
-                            <button class="add" onclick="toggleItemAdded()">
-                                <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-                                <span class="add_text">Add to basket</span>
-                            </button>
-                        </li>
-
-                        <!--Add other carousel slides here-->
-                    </ul>
                 </div>
-                <!--Right carousel button-->
-                <button class="carousel_button">
-                    <img src="...." alt="">
+                <!--Add to basket button-->
+                <button class="add" onclick="toggleItemAdded()">
+                    <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                    <span class="add_text">Add to basket</span>
                 </button>
+                </li>
+
+                <!--Add other carousel slides here-->
+                </ul>
             </div>
+            <!--Right carousel button-->
+            <button class="carousel_button_right">
+                <img src="images\Icon ionic-ios-arrow-forward.svg" alt="">
+            </button>
+        </div>
 
 
 
 
+    </div>
+
+    <!--Item added-->
+    <div class="item_added">
+        <h2>Item Added!</h2>
+        <img src="...." alt="Margeritta pizza">
+        <div class="add_quantity">
+            <span>x</span>
+            <div class="root_quantity"></div>
+            <span>Margheritta Pizza</span>
+        </div>
+        <div class="price">
+            <span>Basket Total:</span>
+            <div class="price_calculation"></div>
+        </div>
+        <div class="back_nav">
+            <button class="return" type="button"></button>
+            <button class="go_basket" type="button"></button>
+        </div>
+    </div>
+
+    <!--Basket icon-->
+    <i class="basket-icon"></i>
+
+    <!--Basket-->
+    <div class="basket">
+        <span>BASKET</span>
+        <button class="basket" onclick="toggleBasket()"><i class="......"></i></button>
+
+        <div class="item_details">
+            <div class="item_count">
+                <div class="quantity_calculation"></div>
+                <span>Items</span>
             </div>
-
-            <!--Item added-->
-            <div class="item_added">
-                <h2>Item Added!</h2>
-                <img src="...." alt="Margeritta pizza">
-                <div class="add_quantity">
-                    <span>x</span>
-                    <div class="root_quantity"></div>
-                    <span>Margheritta Pizza</span>
-                </div>
-                <div class="price">
-                    <span>Basket Total:</span>
-                    <div class="price_calculation"></div>
-                </div>
-                <div class="back_nav">
-                    <button class="return" type="button"></button>
-                    <button class="go_basket" type="button"></button>
-                </div>
-            </div>
-
-            <!--Basket icon-->
-            <i class="basket-icon"></i>
-
-            <!--Basket-->
-            <div class="basket">
-                <span>BASKET</span>
-                <button class="basket" onclick="toggleBasket()"><i class="......"></i></button>
-
-                <div class="item_details">
-                    <div class="item_count">
-                        <div class="quantity_calculation"></div>
-                        <span>Items</span>
-                    </div>
-                    <div class="price_count">
-                        <span>TOTAL: </span>
-                        <div class="price_calculation"></div>
-                    </div>
-                </div>
-                <div class="basket_item">
-                    <div class="delete"><i class="......"></i></div>
-                    <img src="......." alt=".......">
-                    <div class="pizza_name"></div>
-                    <span>$</span>
-                    <div class="item_basket_price"></div>
-                    <div class="quantity_basket">
-                        <div class="change_basket_quantity">
-                            <button class="basket_minus" type="button" onclick="decrement()">-</button>
-                            <div class="root_quantity"></div>
-                            <button class="basket_plus" type="button" onclick="increment()">+</button>
-                        </div>
-                    </div>
-                </div>
-                <button class="basket" onclick="toggleBasket()"></button>
+            <div class="price_count">
+                <span>TOTAL: </span>
+                <div class="price_calculation"></div>
             </div>
         </div>
+        <div class="basket_item">
+            <div class="delete"><i class="......"></i></div>
+            <img src="......." alt=".......">
+            <div class="pizza_name"></div>
+            <span>$</span>
+            <div class="item_basket_price"></div>
+            <div class="quantity_basket">
+                <div class="change_basket_quantity">
+                    <button class="basket_minus" type="button" onclick="decrement()">-</button>
+                    <div class="root_quantity"></div>
+                    <button class="basket_plus" type="button" onclick="increment()">+</button>
+                </div>
+            </div>
+        </div>
+        <button class="basket" onclick="toggleBasket()"></button>
+    </div>
+    </div>
     </div>
     </div>
 

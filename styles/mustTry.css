@@ -105,6 +105,10 @@ body {
   top: 203px;
   left: 178px;
   position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
 }
 
 h3 {
@@ -239,7 +243,7 @@ h3 {
           transform: translate(-50%);
   position: absolute;
   top: 866px;
-  border-radius: 10px;
+  border-radius: 20px;
   background: #0A1F30;
   width: 300px;
   height: 78px;
@@ -275,6 +279,99 @@ h3 {
   padding-left: 27px;
   padding-right: 27px;
   letter-spacing: 0.11px;
+}
+
+.deal {
+  background-color: #F05A35;
+  width: 176px;
+  height: 42px;
+  position: absolute;
+  font-size: 36px;
+  letter-spacing: 0.14px;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-transform: rotate(9deg);
+          transform: rotate(9deg);
+  top: 197px;
+  left: 300px;
+  z-index: 10;
+}
+
+.carousel_button_right {
+  top: 331px;
+  position: absolute;
+  border: none;
+  background-color: #0A1F30;
+  right: 135px;
+}
+
+.carousel_button_left {
+  top: 331px;
+  position: absolute;
+  border: none;
+  background-color: #0A1F30;
+  left: 135px;
+}
+
+.nav_option_selected_top {
+  background-color: #F4C938;
+  border-radius: 14px;
+}
+
+.nav_option {
+  top: 40px;
+  position: relative;
+}
+
+.nav_option .nav_text {
+  padding-bottom: 70px;
+  font-size: 25px;
+  letter-spacing: 0.17px;
+}
+
+.nav_option .nav_text_feedback {
+  padding-bottom: 70px;
+  font-size: 25px;
+  letter-spacing: 0.17px;
+  font-style: italic;
+  text-decoration: underline;
+  letter-spacing: 0.03px;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  padding-bottom: 0px;
+  top: 140px;
+}
+
+.nav_option .nav_text_help {
+  padding-bottom: 70px;
+  font-size: 25px;
+  letter-spacing: 0.17px;
+  font-style: italic;
+  text-decoration: underline;
+  letter-spacing: 0.03px;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  padding-bottom: 0px;
+  top: 200px;
+}
+
+.nav_option .selected {
+  color: #F05A35;
 }
 
 /*

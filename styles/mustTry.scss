@@ -58,6 +58,7 @@ $primaryLightGrey: #EFEFEF;
 $primaryDarkGrey: #555758;
 $primaryFont: britannic;
 $lightFont: lighter;
+$selected: #F4C938;
 
 * {
     margin: 0;
@@ -152,8 +153,15 @@ body {
     position: absolute;
 }
 
+@mixin centre {
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+}
+
 .kale {
     @include mainFoodImage;
+    @include centre;
 }
 
 h3 {
@@ -163,12 +171,6 @@ h3 {
     color: $primaryYellow;
     font-family: $primaryFont;
     font-size: 38px;
-}
-
-@mixin centre {
-    left: 50%;
-    transform: translate(-50%);
-    position: absolute;
 }
 
 .food_price {
@@ -220,6 +222,8 @@ h3 {
 
 $dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
 
+$averageBorder: 10px;
+
 .change_quantity {
     @include centre();
     height: 68px;
@@ -231,12 +235,12 @@ $dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 @mixin quantityButtons {
     background: $primaryYellow;
-    border-radius: 10px;
+    border-radius: $averageBorder;
     display: inline-block;
     height: 51px;
     width: 51px;
@@ -267,31 +271,117 @@ $dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
 .add {
     color: $primaryBlue;
     @include centre();
-    top:866px;
-    border-radius: 10px;
+    top: 866px;
+    border-radius: 20px;
     background: $primaryBlue;
     width: 300px;
     height: 78px;
     border: none;
-    box-shadow:$dropShadow;
+    box-shadow: $dropShadow;
+
     .basket {
         align-items: center;
         justify-content: center;
         position: relative;
-        top:0px;
-        left:0px;
+        top: 0px;
+        left: 0px;
         @include quantityButtons();
         height: 65px;
         width: 65px;
     }
-    .add_text{
+
+    .add_text {
         font-size: 27px;
         color: white;
         padding-left: 27px;
         padding-right: 27px;
-        letter-spacing:0.11px;
+        letter-spacing: 0.11px;
     }
 }
+
+.deal {
+    background-color: $primaryRed;
+    width: 176px;
+    height: 42px;
+    position: absolute;
+    font-size: 36px;
+    letter-spacing: 0.14px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    border-radius: $averageBorder;
+    text-align: center;
+    transform: rotate(9deg);
+    top: 197px;
+    left: 300px;
+    z-index: 10;
+}
+
+@mixin arrows {
+    top: 331px;
+    position: absolute;
+    border: none;
+    background-color: $primaryBlue;
+}
+
+.carousel_button_right {
+    @include arrows();
+    right: 135px;
+}
+
+.carousel_button_left {
+    @include arrows();
+    left: 135px;
+}
+
+@mixin navText {
+    padding-bottom: 70px;
+        font-size: 25px;
+        letter-spacing: 0.17px;
+}
+
+@mixin lowerNavText {
+    font-style: italic;
+    text-decoration: underline;
+    letter-spacing: 0.03px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 0px;
+}
+
+@mixin navOption {
+    top: 40px;
+    position: relative;
+}
+
+.nav_option_selected_top {
+    background-color: $selected;
+    border-radius: 14px;
+}
+
+.nav_option {
+    @include navOption();
+    .nav_text {
+        @include navText();
+    }
+    .nav_text_feedback {
+        @include navText();
+        @include lowerNavText();
+        top: 140px;
+    }
+    .nav_text_help {
+        @include navText();
+        @include lowerNavText();
+        top: 200px;
+    }
+    .selected {
+        color: #F05A35;
+    }
+}
+
+
 
 
 
