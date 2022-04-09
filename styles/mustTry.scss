@@ -76,7 +76,7 @@ body {
     left: 0;
     top: 0;
     width: 116px;
-    height: 100vh;
+    height: 1024px;
     position: fixed;
     background: $primaryYellow;
     text-align: center;
@@ -382,73 +382,40 @@ $averageBorder: 10px;
 }
 
 
+//Item added pop up
 
-
-
-
-
-/*
-.sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 15vw;
-    height: 100vh;
-    background: $primaryYellow;
-    color: $primaryBlue;
-    text-align: center;
-    line-height: 90px;
+.item_added {
+    top: 212px;
+    position:absolute;
+    width: 561px;
+    height: 600px;
+    border-radius: 48px;
+    background: white;
+    box-shadow: $dropShadow;
+    z-index: 15;
 }
 
-@mixin navOptions {
-    vertical-align: top;
-    display: block;
-    text-align: center;
-    line-height: 16px;
+.item_added_decoration {
+    width: 561px;
+    height: 600px;
+    border-radius: 48px;
+    z-index: 15;
+    background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
 }
 
-@mixin navText {
-    display: block;
+.page {
+    filter: blur(8px);
 }
 
-.nav_option {
-    @include navOptions();
-}
-
-.sidebar a {
-    text-decoration: none;
-    color: $primaryBlue;
-    letter-spacing: 0.7px;
-
-    .nav_text {
-        @include navText();
-    }
-}
-
-@mixin pageContent {
-    width: 75vw;
-    margin-left: 15vw;
-}
-
-@mixin content {
-    width: 75vw;
-    margin-left: 15vw;
-}
-
-
-
-.content_container {
-    @include content();
-    position:relative;
-}
-
-.main_content {
+.blur_filter{
+    height: 768px;
+    width: 1024px;
+    background-color: $primaryBlue;
+    z-index: 14;
     position: absolute;
-    top:8px;
-
+    top:0px;
+    left:0px;
 }
-.background_design {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-} */
+
+
+
