@@ -9,6 +9,7 @@ function toggleItemAdded(){
 
 function toggleBasket(){
   document.getElementById('basket_toggle').classList.toggle('active');
+  document.getElementById('item_added').style.display = "none";
 }
 
 
