@@ -1,7 +1,15 @@
+//item added
+
 function toggleItemAdded(){
   document.getElementById('item_added').classList.toggle('active');
 }
 
+
+//basket
+
+function toggleBasket(){
+  document.getElementById('basket_toggle').classList.toggle('active');
+}
 
 
 

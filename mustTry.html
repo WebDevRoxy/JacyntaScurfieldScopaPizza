@@ -46,7 +46,9 @@
             <!--Logo-->
             <img class="logo" src="images\logo.svg" alt="Scopa Pizzeria logo">
 
-            <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+            <button id="go_basket" onclick="toggleBasket()" type="button">
+                <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+            </button>
 
             <h2 class="header_text">Must Try</h2>
 
@@ -104,9 +106,9 @@
                 <span class="dollar">$</span>
                 <div class="price_calculation"></div>
             </div>
-            <div class="back_nav">
-                <button class="return" onclick="toggleItemAdded()">Return</button>
-                <button class="go_basket" type="button">Go to basket</button>
+            <div class="back_nav" id="item_added">
+                <button class="return" onclick="toggleItemAdded()" type="button">Return</button>
+                <button class="go_basket" onclick="toggleBasket()" type="button">Go to basket</button>
             </div>
         </div>
     </div>
@@ -121,36 +123,41 @@
     <i class="basket-icon"></i>
 
     <!--Basket-->
-    <div class="basket_container">
-        <span class="basket_name">BASKET</span>
-        <button class="basket" onclick="toggleBasket()"><i class="fa-light fa-circle-x"></i></button>
-        <div class="item_details">
-            <div class="item_count">
-                <div class="quantity_calculation"></div>
-                <span class="item_amount">Items</span>
+    <div class="basket_container" id="basket_toggle">
+        <div class="overlay"></div>
+        <div class="basket_content">
+            <span class="basket_name">BASKET</span>
+            <button class="basket" onclick="toggleBasket()"><i class="fa-light fa-circle-x"></i></button>
+            <div class="item_details">
+                <div class="item_count">
+                    <div class="quantity_calculation"></div>
+                    <span class="item_amount">Items</span>
+                </div>
+                <div class="price_count">
+                    <span class="total_amount">TOTAL: </span>
+                    <div class="price_calculation"></div>
+                </div>
             </div>
-            <div class="price_count">
-                <span class="total_amount">TOTAL: </span>
-                <div class="price_calculation"></div>
+            <div class="basket_item">
+                <div class="delete"><span>x</span>
+                    <!--<i class="fa-solid fa-xmark-large"></i>!-->
+                </div>
+                <img src="images\pizza.png" alt="Margherita pizza">
+                <span class="pizza_name">Margherita
             </div>
-        </div>
-        <div class="basket_item">
-            <div class="delete"><span>x</span>
-                <!--<i class="fa-solid fa-xmark-large"></i>!-->
+            <span class="dollar_sign">$</span>
+            <div class="item_basket_price"></div>
+            <div class="change_basket_quantity">
+                <button class="basket_minus" type="button" onclick="decrement()">-</button>
+                <div class="root_quantity">1</div>
+                <button class="basket_plus" type="button" onclick="increment()">+</button>
             </div>
-            <img src="images\pizza.png" alt="Margherita pizza">
-            <span class="pizza_name">Margherita
+            <a class="place_order" href="confirmOrder.html">PLACE ORDER</a>
         </div>
-        <span class="dollar_sign">$</span>
-        <div class="item_basket_price"></div>
-        <div class="change_basket_quantity">
-            <button class="basket_minus" type="button" onclick="decrement()">-</button>
-            <div class="root_quantity">1</div>
-            <button class="basket_plus" type="button" onclick="increment()">+</button>
-        </div>
-        <button class="basket" onclick="toggleBasket()"></button>
-        <a class="place_order" href="confirmOrder.html">PLACE ORDER</a>
     </div>
+
+
+
 
     <!--Blur the background-->
     <div class="blur_filter"></div>

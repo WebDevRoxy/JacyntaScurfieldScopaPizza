@@ -394,54 +394,6 @@ h3 {
   color: #F05A35;
 }
 
-.item_added {
-  display: none;
-}
-
-.item_added .overlay {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 768px;
-  height: 1024px;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 10;
-}
-
-.item_added_content {
-  position: fixed;
-  top: 212px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
-  width: 561px;
-  height: 600px;
-  border-radius: 48px;
-  z-index: 15;
-  background: radial-gradient(112% 555px at 50% -30px, #0A1F30 75%, transparent 75%);
-}
-
-.white_background {
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
-  position: absolute;
-  top: 212px;
-  width: 561px;
-  height: 600px;
-  border-radius: 48px;
-  background: white;
-  -webkit-box-shadow: 0em 0.15em 0.35em #555758;
-          box-shadow: 0em 0.15em 0.35em #555758;
-  z-index: 14;
-}
-
-.item_added.active {
-  display: block;
-}
-
 /*
 
 .item_added {
@@ -557,161 +509,260 @@ h3 {
     top:0px;
     left:0px;
 } */
-/*
-.basket_container {
-    top: 0px;
-    right: 0px;
-    position: absolute;
-    width: 376px;
-    height: 1024px;
-    background: $primaryBlue;
-    z-index: 17;
-    border: none;
+.item_added {
+  display: none;
 }
 
-$basketMargin: 36px;
+.item_added .overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 768px;
+  height: 1024px;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
 
+.item_added_content {
+  position: fixed;
+  top: 212px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+  width: 561px;
+  height: 600px;
+  border-radius: 48px;
+  z-index: 15;
+  background: radial-gradient(112% 555px at 50% -30px, #0A1F30 75%, transparent 75%);
+}
 
-@mixin basketHeader {
-    color: white;
-    top: 39px;
+.white_background {
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+  position: absolute;
+  top: 212px;
+  width: 561px;
+  height: 600px;
+  border-radius: 48px;
+  background: white;
+  z-index: 14;
+}
+
+.item_added.active {
+  display: block;
+}
+
+.basket_container .overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 768px;
+  height: 1024px;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  display: none;
+}
+
+.go_basket.active {
+  right: 0px;
+}
+
+.basket_container .basket_content {
+  display: none;
+  top: 0px;
+  right: -380px;
+  position: absolute;
+  width: 376px;
+  height: 1024px;
+  background: #0A1F30;
+  z-index: 17;
+  border: none;
+}
+
+.basket_container.active .overlay {
+  display: block;
+}
+
+.basket_container.active .basket_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  right: 0px;
+}
+
+.basket_main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#go_basket {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .basket_name {
-    @include basketHeader();
-    left: $basketMargin;
-    font-size: 33px;
-    letter-spacing: 1.45px;
-    z-index: 18;
-    position: absolute;
+  color: white;
+  top: 39px;
+  left: 36px;
+  font-size: 33px;
+  letter-spacing: 1.45px;
+  z-index: 18;
+  position: absolute;
 }
-
 
 .delete {
-    @include basketHeader();
-    right: $basketMargin;
-    position: relative;
-}
-
-$basketZ: 18;
-
-@mixin rowTwoBasket {
-    top: 100px;
-    font-size: 24px;
-    z-index: $basketZ;
-    position: absolute;
-    color: white;
+  color: white;
+  top: 39px;
+  right: 36px;
+  position: relative;
 }
 
 .item_amount {
-    left: $basketMargin;
-    @include rowTwoBasket();
+  left: 36px;
+  top: 100px;
+  font-size: 24px;
+  z-index: 18;
+  position: absolute;
+  color: white;
 }
 
 .total_amount {
-    right: $basketMargin;
-    @include rowTwoBasket();
+  right: 36px;
+  top: 100px;
+  font-size: 24px;
+  z-index: 18;
+  position: absolute;
+  color: white;
 }
 
 .basket_item {
-    padding-top: 155px;
-    z-index: $basketZ;
-    @include centre();
+  padding-top: 155px;
+  z-index: 18;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
 }
 
 .pizza_name {
-    z-index: $basketZ;
-    font-family: $primaryFont;
-    color: $primaryYellow;
-    @include centre();
-    padding-top: 10px;
-    font-size: 29px;
-    letter-spacing: 0.12px;
-    display: flex;
+  z-index: 18;
+  font-family: britannic;
+  color: #FFDA5D;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+  padding-top: 10px;
+  font-size: 29px;
+  letter-spacing: 0.12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-
-//fix alignment below
 
 .dollar_sign {
-    z-index: $basketZ;
-    color: white;
-    @include centre();
-    top: 380px;
-    font-size: 24px;
-    letter-spacing: 0.12px;
+  z-index: 18;
+  color: white;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+  top: 380px;
+  font-size: 24px;
+  letter-spacing: 0.12px;
 }
 
-.delete {
-    span {
-        color: $primaryRed;
-        font-size: 40px;
-        left: 218px;
-        position: absolute;
-    }
+.delete span {
+  color: #F05A35;
+  font-size: 40px;
+  left: 218px;
+  position: absolute;
 }
 
-.basket_item {
-    img {
-        display: flex;
-    }
+.basket_item img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .change_basket_quantity {
-    background: white;
-    border-radius: 13px;
-    width: 131px;
-    height: 45px;
-    border: none;
-    top: 432px;
-    position: absolute;
-    @include centre();
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .basket_minus {
-        @include quantityButtons();
-        background: $primaryLightGrey;
-        width: 34px;
-        height: 34px;
-        left: 20px;
-    }
-
-    .basket_plus {
-        @include quantityButtons();
-        width: 34px;
-        height: 34px;
-
-    }
+  background: white;
+  border-radius: 13px;
+  width: 131px;
+  height: 45px;
+  border: none;
+  top: 432px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-@mixin quantityButtons {
-    background: $primaryYellow;
-    border-radius: $averageBorder;
-    display: inline-block;
-    height: 51px;
-    width: 51px;
-    border: none;
-    font-size: 32px;
+.change_basket_quantity .basket_minus {
+  background: #FFDA5D;
+  border-radius: 10px;
+  display: inline-block;
+  height: 51px;
+  width: 51px;
+  border: none;
+  font-size: 32px;
+  background: #EFEFEF;
+  width: 34px;
+  height: 34px;
+  left: 20px;
+}
+
+.change_basket_quantity .basket_plus {
+  background: #FFDA5D;
+  border-radius: 10px;
+  display: inline-block;
+  height: 51px;
+  width: 51px;
+  border: none;
+  font-size: 32px;
+  width: 34px;
+  height: 34px;
 }
 
 .place_order {
-    background: $primaryYellow;
-    width: 218px;
-    height: 68px;
-    border-radius: $orderBorder;
-    text-decoration: none;
-    position: sticky;
-    @include centre();
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 27px;
-    letter-spacing: 0.11px;
-    color: $primaryBlue;
-    top: 870px;
+  background: #FFDA5D;
+  width: 218px;
+  height: 68px;
+  border-radius: 20px;
+  text-decoration: none;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+  font-size: 27px;
+  letter-spacing: 0.11px;
+  color: #0A1F30;
+  top: 870px;
 }
-
-*/
 /*# sourceMappingURL=mustTry.css.map */
