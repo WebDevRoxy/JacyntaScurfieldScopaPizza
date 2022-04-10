@@ -97,6 +97,7 @@ function addToCartClicked(event) {
   var imageSrc = shopItem.getElementsByClassName('item_img')[0].src;
   console.log(title, price, imageSrc);
   addItemToCart(title, price, imageSrc);
+  updateCartTotal();
 }
 
 //casousel_track_container = cart-items
@@ -106,15 +107,22 @@ function addItemToCart(title, price, imageSrc) {
   var cartRow = document.createElement('div');
   cartRow.classList.add('basket_item')
   var cartItems = document.getElementsByClassName('casousel_track_container')[0];
+  var cartItemNames = cartItems.getElementsByClassName('pizza_name');
+  for (var i = 0; i < cartItemNames.length; i++) {
+    if (cartItemNames[i].innerText == title) {
+      alert('This item is already in your basket');
+      return;
+    }
+  }
   var cartRowContents = `
     <div class="basket_item">
         <div class="item_name">
             <button class="delete" type="button">x</button>
             <!--<i class="fa-solid fa-xmark-large"></i>!-->
-            <img src="images/pizza.png" alt="Margherita pizza">
-            <span class="pizza_name">Margherita
+            <img src="${imageSrc}">
+            <span class="pizza_name">${title}
         </div>
-        <span class="item_basket_price">$10</span>
+        <span class="item_basket_price">${price}</span>
         <div class="change_basket_quantity">
             <button class="basket_minus" type="button" onclick="decrement(this)">-</button>
             <input class="quantity_input" type="number" value="1" onblur="quantityChanged(this)">
@@ -123,6 +131,8 @@ function addItemToCart(title, price, imageSrc) {
     </div>`
     cartRow.innerHTML = cartRowContents;
   cartItems.append(cartRow);
+  cartRow.getElementsByClassName('delete')[0].addEventListener('click',removeCartItem);
+  cartRow.getElementsByClassName('quantity_input')[0].addEventListener('change', quantityChanged);
 }
 
 
