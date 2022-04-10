@@ -135,7 +135,7 @@
                 </div>
                 <div class="price_count">
                     <span class="total_amount">TOTAL: </span>
-                    <span class="price_calculation">$10</span>
+                    <span id="total" class="price_calculation">10</span>
                 </div>
             </div>
 
@@ -149,9 +149,9 @@
                 </div>
                 <span class="item_basket_price">$10</span>
                 <div class="change_basket_quantity">
-                    <button class="basket_minus" type="button" onclick="decrement()">-</button>
-                    <input class="quantity_input" type="number" value="1">
-                    <button class="basket_plus" type="button" onclick="increment()">+</button>
+                    <button class="basket_minus" type="button" onclick="decrement(this)">-</button>
+                    <input class="quantity_input" type="number" value="1" onblur="quantityChanged(this)">
+                    <button class="basket_plus" type="button" onclick="increment(this)">+</button>
                 </div>
             </div>
             <a class="place_order" href="confirmOrder.html">PLACE ORDER</a>

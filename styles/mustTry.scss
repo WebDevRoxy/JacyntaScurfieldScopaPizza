@@ -607,7 +607,7 @@ $basketZ: 18;
     @include rowTwoBasket();
 }
 
-.total_amount {
+.price_count {
     right: $basketMargin;
     @include rowTwoBasket();
 }
