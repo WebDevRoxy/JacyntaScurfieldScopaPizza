@@ -18,15 +18,14 @@
 /* justify-content: aligns content on page*/
 /* align-items: aligns in the grid*/
 /*@import url(styles\sidebar.scss);*/
-.page {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
-      grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
-  -ms-grid-rows: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
-      grid-template-rows: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
-}
+/*.page {
+    display: grid;
+    //24
+    grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
 
+    //32 rows
+    grid-template-rows: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
+}*/
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +34,7 @@
 body {
   font-family: calibri;
   position: absolute;
+  padding-left: 116px;
   color: #0A1F30;
 }
 
@@ -73,7 +73,7 @@ body {
 .logo {
   top: 32px;
   position: absolute;
-  left: 42px;
+  left: 158px;
   top: 40px;
   position: absolute;
 }
@@ -86,7 +86,11 @@ body {
 }
 
 .header_text {
-  left: 236px;
+  padding-left: 116px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
   top: 128px;
   position: absolute;
   font-style: italic;
@@ -112,19 +116,23 @@ body {
 
 }*/
 .kale {
-  width: 283px;
-  top: 203px;
-  left: 178px;
-  position: absolute;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
+  position: absolute;
+  width: 283px;
+  top: 203px;
   position: absolute;
 }
 
 h3 {
   top: 483px;
-  left: 216px;
+  padding-left: 116px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
   position: absolute;
   color: #FFDA5D;
   font-family: britannic;
@@ -136,6 +144,7 @@ h3 {
   top: 532px;
   font-size: 29px;
   font-weight: lighter;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -143,7 +152,7 @@ h3 {
 }
 
 .presale {
-  left: 227px;
+  left: 343px;
   top: 538px;
   position: absolute;
   color: #F05A35;
@@ -153,6 +162,7 @@ h3 {
 
 .kale_description {
   font-size: 29px;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -162,6 +172,7 @@ h3 {
 }
 
 .diet_details {
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -174,6 +185,7 @@ h3 {
 
 .quantity {
   top: 701px;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -182,10 +194,7 @@ h3 {
 }
 
 .change_quantity {
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
+  left: 346px;
   height: 68px;
   width: 183px;
   border: none;
@@ -193,6 +202,7 @@ h3 {
           box-shadow: 0em 0.15em 0.35em #555758;
   top: 741px;
   border-radius: 20px;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,10 +268,13 @@ h3 {
       -ms-flex-pack: center;
           justify-content: center;
   color: #0A1F30;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   position: absolute;
+  padding-left: 0px;
+  left: 434px;
   top: 866px;
   border-radius: 20px;
   background: #0A1F30;
@@ -315,8 +328,8 @@ h3 {
   text-align: center;
   -webkit-transform: rotate(9deg);
           transform: rotate(9deg);
-  top: 197px;
-  left: 300px;
+  top: 200px;
+  left: 416px;
   z-index: 10;
 }
 
@@ -394,29 +407,10 @@ h3 {
   color: #F05A35;
 }
 
-/*
-
-.item_added {
-    position: absolute;
-    top: 212px;
-    width: 561px;
-    height: 600px;
-    border-radius: 48px;
-    background: white;
-    box-shadow: $dropShadow;
-    z-index: 15;
-    .overlay {
-        filter: blur(8px);
-        top:0px;
-        left:0px;
-        width: 100vw;
-        height:100vw;
-        z-index: 10;
-    }
-}*/
 .item_added h2 {
   color: #FFDA5D;
   top: 45px;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -426,30 +420,36 @@ h3 {
   letter-spacing: 0.66px;
   z-index: 16;
   position: absolute;
+  padding-left: 0px;
 }
 
 .item_added img {
   top: 115px;
   position: absolute;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   position: absolute;
+  padding-left: 0px;
 }
 
 .item_added .added_name {
   top: 300px;
   color: white;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   position: absolute;
   font-size: 24px;
   letter-spacing: 0.14px;
+  padding-left: 0px;
 }
 
 .item_added .price {
   top: 420px;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -457,6 +457,7 @@ h3 {
   font-style: italic;
   letter-spacing: 0.12px;
   font-size: 29px;
+  padding-left: 0px;
 }
 
 .item_added .price .total {
@@ -495,20 +496,6 @@ h3 {
   letter-spacing: 0.11px;
 }
 
-/*
-.page {
-    filter: blur(8px);
-    padding-left: 116px;
-}
-/* .blur_filter{
-    height: 768px;
-    width: 1024px;
-    background-color: $primaryBlue;
-    z-index: 14;
-    position: absolute;
-    top:0px;
-    left:0px;
-} */
 .item_added {
   display: none;
 }
@@ -526,6 +513,7 @@ h3 {
 .item_added_content {
   position: fixed;
   top: 212px;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -538,6 +526,7 @@ h3 {
 }
 
 .white_background {
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -607,6 +596,7 @@ h3 {
 .basket_name {
   color: white;
   top: 39px;
+  padding-left: 0px;
   left: 36px;
   font-size: 33px;
   letter-spacing: 1.45px;
@@ -617,8 +607,10 @@ h3 {
 .delete {
   color: white;
   top: 39px;
+  padding-left: 0px;
   right: 36px;
   position: relative;
+  padding-left: 0px;
 }
 
 .item_amount {
@@ -628,6 +620,7 @@ h3 {
   z-index: 18;
   position: absolute;
   color: white;
+  padding-left: 0px;
 }
 
 .total_amount {
@@ -637,21 +630,25 @@ h3 {
   z-index: 18;
   position: absolute;
   color: white;
+  padding-left: 0px;
 }
 
 .basket_item {
   padding-top: 155px;
   z-index: 18;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   position: absolute;
+  padding-left: 0px;
 }
 
 .pizza_name {
   z-index: 18;
   font-family: britannic;
   color: #FFDA5D;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -659,6 +656,7 @@ h3 {
   padding-top: 10px;
   font-size: 29px;
   letter-spacing: 0.12px;
+  padding-left: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -667,6 +665,7 @@ h3 {
 .dollar_sign {
   z-index: 18;
   color: white;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -674,6 +673,7 @@ h3 {
   top: 380px;
   font-size: 24px;
   letter-spacing: 0.12px;
+  padding-left: 0px;
 }
 
 .delete span {
@@ -681,6 +681,7 @@ h3 {
   font-size: 40px;
   left: 218px;
   position: absolute;
+  padding-left: 0px;
 }
 
 .basket_item img {
@@ -697,6 +698,7 @@ h3 {
   border: none;
   top: 432px;
   position: absolute;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -710,6 +712,7 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-left: 0px;
 }
 
 .change_basket_quantity .basket_minus {
@@ -746,6 +749,7 @@ h3 {
   text-decoration: none;
   position: -webkit-sticky;
   position: sticky;
+  padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -764,5 +768,6 @@ h3 {
   letter-spacing: 0.11px;
   color: #0A1F30;
   top: 870px;
+  padding-left: 0px;
 }
 /*# sourceMappingURL=mustTry.css.map */

@@ -36,14 +36,14 @@
 
 /*@import url(styles\sidebar.scss);*/
 
-.page {
+/*.page {
     display: grid;
     //24
     grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
 
     //32 rows
     grid-template-rows: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
-}
+}*/
 
 $primaryRed: #F05A35;
 $primaryYellow: #FFDA5D;
@@ -54,6 +54,13 @@ $primaryFont: britannic;
 $lightFont: lighter;
 $selected: #F4C938;
 
+@mixin centre {
+    padding-left: 116px;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -62,7 +69,7 @@ $selected: #F4C938;
 body {
     font-family: calibri;
     position: absolute;
-    // left: 116px;
+    padding-left: 116px;
     color: $primaryBlue;
 }
 
@@ -103,10 +110,6 @@ body {
     }
 }
 
-@mixin content {
-    grid-column: 4/-1;
-}
-
 .background-design {
     position: inline-block;
 }
@@ -120,7 +123,7 @@ body {
 
 .logo {
     @include header();
-    left: 42px;
+    left: 158px;
     top: 40px;
     position: absolute;
 }
@@ -132,7 +135,7 @@ body {
 }
 
 .header_text {
-    left: 236px;
+    @include centre();
     top: 128px;
     position: absolute;
     font-style: italic;
@@ -141,15 +144,9 @@ body {
 }
 
 @mixin mainFoodImage {
+    @include centre();
     width: 283px;
     top: 203px;
-    left: 178px;
-    position: absolute;
-}
-
-@mixin centre {
-    left: 50%;
-    transform: translate(-50%);
     position: absolute;
 }
 
@@ -174,12 +171,11 @@ body {
 
 .kale {
     @include mainFoodImage;
-    @include centre;
 }
 
 h3 {
     top: 483px;
-    left: 216px;
+    @include centre();
     position: absolute;
     color: $primaryYellow;
     font-family: $primaryFont;
@@ -203,7 +199,7 @@ h3 {
 }
 
 .presale {
-    left: 227px;
+    left: 343px;
     @include presalePrice();
 }
 
@@ -238,17 +234,17 @@ $dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
 $averageBorder: 10px;
 
 .change_quantity {
-    @include centre();
+    left: 346px;
     height: 68px;
     width: 183px;
     border: none;
     box-shadow: $dropShadow;
     top: 741px;
     border-radius: 20px;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 @mixin quantityButtons {
@@ -289,6 +285,8 @@ $orderBorder: 20px;
     justify-content: center;
     color: $primaryBlue;
     @include centre();
+    padding-left:0px;
+    left:434px;
     top: 866px;
     border-radius: $orderBorder;
     background: $primaryBlue;
@@ -330,8 +328,8 @@ $orderBorder: 20px;
     border-radius: $averageBorder;
     text-align: center;
     transform: rotate(9deg);
-    top: 197px;
-    left: 300px;
+    top: 200px;
+    left: 416px;
     z-index: 10;
 }
 
@@ -403,26 +401,6 @@ $orderBorder: 20px;
     }
 }
 
-/*
-
-.item_added {
-    position: absolute;
-    top: 212px;
-    width: 561px;
-    height: 600px;
-    border-radius: 48px;
-    background: white;
-    box-shadow: $dropShadow;
-    z-index: 15;
-    .overlay {
-        filter: blur(8px);
-        top:0px;
-        left:0px;
-        width: 100vw;
-        height:100vw;
-        z-index: 10;
-    }
-}*/
 @mixin overlay {
     position: fixed;
     top: 0px;
@@ -444,12 +422,14 @@ $orderBorder: 20px;
         letter-spacing: 0.66px;
         z-index: 16;
         position: absolute;
+        padding-left: 0px;
     }
 
     img {
         top: 115px;
         position: absolute;
         @include centre();
+        padding-left: 0px;
     }
 
     .added_name {
@@ -458,6 +438,7 @@ $orderBorder: 20px;
         @include centre();
         font-size: 24px;
         letter-spacing: 0.14px;
+        padding-left: 0px;
     }
 
     .price {
@@ -466,7 +447,7 @@ $orderBorder: 20px;
         font-style: italic;
         letter-spacing: 0.12px;
         font-size: 29px;
-
+        padding-left: 0px;
         .total {
             padding-right: 51px;
         }
@@ -498,23 +479,6 @@ $orderBorder: 20px;
     position: absolute;
     @include backNavBtns();
 }
-
-//background blur
-/*
-.page {
-    filter: blur(8px);
-    padding-left: 116px;
-}
-/* .blur_filter{
-    height: 768px;
-    width: 1024px;
-    background-color: $primaryBlue;
-    z-index: 14;
-    position: absolute;
-    top:0px;
-    left:0px;
-} */
-
 
 // Basket
 
@@ -605,6 +569,7 @@ $basketMargin: 36px;
 @mixin basketHeader {
     color: white;
     top: 39px;
+    padding-left: 0px;
 }
 
 .basket_name {
@@ -620,6 +585,7 @@ $basketMargin: 36px;
     @include basketHeader();
     right: $basketMargin;
     position: relative;
+    padding-left: 0px;
 }
 
 $basketZ: 18;
@@ -630,6 +596,7 @@ $basketZ: 18;
     z-index: $basketZ;
     position: absolute;
     color: white;
+    padding-left: 0px;
 }
 
 .item_amount {
@@ -646,6 +613,7 @@ $basketZ: 18;
     padding-top: 155px;
     z-index: $basketZ;
     @include centre();
+    padding-left: 0px;
 }
 
 .pizza_name {
@@ -656,6 +624,7 @@ $basketZ: 18;
     padding-top: 10px;
     font-size: 29px;
     letter-spacing: 0.12px;
+    padding-left: 0px;
     display: flex;
 }
 
@@ -668,6 +637,7 @@ $basketZ: 18;
     top: 380px;
     font-size: 24px;
     letter-spacing: 0.12px;
+    padding-left: 0px;
 }
 
 .delete {
@@ -676,6 +646,7 @@ $basketZ: 18;
         font-size: 40px;
         left: 218px;
         position: absolute;
+        padding-left: 0px;
     }
 }
 
@@ -683,6 +654,16 @@ $basketZ: 18;
     img {
         display: flex;
     }
+}
+
+@mixin quantityButtons {
+    background: $primaryYellow;
+    border-radius: $averageBorder;
+    display: inline-block;
+    height: 51px;
+    width: 51px;
+    border: none;
+    font-size: 32px;
 }
 
 .change_basket_quantity {
@@ -697,6 +678,7 @@ $basketZ: 18;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 0px;
 
     .basket_minus {
         @include quantityButtons();
@@ -712,16 +694,6 @@ $basketZ: 18;
         height: 34px;
 
     }
-}
-
-@mixin quantityButtons {
-    background: $primaryYellow;
-    border-radius: $averageBorder;
-    display: inline-block;
-    height: 51px;
-    width: 51px;
-    border: none;
-    font-size: 32px;
 }
 
 .place_order {
@@ -740,4 +712,5 @@ $basketZ: 18;
     letter-spacing: 0.11px;
     color: $primaryBlue;
     top: 870px;
+    padding-left: 0px;
 }
