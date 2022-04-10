@@ -267,7 +267,7 @@ $averageBorder: 10px;
     @include quantityButtons();
 }
 
-.root_quantity {
+.quantity_input {
     @include quantityButtons();
     background: none;
     text-align: center;
@@ -285,8 +285,8 @@ $orderBorder: 20px;
     justify-content: center;
     color: $primaryBlue;
     @include centre();
-    padding-left:0px;
-    left:434px;
+    padding-left: 0px;
+    left: 434px;
     top: 866px;
     border-radius: $orderBorder;
     background: $primaryBlue;
@@ -448,6 +448,7 @@ $orderBorder: 20px;
         letter-spacing: 0.12px;
         font-size: 29px;
         padding-left: 0px;
+
         .total {
             padding-right: 51px;
         }
@@ -480,12 +481,11 @@ $orderBorder: 20px;
     @include backNavBtns();
 }
 
-// Basket
-
 //Item added pop up
 
 .item_added {
     display: none;
+    transform: (-50%, -50%) scale(0);
 
     .overlay {
         @include overlay();
@@ -516,6 +516,8 @@ $orderBorder: 20px;
 
 .item_added.active {
     display: block;
+    transition:all 300ms ease-in-out;
+    transform: (-50%, -50%) scale(1);
 }
 
 //basket pop up
@@ -523,7 +525,7 @@ $orderBorder: 20px;
 .basket_container {
     .overlay {
         @include overlay();
-        display:none;
+        display: none;
     }
 }
 
@@ -533,7 +535,7 @@ $orderBorder: 20px;
 
 .basket_container {
     .basket_content {
-        display:none;
+        //display:none;
         top: 0px;
         right: -380px;
         position: absolute;
@@ -547,11 +549,12 @@ $orderBorder: 20px;
 
 .basket_container.active {
     .overlay {
-        display:block;
+        display: block;
     }
+
     .basket_content {
         display: flex;
-        right:0px;
+        right: 0px;
     }
 }
 
@@ -572,7 +575,7 @@ $basketMargin: 36px;
     padding-left: 0px;
 }
 
-.basket_name {
+.item_name {
     @include basketHeader();
     left: $basketMargin;
     font-size: 33px;
@@ -609,11 +612,23 @@ $basketZ: 18;
     @include rowTwoBasket();
 }
 
-.basket_item {
+.item_name {
     padding-top: 155px;
     z-index: $basketZ;
     @include centre();
     padding-left: 0px;
+
+    .delete {
+        color: $primaryRed;
+        font-size: 40px;
+        left: 218px;
+        top: 150px;
+        border: none;
+        padding: 0;
+        background: none;
+        position: absolute;
+        padding-left: 0px;
+    }
 }
 
 .pizza_name {
@@ -638,16 +653,6 @@ $basketZ: 18;
     font-size: 24px;
     letter-spacing: 0.12px;
     padding-left: 0px;
-}
-
-.delete {
-    span {
-        color: $primaryRed;
-        font-size: 40px;
-        left: 218px;
-        position: absolute;
-        padding-left: 0px;
-    }
 }
 
 .basket_item {
