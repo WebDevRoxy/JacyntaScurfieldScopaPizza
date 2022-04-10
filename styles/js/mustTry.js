@@ -96,6 +96,33 @@ function addToCartClicked(event) {
   var price = shopItem.getElementsByClassName('item_price')[0].innerText;
   var imageSrc = shopItem.getElementsByClassName('item_img')[0].src;
   console.log(title, price, imageSrc);
+  addItemToCart(title, price, imageSrc);
+}
+
+//casousel_track_container = cart-items
+//basket_item = cart_row
+
+function addItemToCart(title, price, imageSrc) {
+  var cartRow = document.createElement('div');
+  cartRow.classList.add('basket_item')
+  var cartItems = document.getElementsByClassName('casousel_track_container')[0];
+  var cartRowContents = `
+    <div class="basket_item">
+        <div class="item_name">
+            <button class="delete" type="button">x</button>
+            <!--<i class="fa-solid fa-xmark-large"></i>!-->
+            <img src="images/pizza.png" alt="Margherita pizza">
+            <span class="pizza_name">Margherita
+        </div>
+        <span class="item_basket_price">$10</span>
+        <div class="change_basket_quantity">
+            <button class="basket_minus" type="button" onclick="decrement(this)">-</button>
+            <input class="quantity_input" type="number" value="1" onblur="quantityChanged(this)">
+            <button class="basket_plus" type="button" onclick="increment(this)">+</button>
+        </div>
+    </div>`
+    cartRow.innerHTML = cartRowContents;
+  cartItems.append(cartRow);
 }
 
 
