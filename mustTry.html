@@ -62,10 +62,10 @@
                     <ul class="carousel_track">
                         <li class="casousel_slide">
                             <span class="deal">DEAL!</span>
-                            <img class="kale" src="images\kale.png" alt="">
-                            <h3>Kale Caesar</h3>
-                            <span class="presale">$15 </span><span class="food_price">NOW $10</span>
-                            <p class="kale_description">Toasted bread crumbs, Caesar dressing, parmesan.</p>
+                            <img class="item_img" src="images\kale.png" alt="">
+                            <h3 class="item_title">Kale Caesar</h3>
+                            <span class="presale">$15 </span><span class="item_price">$10</span>
+                            <p class="item_description">Toasted bread crumbs, Caesar dressing, parmesan.</p>
                             <span class="diet_details">* nut free, vegetarian</span>
                             <span class="quantity">Quantity</span>
                             <div class="change_quantity">
@@ -73,6 +73,12 @@
                                 <input class="quantity_input" type="number" value="1">
                                 <button class="plus" type="button" onclick="increment()">+</button>
                             </div>
+                            <!--Add to basket button-->
+                            <button class="add" onclick="toggleItemAdded()">
+                                <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                                <span class="add_text">Add to basket</span>
+                            </button>
+
                         </li>
                     </ul>
                 </div>
@@ -112,12 +118,6 @@
             </div>
         </div>
     </div>
-
-    <!--Add to basket button-->
-    <button class="add" onclick="toggleItemAdded()">
-        <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-        <span class="add_text">Add to basket</span>
-    </button>
 
     <!--Basket icon-->
     <i class="basket-icon"></i>
@@ -166,7 +166,7 @@
 
 
     <script type="text/javascript" src="styles\js\mustTry.js" async></script>
-    
+
 
 </body>
 

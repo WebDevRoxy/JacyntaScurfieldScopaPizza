@@ -59,7 +59,7 @@ function decrement(event) {
   var quantityElement = cartRows.getElementsByClassName('quantity_input')[0];
   var quantity = quantityElement.value - 1;
 
-  
+
 
   updateCartTotal();
 }
@@ -71,12 +71,36 @@ function increment(event) {
 
 function quantityChanged(event) {
   var input = parseInt(event.value);
-  if (isNaN(input) || input.value <= 0) {
-    input = 1;
+  if (isNaN(input.value) || input.value <= 0) {
+    input.value = 1;
   }
   event.value = input;
   updateCartTotal();
 }
+
+//add = shop-item-button
+//item_title = shop-item-title
+//item_price = shop-item-price
+//item_img = shop-item-image
+
+var addToCartButtons = document.getElementsByClassName('add');
+for (var i = 0; i < addToCartButtons.length; i++) {
+  var button = addToCartButtons[i];
+  button.addEventListener('click', addToCartClicked);
+}
+
+function addToCartClicked(event) {
+  var button = event.target;
+  var shopItem = button.parentElement.parentElement;
+  var title = shopItem.getElementsByClassName('item_title')[0].innerText;
+  var price = shopItem.getElementsByClassName('item_price')[0].innerText;
+  var imageSrc = shopItem.getElementsByClassName('item_img')[0].src;
+  console.log(title, price, imageSrc);
+}
+
+
+
+
 
 //Updates the calculations
 function updateCartTotal(quantity) {
@@ -95,6 +119,13 @@ function updateCartTotal(quantity) {
   }
   document.getElementById('total').innerText = total;
 }
+
+
+
+
+
+
+
 
 
 /*const swiper = new Swiper('.swiper', {

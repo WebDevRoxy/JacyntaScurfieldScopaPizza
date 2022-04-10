@@ -169,7 +169,7 @@ body {
 
 }*/
 
-.kale {
+.item_img {
     @include mainFoodImage;
 }
 
@@ -182,7 +182,7 @@ h3 {
     font-size: 38px;
 }
 
-.food_price {
+.item_price {
     color: white;
     top: 532px;
     font-size: 29px;
@@ -209,7 +209,7 @@ h3 {
 }
 
 
-.kale_description {
+.item_description {
     @include bigDescription();
     top: 617px;
     white-space: nowrap;

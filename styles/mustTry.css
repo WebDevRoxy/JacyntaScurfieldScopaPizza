@@ -115,7 +115,7 @@ body {
     font-size:60px;
 
 }*/
-.kale {
+.item_img {
   padding-left: 116px;
   left: 50%;
   -webkit-transform: translate(-50%);
@@ -139,7 +139,7 @@ h3 {
   font-size: 38px;
 }
 
-.food_price {
+.item_price {
   color: white;
   top: 532px;
   font-size: 29px;
@@ -160,7 +160,7 @@ h3 {
   text-decoration: line-through;
 }
 
-.kale_description {
+.item_description {
   font-size: 29px;
   padding-left: 116px;
   left: 50%;
