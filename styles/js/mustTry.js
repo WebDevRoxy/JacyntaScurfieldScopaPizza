@@ -34,7 +34,7 @@ for (var i = 0; i < removeCartItemButtons.length; i++) {
 
 //or
 
-//price_calculation instead of cart-price
+//item_basket_price instead of cart-price
 
 //basket_item instead of cart-row
 
@@ -48,7 +48,7 @@ function updateCartTotal() {
   var cartRows = cartItemContainer.getElementsByClassName('basket_item');
   for (var i = 0; i < cartRows.length; i++) {
     var cartRows = cartRows[i];
-    var priceElement = cartRows.getElementsByClassName('price_calculation')[0];
+    var priceElement = cartRows.getElementsByClassName('item_basket_price')[0];
     var quantityElement = cartRows.getElementsByClassName('quantity_input')[0];
     console.log(priceElement, quantityElement)
 

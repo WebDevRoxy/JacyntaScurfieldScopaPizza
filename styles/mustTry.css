@@ -598,7 +598,7 @@ h3 {
       flex-shrink: 0;
 }
 
-.item_name {
+.basket_name {
   color: white;
   top: 39px;
   padding-left: 0px;
@@ -679,7 +679,7 @@ h3 {
   display: flex;
 }
 
-.dollar_sign {
+.item_basket_price {
   z-index: 18;
   color: white;
   padding-left: 116px;
@@ -687,7 +687,7 @@ h3 {
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
   position: absolute;
-  top: 380px;
+  top: 390px;
   font-size: 24px;
   letter-spacing: 0.12px;
   padding-left: 0px;

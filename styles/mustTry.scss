@@ -575,7 +575,7 @@ $basketMargin: 36px;
     padding-left: 0px;
 }
 
-.item_name {
+.basket_name {
     @include basketHeader();
     left: $basketMargin;
     font-size: 33px;
@@ -645,11 +645,11 @@ $basketZ: 18;
 
 //fix alignment below
 
-.dollar_sign {
+.item_basket_price {
     z-index: $basketZ;
     color: white;
     @include centre();
-    top: 380px;
+    top: 390px;
     font-size: 24px;
     letter-spacing: 0.12px;
     padding-left: 0px;
