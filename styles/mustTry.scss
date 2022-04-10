@@ -563,6 +563,9 @@ $orderBorder: 20px;
     }
 }
 
+.go_basket.active {
+    right: 0px;
+}
 
 .basket_container {
     .basket_content {
@@ -570,11 +573,11 @@ $orderBorder: 20px;
         top: 0px;
         right: -380px;
         position: absolute;
+        width: 376px;
+        height: 1024px;
+        background: $primaryBlue;
         z-index: 17;
         border: none;
-        width: 376px;
-        height: 1024x;
-        background: $primaryBlue;
     }
 }
 
@@ -586,6 +589,14 @@ $orderBorder: 20px;
         display: flex;
         right:0px;
     }
+}
+
+.basket_main {
+    flex-grow: 1;
+}
+
+#go_basket {
+    flex-shrink: 0;
 }
 
 $basketMargin: 36px;

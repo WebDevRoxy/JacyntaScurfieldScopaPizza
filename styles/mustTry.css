@@ -566,16 +566,20 @@ h3 {
   display: none;
 }
 
+.go_basket.active {
+  right: 0px;
+}
+
 .basket_container .basket_content {
   display: none;
   top: 0px;
   right: -380px;
   position: absolute;
+  width: 376px;
+  height: 1024px;
+  background: #0A1F30;
   z-index: 17;
   border: none;
-  width: 376px;
-  height: 1024x;
-  background: #0A1F30;
 }
 
 .basket_container.active .overlay {
@@ -587,6 +591,17 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   right: 0px;
+}
+
+.basket_main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#go_basket {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .basket_name {
