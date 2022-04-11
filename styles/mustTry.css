@@ -1,31 +1,3 @@
-/* $name: ; to make aomething that can be used everywhere*/
-/* Nesting like html with { &:{ } } // :: for after*/
-/* import header and sidebar with @import "./url";*/
-/* @mixin name {} lets you use a paragraph of styles*/
-/* @mixin name($differentname) {} */
-/* @extend nameofotherthing; you can add other styles on top*/
-/* display: grid; */
-/* grid-template-columns: px px px px columns*/
-/* fr can be used instead of px. It devides the screen*/
-/* repeat(multiply number, px number)*/
-/* grid-auto-rows: basic value; creates as many rows as possible in that size*/
-/* grid-auto-rows: minmax(start size, auto); gives minimum value and auto max value*/
-/* grid-gap: puts gaps between rows and columns*/
-/* grid-template-area: "header header"
-"sidebar content"
-"sidebar content"*/
-/* grid-column-start: & grid-column-end: use for individual items to show how far they'll span*/
-/* justify-content: aligns content on page*/
-/* align-items: aligns in the grid*/
-/*@import url(styles\sidebar.scss);*/
-/*.page {
-    display: grid;
-    //24
-    grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
-
-    //32 rows
-    grid-template-rows: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
-}*/
 * {
   margin: 0;
   padding: 0;
@@ -66,8 +38,21 @@ body {
   display: block;
 }
 
-.background-design {
+.background_design {
   position: inline-block;
+}
+
+.header_text {
+  padding-left: 116px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+  top: 128px;
+  position: absolute;
+  font-style: italic;
+  font-size: 45px;
+  color: white;
 }
 
 .logo {
@@ -85,45 +70,63 @@ body {
   top: 24px;
 }
 
-.header_text {
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
-  top: 128px;
-  position: absolute;
-  font-style: italic;
-  font-size: 45px;
-  color: white;
+.casousel_track_container {
+  height: 1024px;
+  width: 768px;
+  overflow: hidden;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
-/*
-.swiper {
-    width: 600px;
-    height: 300px;
-  }
-
-.swiper-wrapper {
-    height: 500px;
+.casousel_slide {
+  max-height: 100vh;
+  width: 100vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
-.swiper_slide {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-size:60px;
-
-}*/
 .item_img {
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
-  width: 283px;
-  top: 203px;
-  position: absolute;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  top: 180px;
+}
+
+.grabbing {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.grabbing .casousel_slide {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 h3 {
@@ -137,6 +140,9 @@ h3 {
   color: #FFDA5D;
   font-family: britannic;
   font-size: 38px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
 }
 
 .item_price {
@@ -153,6 +159,9 @@ h3 {
 
 .presale {
   left: 343px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
   top: 538px;
   position: absolute;
   color: #F05A35;
@@ -162,21 +171,17 @@ h3 {
 
 .item_description {
   font-size: 29px;
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
   top: 617px;
   white-space: nowrap;
 }
 
 .diet_details {
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
   top: 647px;
   color: #555758;
   font-size: 22px;
@@ -184,16 +189,17 @@ h3 {
 }
 
 .quantity {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
   top: 701px;
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
   font-size: 27px;
 }
 
 .change_quantity {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
   left: 346px;
   height: 68px;
   width: 183px;
@@ -236,6 +242,9 @@ h3 {
 }
 
 .quantity_input {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
   background: #FFDA5D;
   border-radius: 10px;
   display: inline-block;
@@ -258,6 +267,9 @@ h3 {
 }
 
 .add {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -268,11 +280,6 @@ h3 {
       -ms-flex-pack: center;
           justify-content: center;
   color: #0A1F30;
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
   padding-left: 0px;
   left: 434px;
   top: 866px;
@@ -566,6 +573,7 @@ h3 {
 }
 
 .basket_container .basket_content {
+  display: none;
   top: 0px;
   right: -380px;
   position: absolute;
@@ -585,17 +593,6 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   right: 0px;
-}
-
-.basket_main {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-#go_basket {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
 }
 
 .basket_name {

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-with, initial-scale=1.0" />
@@ -9,10 +8,8 @@
     <script src="https://kit.fontawesome.com/82be183e51.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
     <title>Scopa Pizzeria -- Must Try</title>
 </head>
-
 <body>
     <div class="page">
         <!--Sidebar navigation-->
@@ -35,30 +32,25 @@
             <li class="nav_option"><a href="feedback.html"><span class="nav_text_feedback">Feedback</span></a></li>
             <li class="nav_option"><a href="help.html"><span class="nav_text_help">Help</span></a></li>
         </ul>
-
-        <div class="content_container">
             <!--Blue background-->
-            <img class="background_design" src="images\mustTryBackground.svg" alt="Background pattern">
-        </div>
-
+            <!--<img class="background_design" src="images\mustTryBackground.svg" alt="Background pattern">
+            <div class="backgorund_design"></div>-->
         <div class="main_content">
             <!--Logo-->
             <img class="logo" src="images\logo.svg" alt="Scopa Pizzeria logo">
-
+            <!--Header basket-->
             <button id="go_basket" onclick="toggleBasket()" type="button">
                 <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
             </button>
-
+            <!--Page name-->
             <h2 class="header_text">Must Try</h2>
-
             <div class="casousel">
                 <!--Left carousel button-->
                 <button class="carousel_button_left">
                     <img src="images\Icon ionic-ios-arrow-back.svg" alt="">
                 </button>
                 <!--Carousel items-->
-
-                <div class="casousel_track_container">
+                <div class="casousel_track_container grabbing">
                     <ul class="carousel_track">
                         <li class="casousel_slide">
                             <span class="deal">DEAL!</span>
@@ -78,14 +70,51 @@
                                 <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
                                 <span class="add_text">Add to basket</span>
                             </button>
-
+                        </li>
+                        <li class="casousel_slide">
+                            <span class="deal">DEAL!</span>
+                            <img class="item_img" src="images\rings.png" alt="">
+                            <h3 class="item_title">Rings</h3>
+                            <span class="presale">$15 </span><span class="item_price">$10</span>
+                            <p class="item_description">food talky talky</p>
+                            <span class="diet_details">* nut free, vegetarian</span>
+                            <span class="quantity">Quantity</span>
+                            <div class="change_quantity">
+                                <button class="minus" type="button" onclick="decrement()">-</button>
+                                <input class="quantity_input" type="number" value="1">
+                                <button class="plus" type="button" onclick="increment()">+</button>
+                            </div>
+                            <!--Add to basket button-->
+                            <button class="add" onclick="toggleItemAdded()">
+                                <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                                <span class="add_text">Add to basket</span>
+                            </button>
+                        </li>
+                        <li class="casousel_slide">
+                            <span class="deal">DEAL!</span>
+                            <img class="item_img" src="images\cannelloni.png" alt="">
+                            <h3 class="item_title">Cannoli</h3>
+                            <span class="presale">$15 </span><span class="item_price">$10</span>
+                            <p class="item_description">more food talky talky talky</p>
+                            <span class="diet_details">* nut free, vegetarian</span>
+                            <span class="quantity">Quantity</span>
+                            <div class="change_quantity">
+                                <button class="minus" type="button" onclick="decrement()">-</button>
+                                <input class="quantity_input" type="number" value="1">
+                                <button class="plus" type="button" onclick="increment()">+</button>
+                            </div>
+                            <!--Add to basket button-->
+                            <button class="add" onclick="toggleItemAdded()">
+                                <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                                <span class="add_text">Add to basket</span>
+                            </button>
                         </li>
                     </ul>
                 </div>
                 </li>
 
                 <!--Add other carousel slides here-->
-                </ul>
+
             </div>
             <!--Right carousel button-->
             <button class="carousel_button_right">
@@ -93,8 +122,6 @@
             </button>
         </div>
     </div>
-
-
     <!--Item added-->
     <div class="item_added" id="item_added">
         <div class="overlay"></div>
@@ -118,10 +145,8 @@
             </div>
         </div>
     </div>
-
     <!--Basket icon-->
     <i class="basket-icon"></i>
-
     <!--Basket-->
     <div class="basket_container" id="basket_toggle">
         <div class="overlay"></div>
@@ -157,17 +182,9 @@
             <a class="place_order" href="confirmOrder.html">PLACE ORDER</a>
         </div>
     </div>
-
-
-
-
     <!--Blur the background-->
     <div class="blur_filter"></div>
-
-
+    <!--Loads Javascript-->
     <script type="text/javascript" src="styles\js\mustTry.js" async></script>
-
-
 </body>
-
 </html>
