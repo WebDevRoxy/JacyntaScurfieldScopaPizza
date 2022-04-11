@@ -1,3 +1,50 @@
+/* $name: ; to make aomething that can be used everywhere*/
+
+/* Nesting like html with { &:{ } } // :: for after*/
+
+/* import header and sidebar with @import "./url";*/
+
+/* @mixin name {} lets you use a paragraph of styles*/
+
+/* @mixin name($differentname) {} */
+
+/* @extend nameofotherthing; you can add other styles on top*/
+
+/* display: grid; */
+
+/* grid-template-columns: px px px px columns*/
+
+/* fr can be used instead of px. It devides the screen*/
+
+/* repeat(multiply number, px number)*/
+
+/* grid-auto-rows: basic value; creates as many rows as possible in that size*/
+
+/* grid-auto-rows: minmax(start size, auto); gives minimum value and auto max value*/
+
+/* grid-gap: puts gaps between rows and columns*/
+
+/* grid-template-area: "header header"
+"sidebar content"
+"sidebar content"*/
+
+/* grid-column-start: & grid-column-end: use for individual items to show how far they'll span*/
+
+/* justify-content: aligns content on page*/
+
+/* align-items: aligns in the grid*/
+
+/*@import url(styles\sidebar.scss);*/
+
+/*.page {
+    display: grid;
+    //24
+    grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
+
+    //32 rows
+    grid-template-rows: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
+}*/
+
 $primaryRed: #F05A35;
 $primaryYellow: #FFDA5D;
 $primaryBlue: #0A1F30;
