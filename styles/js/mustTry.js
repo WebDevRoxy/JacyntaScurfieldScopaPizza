@@ -116,7 +116,7 @@ function addItemToCart(title, price, imageSrc) {
   }
   var cartRowContents = `
     <div class="basket_item">
-        <div class="item_name">
+        <div class="basket_item_details">
             <button class="delete" type="button">x</button>
             <!--<i class="fa-solid fa-xmark-large"></i>!-->
             <img src="${imageSrc}">

@@ -1,0 +1,36 @@
+.sidebar {
+    left: 0;
+    top: 0;
+    width: 116px;
+    height: 1024px;
+    position: fixed;
+    background: $primaryYellow;
+    text-align: center;
+    line-height: 90px;
+}
+
+
+@mixin navOptions {
+    vertical-align: top;
+    display: block;
+    text-align: center;
+    line-height: 16px;
+}
+
+@mixin navText {
+    display: block;
+}
+
+.nav_option {
+    @include navOptions();
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: $primaryBlue;
+    letter-spacing: 0.7px;
+
+    .nav_text {
+        @include navText();
+    }
+}

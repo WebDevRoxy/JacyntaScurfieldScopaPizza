@@ -1,0 +1,196 @@
+.header_text {
+    @include centre();
+    top: 128px;
+    position: absolute;
+    font-style: italic;
+    font-size: 45px;
+    color: white;
+}
+
+@mixin mainFoodImage {
+    @include centre();
+    width: 283px;
+    top: 203px;
+    position: absolute;
+}
+
+.item_img {
+    @include mainFoodImage;
+}
+
+h3 {
+    top: 483px;
+    @include centre();
+    position: absolute;
+    color: $primaryYellow;
+    font-family: $primaryFont;
+    font-size: 38px;
+}
+
+.item_price {
+    color: white;
+    top: 532px;
+    font-size: 29px;
+    font-weight: $lightFont;
+    @include centre();
+}
+
+@mixin presalePrice {
+    top: 538px;
+    position: absolute;
+    color: $primaryRed;
+    font-size: 20px;
+    text-decoration: line-through;
+}
+
+.presale {
+    left: 343px;
+    @include presalePrice();
+}
+
+@mixin bigDescription {
+    font-size: 29px;
+    @include centre();
+}
+
+
+.item_description {
+    @include bigDescription();
+    top: 617px;
+    white-space: nowrap;
+}
+
+.diet_details {
+    @include centre();
+    top: 647px;
+    color: $primaryDarkGrey;
+    font-size: 22px;
+    font-weight: $lightFont;
+}
+
+.quantity {
+    top: 701px;
+    @include centre();
+    font-size: 27px;
+}
+
+$dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
+
+$averageBorder: 10px;
+
+.change_quantity {
+    left: 346px;
+    height: 68px;
+    width: 183px;
+    border: none;
+    box-shadow: $dropShadow;
+    top: 741px;
+    border-radius: 20px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin quantityButtons {
+    background: $primaryYellow;
+    border-radius: $averageBorder;
+    display: inline-block;
+    height: 51px;
+    width: 51px;
+    border: none;
+    font-size: 32px;
+}
+
+.minus {
+    @include quantityButtons();
+    background: $primaryLightGrey;
+}
+
+.plus {
+    @include quantityButtons();
+}
+
+.quantity_input {
+    @include quantityButtons();
+    background: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+$orderBorder: 20px;
+
+.add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primaryBlue;
+    @include centre();
+    padding-left: 0px;
+    left: 434px;
+    top: 866px;
+    border-radius: $orderBorder;
+    background: $primaryBlue;
+    width: 300px;
+    height: 78px;
+    border: none;
+    box-shadow: $dropShadow;
+
+    .basket {
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        @include quantityButtons();
+        height: 65px;
+        width: 65px;
+    }
+
+    .add_text {
+        font-size: 27px;
+        color: white;
+        padding-left: 27px;
+        padding-right: 27px;
+        letter-spacing: 0.11px;
+    }
+}
+
+.deal {
+    background-color: $primaryRed;
+    width: 176px;
+    height: 42px;
+    position: absolute;
+    font-size: 36px;
+    letter-spacing: 0.14px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    border-radius: $averageBorder;
+    text-align: center;
+    transform: rotate(9deg);
+    top: 200px;
+    left: 416px;
+    z-index: 10;
+}
+
+@mixin arrows {
+    top: 331px;
+    position: absolute;
+    border: none;
+    background-color: $primaryBlue;
+}
+
+.carousel_button_right {
+    @include arrows();
+    right: 135px;
+}
+
+.carousel_button_left {
+    @include arrows();
+    left: 251px;
+}
+

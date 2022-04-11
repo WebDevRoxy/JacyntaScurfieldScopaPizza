@@ -638,7 +638,7 @@ h3 {
   padding-left: 0px;
 }
 
-.item_name {
+.basket_item_details {
   padding-top: 155px;
   z-index: 18;
   padding-left: 116px;
@@ -649,7 +649,7 @@ h3 {
   padding-left: 0px;
 }
 
-.item_name .delete {
+.basket_item_details .delete {
   color: #F05A35;
   font-size: 40px;
   left: 218px;

@@ -1,0 +1,27 @@
+$primaryRed: #F05A35;
+$primaryYellow: #FFDA5D;
+$primaryBlue: #0A1F30;
+$primaryLightGrey: #EFEFEF;
+$primaryDarkGrey: #555758;
+$primaryFont: britannic;
+$lightFont: lighter;
+$selected: #F4C938;
+
+@mixin centre {
+    padding-left: 116px;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: calibri;
+    position: absolute;
+    padding-left: 116px;
+    color: $primaryBlue;
+}

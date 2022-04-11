@@ -1,0 +1,196 @@
+.basket_container {
+    .overlay {
+        @include overlay();
+        display: none;
+    }
+}
+
+.go_basket.active {
+    right: 0px;
+}
+
+.basket_container {
+    .basket_content {
+        //display:none;
+        top: 0px;
+        right: -380px;
+        position: absolute;
+        width: 376px;
+        height: 1024px;
+        background: $primaryBlue;
+        z-index: 17;
+        border: none;
+    }
+}
+
+.basket_container.active {
+    .overlay {
+        display: block;
+    }
+    .basket_content {
+        display: flex;
+        right: 0px;
+    }
+}
+
+.basket_main {
+    flex-grow: 1;
+}
+
+#go_basket {
+    flex-shrink: 0;
+}
+
+$basketMargin: 36px;
+
+
+@mixin basketHeader {
+    color: white;
+    top: 39px;
+    padding-left: 0px;
+}
+
+.basket_name {
+    @include basketHeader();
+    left: $basketMargin;
+    font-size: 33px;
+    letter-spacing: 1.45px;
+    z-index: 18;
+    position: absolute;
+}
+
+.delete {
+    @include basketHeader();
+    right: $basketMargin;
+    position: relative;
+    padding-left: 0px;
+}
+
+$basketZ: 18;
+
+@mixin rowTwoBasket {
+    top: 100px;
+    font-size: 24px;
+    z-index: $basketZ;
+    position: absolute;
+    color: white;
+    padding-left: 0px;
+}
+
+.item_amount {
+    left: $basketMargin;
+    @include rowTwoBasket();
+}
+
+.price_count {
+    right: $basketMargin;
+    @include rowTwoBasket();
+}
+
+.basket_item_details {
+    padding-top: 155px;
+    z-index: $basketZ;
+    @include centre();
+    padding-left: 0px;
+
+    .delete {
+        color: $primaryRed;
+        font-size: 40px;
+        left: 218px;
+        top: 150px;
+        border: none;
+        padding: 0;
+        background: none;
+        position: absolute;
+        padding-left: 0px;
+    }
+}
+
+.pizza_name {
+    z-index: $basketZ;
+    font-family: $primaryFont;
+    color: $primaryYellow;
+    @include centre();
+    padding-top: 10px;
+    font-size: 29px;
+    letter-spacing: 0.12px;
+    padding-left: 0px;
+    display: flex;
+}
+
+//fix alignment below
+
+.item_basket_price {
+    z-index: $basketZ;
+    color: white;
+    @include centre();
+    top: 390px;
+    font-size: 24px;
+    letter-spacing: 0.12px;
+    padding-left: 0px;
+}
+
+.basket_item {
+    img {
+        display: flex;
+    }
+}
+
+@mixin quantityButtons {
+    background: $primaryYellow;
+    border-radius: $averageBorder;
+    display: inline-block;
+    height: 51px;
+    width: 51px;
+    border: none;
+    font-size: 32px;
+}
+
+.change_basket_quantity {
+    background: white;
+    border-radius: 13px;
+    width: 131px;
+    height: 45px;
+    border: none;
+    top: 432px;
+    position: absolute;
+    @include centre();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0px;
+
+    .basket_minus {
+        @include quantityButtons();
+        background: $primaryLightGrey;
+        width: 34px;
+        height: 34px;
+        left: 20px;
+    }
+
+    .basket_plus {
+        @include quantityButtons();
+        width: 34px;
+        height: 34px;
+
+    }
+}
+
+.place_order {
+    background: $primaryYellow;
+    width: 218px;
+    height: 68px;
+    border-radius: $orderBorder;
+    text-decoration: none;
+    position: sticky;
+    @include centre();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 27px;
+    letter-spacing: 0.11px;
+    color: $primaryBlue;
+    top: 870px;
+    padding-left: 0px;
+}
