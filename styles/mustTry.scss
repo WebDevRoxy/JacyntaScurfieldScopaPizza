@@ -1,12 +1,50 @@
-/* shared page content
+/* $name: ; to make aomething that can be used everywhere*/
 
-//resets page style
-* {
-    margin: 0;
-    padding: 0;
-}
+/* Nesting like html with { &:{ } } // :: for after*/
 
-//common styles
+/* import header and sidebar with @import "./url";*/
+
+/* @mixin name {} lets you use a paragraph of styles*/
+
+/* @mixin name($differentname) {} */
+
+/* @extend nameofotherthing; you can add other styles on top*/
+
+/* display: grid; */
+
+/* grid-template-columns: px px px px columns*/
+
+/* fr can be used instead of px. It devides the screen*/
+
+/* repeat(multiply number, px number)*/
+
+/* grid-auto-rows: basic value; creates as many rows as possible in that size*/
+
+/* grid-auto-rows: minmax(start size, auto); gives minimum value and auto max value*/
+
+/* grid-gap: puts gaps between rows and columns*/
+
+/* grid-template-area: "header header"
+"sidebar content"
+"sidebar content"*/
+
+/* grid-column-start: & grid-column-end: use for individual items to show how far they'll span*/
+
+/* justify-content: aligns content on page*/
+
+/* align-items: aligns in the grid*/
+
+/*@import url(styles\sidebar.scss);*/
+
+/*.page {
+    display: grid;
+    //24
+    grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
+
+    //32 rows
+    grid-template-rows: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
+}*/
+
 $primaryRed: #F05A35;
 $primaryYellow: #FFDA5D;
 $primaryBlue: #0A1F30;
@@ -15,18 +53,7 @@ $primaryDarkGrey: #555758;
 $primaryFont: britannic;
 $lightFont: lighter;
 $selected: #F4C938;
-$dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
-$averageBorder: 10px;
 
-//body style
-body {
-    font-family: calibri;
-    position: absolute;
-    padding-left: 116px;
-    color: $primaryBlue;
-}
-
-//centres items
 @mixin centre {
     padding-left: 116px;
     left: 50%;
@@ -34,45 +61,66 @@ body {
     position: absolute;
 }
 
-*/
-
-
-
-
-
-
-
-
-/* background
-
-//blue background shape
-.background_design {
-    position: inline-block;
-
-
-    @include centre();
-    position: absolute;
-    top: 0px;
-    width: 908px;
-    height: 600px;
-    border-radius: 48px;
-    background: $primaryBlue;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-//positions header elements
+body {
+    font-family: calibri;
+    position: absolute;
+    padding-left: 116px;
+    color: $primaryBlue;
+}
+
+.sidebar {
+    left: 0;
+    top: 0;
+    width: 116px;
+    height: 1024px;
+    position: fixed;
+    background: $primaryYellow;
+    text-align: center;
+    line-height: 90px;
+}
+
+
+@mixin navOptions {
+    vertical-align: top;
+    display: block;
+    text-align: center;
+    line-height: 16px;
+}
+
+@mixin navText {
+    display: block;
+}
+
+.nav_option {
+    @include navOptions();
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: $primaryBlue;
+    letter-spacing: 0.7px;
+
+    .nav_text {
+        @include navText();
+    }
+}
+
+.background-design {
+    position: inline-block;
+}
+
 @mixin header {
     top: 32px;
     position: absolute
 }
 
+//sidebar is 96px. Width without sidebar is 672
 
-
-
-
-
-// header icons
-
-//logo
 .logo {
     @include header();
     left: 158px;
@@ -80,36 +128,12 @@ body {
     position: absolute;
 }
 
-//basket icon in header
 .basket {
     @include header();
     right: 64px;
     top: 24px;
 }
 
-
-
-
-
-
-
-
-
-
-
-//food info
-
-//food name
-h3 {
-    top: 483px;
-    @include centre();
-    position: absolute;
-    color: $primaryYellow;
-    font-family: $primaryFont;
-    font-size: 38px;
-}
-
-//title of page
 .header_text {
     @include centre();
     top: 128px;
@@ -119,7 +143,6 @@ h3 {
     color: white;
 }
 
-//main image of food position
 @mixin mainFoodImage {
     @include centre();
     width: 283px;
@@ -127,11 +150,38 @@ h3 {
     position: absolute;
 }
 
+//slider
+/*
+.swiper {
+    width: 600px;
+    height: 300px;
+  }
+
+.swiper-wrapper {
+    height: 500px;
+}
+
+.swiper_slide {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:60px;
+
+}*/
+
 .item_img {
     @include mainFoodImage;
 }
 
-//item price
+h3 {
+    top: 483px;
+    @include centre();
+    position: absolute;
+    color: $primaryYellow;
+    font-family: $primaryFont;
+    font-size: 38px;
+}
+
 .item_price {
     color: white;
     top: 532px;
@@ -140,10 +190,6 @@ h3 {
     @include centre();
 }
 
-
-
-//!!!!!!!!!!!! leave this in file
-//price brefore sale
 @mixin presalePrice {
     top: 538px;
     position: absolute;
@@ -152,31 +198,23 @@ h3 {
     text-decoration: line-through;
 }
 
-
-//price brefore sale
 .presale {
     left: 343px;
     @include presalePrice();
 }
 
-//decription of food item
 @mixin bigDescription {
     font-size: 29px;
     @include centre();
 }
 
 
-
-//!!!!!!!!!!!! leave this in file
 .item_description {
     @include bigDescription();
     top: 617px;
     white-space: nowrap;
 }
 
-
-
-//dietary information
 .diet_details {
     @include centre();
     top: 647px;
@@ -185,14 +223,16 @@ h3 {
     font-weight: $lightFont;
 }
 
-//quantity
 .quantity {
     top: 701px;
     @include centre();
     font-size: 27px;
 }
 
-//change quantity of item container
+$dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
+
+$averageBorder: 10px;
+
 .change_quantity {
     left: 346px;
     height: 68px;
@@ -207,7 +247,6 @@ h3 {
     justify-content: center;
 }
 
-//quantity plus and minus buttons
 @mixin quantityButtons {
     background: $primaryYellow;
     border-radius: $averageBorder;
@@ -218,18 +257,16 @@ h3 {
     font-size: 32px;
 }
 
-//minus button
 .minus {
     @include quantityButtons();
     background: $primaryLightGrey;
 }
 
-//plus button
+
 .plus {
     @include quantityButtons();
 }
 
-//quantity input
 .quantity_input {
     @include quantityButtons();
     background: none;
@@ -240,10 +277,8 @@ h3 {
     font-size: 27px;
 }
 
-//border radius for order add section
 $orderBorder: 20px;
 
-//add to cart button
 .add {
     display: flex;
     align-items: center;
@@ -259,7 +294,7 @@ $orderBorder: 20px;
     height: 78px;
     border: none;
     box-shadow: $dropShadow;
-    //basket icon
+
     .basket {
         align-items: center;
         justify-content: center;
@@ -270,7 +305,7 @@ $orderBorder: 20px;
         height: 65px;
         width: 65px;
     }
-    //add to basket text
+
     .add_text {
         font-size: 27px;
         color: white;
@@ -280,7 +315,6 @@ $orderBorder: 20px;
     }
 }
 
-//deal text
 .deal {
     background-color: $primaryRed;
     width: 176px;
@@ -299,7 +333,6 @@ $orderBorder: 20px;
     z-index: 10;
 }
 
-//carousel arrow buttons
 @mixin arrows {
     top: 331px;
     position: absolute;
@@ -317,29 +350,12 @@ $orderBorder: 20px;
     left: 251px;
 }
 
-
-
-
-
-//sidebar
-
-//navigation option positions
-@mixin navOptions {
-    vertical-align: top;
-    display: block;
-    text-align: center;
-    line-height: 16px;
-}
-
-//navigations options text for options with icons
 @mixin navText {
     padding-bottom: 70px;
     font-size: 25px;
     letter-spacing: 0.17px;
-    display: block;
 }
 
-//navigations options text for feedback and help
 @mixin lowerNavText {
     font-style: italic;
     text-decoration: underline;
@@ -351,41 +367,16 @@ $orderBorder: 20px;
     padding-bottom: 0px;
 }
 
-//spacing between navigation options
 @mixin navOption {
     top: 40px;
     position: relative;
 }
 
-//sidebar background
-.sidebar {
-    left: 0;
-    top: 0;
-    width: 116px;
-    height: 1024px;
-    position: fixed;
-    background: $primaryYellow;
-    text-align: center;
-    line-height: 90px;
-    text-decoration: none;
-    color: $primaryBlue;
-    letter-spacing: 0.7px;
-    .nav_text {
-        @include navText();
-    }
-}
-
-.nav_option {
-    @include navOptions();
-}
-
-//top navigation option
 .nav_option_selected_top {
     background-color: $selected;
     border-radius: 14px;
 }
 
-//navigation options
 .nav_option {
     @include navOption();
 
@@ -393,33 +384,23 @@ $orderBorder: 20px;
         @include navText();
     }
 
-    //positions feedback nav option
     .nav_text_feedback {
         @include navText();
         @include lowerNavText();
         top: 140px;
     }
 
-    //positions help nav option
     .nav_text_help {
         @include navText();
         @include lowerNavText();
         top: 200px;
     }
 
-    //colour of selected nav option
     .selected {
-        color: $primaryRed;
+        color: #F05A35;
     }
 }
 
-
-
-
-
-
-
-//background colour overlay
 @mixin overlay {
     position: fixed;
     top: 0px;
@@ -431,18 +412,7 @@ $orderBorder: 20px;
 }
 
 
-
-
-
-
-
-
-
-//item added pop up
 .item_added {
-    display: none;
-    transform: (-50%, -50%) scale(0);
-    //item added header text
     h2 {
         color: $primaryYellow;
         top: 45px;
@@ -454,14 +424,14 @@ $orderBorder: 20px;
         position: absolute;
         padding-left: 0px;
     }
-    //food image
+
     img {
         top: 115px;
         position: absolute;
         @include centre();
         padding-left: 0px;
     }
-    //name of food
+
     .added_name {
         top: 300px;
         color: white;
@@ -470,7 +440,7 @@ $orderBorder: 20px;
         letter-spacing: 0.14px;
         padding-left: 0px;
     }
-    //price calculation
+
     .price {
         top: 420px;
         @include centre();
@@ -483,15 +453,10 @@ $orderBorder: 20px;
             padding-right: 51px;
         }
     }
-    .overlay {
-        @include overlay();
-    }
-}
 }
 
-//style for return and go to basket buttons
 @mixin backNavBtns {
-    border-radius: $orderBorder;
+    border-radius: 20px;
     width: 183px;
     height: 68px;
     box-shadow: drop-shadow(.5rem .5rem 1rem $primaryDarkGrey);
@@ -502,7 +467,6 @@ $orderBorder: 20px;
     letter-spacing: 0.11px;
 }
 
-//close add pop up
 .return {
     left: 50px;
     background-color: $primaryLightGrey;
@@ -510,7 +474,6 @@ $orderBorder: 20px;
     @include backNavBtns();
 }
 
-//go to basket style
 .go_basket {
     right: 50px;
     background-color: $primaryYellow;
@@ -518,7 +481,17 @@ $orderBorder: 20px;
     @include backNavBtns();
 }
 
-//content inside the item added pop up
+//Item added pop up
+
+.item_added {
+    display: none;
+    transform: (-50%, -50%) scale(0);
+
+    .overlay {
+        @include overlay();
+    }
+}
+
 .item_added_content {
     position: fixed;
     top: 212px;
@@ -530,7 +503,6 @@ $orderBorder: 20px;
     background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
 }
 
-//white background
 .white_background {
     @include centre();
     position: absolute;
@@ -542,39 +514,26 @@ $orderBorder: 20px;
     z-index: 14;
 }
 
-//pop up transition
 .item_added.active {
     display: block;
     transition:all 300ms ease-in-out;
     transform: (-50%, -50%) scale(1);
 }
 
-
-
-
-
-
-
-
 //basket pop up
 
-//positions basket on screen when active
+.basket_container {
+    .overlay {
+        @include overlay();
+        display: none;
+    }
+}
+
 .go_basket.active {
     right: 0px;
 }
 
-.basket_container.active {
-    .overlay {
-        display: block;
-    }
-    .basket_content {
-        display: flex;
-        right: 0px;
-    }
-}
-
 .basket_container {
-    //basket content
     .basket_content {
         //display:none;
         top: 0px;
@@ -586,15 +545,29 @@ $orderBorder: 20px;
         z-index: 17;
         border: none;
     }
-    //overlay
+}
+
+.basket_container.active {
     .overlay {
-        @include overlay();
-        display: none;
+        display: block;
+    }
+
+    .basket_content {
+        display: flex;
+        right: 0px;
     }
 }
 
-//positions basket item text
+.basket_main {
+    flex-grow: 1;
+}
+
+#go_basket {
+    flex-shrink: 0;
+}
+
 $basketMargin: 36px;
+
 
 @mixin basketHeader {
     color: white;
@@ -602,7 +575,6 @@ $basketMargin: 36px;
     padding-left: 0px;
 }
 
-//basket title
 .basket_name {
     @include basketHeader();
     left: $basketMargin;
@@ -612,7 +584,6 @@ $basketMargin: 36px;
     position: absolute;
 }
 
-//delete item button
 .delete {
     @include basketHeader();
     right: $basketMargin;
@@ -620,10 +591,8 @@ $basketMargin: 36px;
     padding-left: 0px;
 }
 
-//basket z index
 $basketZ: 18;
 
-//basket item row style
 @mixin rowTwoBasket {
     top: 100px;
     font-size: 24px;
@@ -633,44 +602,38 @@ $basketZ: 18;
     padding-left: 0px;
 }
 
-//item amount text
 .item_amount {
     left: $basketMargin;
     @include rowTwoBasket();
 }
 
-//calculate price in basket
 .price_count {
     right: $basketMargin;
     @include rowTwoBasket();
 }
 
-//basket item details excluding price
 .basket_item_details {
-    padding-top: 155px;
+    padding-top: 25px;
     z-index: $basketZ;
-    @include centre();
     padding-left: 0px;
-    //delete button
+
     .delete {
         color: $primaryRed;
-        font-size: 40px;
-        left: 218px;
-        top: 150px;
+        font-size: 40px;;
+        top: 15px;
         border: none;
         padding: 0;
         background: none;
-        position: absolute;
+        position: relative;
         padding-left: 0px;
+        float:  right;
     }
 }
 
-//food name
 .pizza_name {
     z-index: $basketZ;
     font-family: $primaryFont;
     color: $primaryYellow;
-    @include centre();
     padding-top: 10px;
     font-size: 29px;
     letter-spacing: 0.12px;
@@ -678,28 +641,29 @@ $basketZ: 18;
     display: flex;
 }
 
+//fix alignment below
 
-//!!!!!!!fix alignment below
-
-//price
 .item_basket_price {
     z-index: $basketZ;
     color: white;
-    @include centre();
-    top: 390px;
+    top: 58px;
     font-size: 24px;
     letter-spacing: 0.12px;
     padding-left: 0px;
 }
 
-//basket item image
+#basket_items {
+    display: flex;
+    flex-direction: column;
+    padding-top: 155px;
+}
+
 .basket_item {
     img {
         display: flex;
     }
 }
 
-//plus and minus buttons
 @mixin quantityButtons {
     background: $primaryYellow;
     border-radius: $averageBorder;
@@ -710,21 +674,18 @@ $basketZ: 18;
     font-size: 32px;
 }
 
-//item quantity
 .change_basket_quantity {
     background: white;
     border-radius: 13px;
     width: 131px;
     height: 45px;
     border: none;
-    top: 432px;
-    position: absolute;
-    @include centre();
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-left: 0px;
-    //minus button
+
     .basket_minus {
         @include quantityButtons();
         background: $primaryLightGrey;
@@ -732,7 +693,7 @@ $basketZ: 18;
         height: 34px;
         left: 20px;
     }
-    //plus button
+
     .basket_plus {
         @include quantityButtons();
         width: 34px;
@@ -741,15 +702,13 @@ $basketZ: 18;
     }
 }
 
-//place order button
 .place_order {
     background: $primaryYellow;
     width: 218px;
     height: 68px;
     border-radius: $orderBorder;
     text-decoration: none;
-    position: sticky;
-    @include centre();
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -757,6 +716,5 @@ $basketZ: 18;
     font-size: 27px;
     letter-spacing: 0.11px;
     color: $primaryBlue;
-    top: 870px;
     padding-left: 0px;
 }

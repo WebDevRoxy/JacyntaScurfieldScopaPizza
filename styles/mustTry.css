@@ -639,37 +639,27 @@ h3 {
 }
 
 .basket_item_details {
-  padding-top: 155px;
+  padding-top: 25px;
   z-index: 18;
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
   padding-left: 0px;
 }
 
 .basket_item_details .delete {
   color: #F05A35;
   font-size: 40px;
-  left: 218px;
-  top: 150px;
+  top: 15px;
   border: none;
   padding: 0;
   background: none;
-  position: absolute;
+  position: relative;
   padding-left: 0px;
+  float: right;
 }
 
 .pizza_name {
   z-index: 18;
   font-family: britannic;
   color: #FFDA5D;
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
   padding-top: 10px;
   font-size: 29px;
   letter-spacing: 0.12px;
@@ -682,15 +672,21 @@ h3 {
 .item_basket_price {
   z-index: 18;
   color: white;
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
-  top: 390px;
+  top: 58px;
   font-size: 24px;
   letter-spacing: 0.12px;
   padding-left: 0px;
+}
+
+#basket_items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 155px;
 }
 
 .basket_item img {
@@ -705,13 +701,7 @@ h3 {
   width: 131px;
   height: 45px;
   border: none;
-  top: 432px;
-  position: absolute;
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -756,13 +746,7 @@ h3 {
   height: 68px;
   border-radius: 20px;
   text-decoration: none;
-  position: -webkit-sticky;
-  position: sticky;
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -776,7 +760,6 @@ h3 {
   font-size: 27px;
   letter-spacing: 0.11px;
   color: #0A1F30;
-  top: 870px;
   padding-left: 0px;
 }
 /*# sourceMappingURL=mustTry.css.map */

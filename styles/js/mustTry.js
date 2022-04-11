@@ -141,8 +141,7 @@ function addItemToCart(title, price, imageSrc) {
     }
   }
   //div content
-  var cartRowContents = `
-    <div class="basket_item">
+  var cartRowContents = `  
         <div class="basket_item_details">
             <button class="delete" type="button">x</button>
             <!--<i class="fa-solid fa-xmark-large"></i>!-->
@@ -154,11 +153,11 @@ function addItemToCart(title, price, imageSrc) {
             <button class="basket_minus" type="button" onclick="decrement(this)">-</button>
             <input class="quantity_input" type="number" value="1" onblur="quantityChanged(this)">
             <button class="basket_plus" type="button" onclick="increment(this)">+</button>
-        </div>
-    </div>`
-    cartRow.innerHTML = cartRowContents;
-    //makes basket_item the new div
-  cartItems.append(cartRow);
+        </div>`
+  cartRow.innerHTML = cartRowContents;
+  //makes basket_item the new div
+  var basketItems = document.getElementById('basket_items');
+  basketItems.append(cartRow);
   //allows delete function to be used
   cartRow.getElementsByClassName('delete')[0].addEventListener('click',removeCartItem);
   //allows quatity changed function to be used
@@ -179,7 +178,7 @@ function updateCartTotal(quantity) {
 
 
     //!!!!!!!!!!
-    
+
     var priceElement = cartRows.getElementsByClassName('item_basket_price')[0];
     var quantityElement = cartRows.getElementsByClassName('quantity_input')[0];
     //replaces $ with empty text

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-with, initial-scale=1.0" />
@@ -7,15 +8,19 @@
     <link rel="stylesheet" href="styles\mustTry.css" />
     <script src="https://kit.fontawesome.com/82be183e51.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
     <title>Scopa Pizzeria -- Must Try</title>
 </head>
+
 <body>
     <div class="page">
         <!--Sidebar navigation-->
         <ul class="sidebar">
             <div class="nav_option_selected_top">
-                <li class="nav_option"><a href="mustTry.html"><img src="images\Icon material-favorite.svg" alt="Heart icon"></i>
-                    <span class="nav_text">Must Try</span></a></li>
+                <li class="nav_option"><a href="mustTry.html"><img src="images\Icon material-favorite.svg"
+                            alt="Heart icon"></i>
+                        <span class="nav_text">Must Try</span></a></li>
             </div>
             <li class="nav_option"><a href="pizza.html"><img src="images\Icon ionic-ios-pizza.svg" alt="Pizza icon"></i>
                     <span class="nav_text">Pizza</span></a></li>
@@ -30,27 +35,29 @@
             <li class="nav_option"><a href="feedback.html"><span class="nav_text_feedback">Feedback</span></a></li>
             <li class="nav_option"><a href="help.html"><span class="nav_text_help">Help</span></a></li>
         </ul>
+
         <div class="content_container">
             <!--Blue background-->
             <img class="background_design" src="images\mustTryBackground.svg" alt="Background pattern">
-            <div class="backgorund_design"></div>
-            
         </div>
+
         <div class="main_content">
             <!--Logo-->
             <img class="logo" src="images\logo.svg" alt="Scopa Pizzeria logo">
-            <!--Header basket-->
+
             <button id="go_basket" onclick="toggleBasket()" type="button">
                 <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
             </button>
-            <!--Page name-->
+
             <h2 class="header_text">Must Try</h2>
+
             <div class="casousel">
                 <!--Left carousel button-->
                 <button class="carousel_button_left">
-                    <img src="images\Icon ionic-ios-arrow-back.svg" alt="Back button">
+                    <img src="images\Icon ionic-ios-arrow-back.svg" alt="">
                 </button>
                 <!--Carousel items-->
+
                 <div class="casousel_track_container">
                     <ul class="carousel_track">
                         <li class="casousel_slide">
@@ -71,20 +78,23 @@
                                 <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
                                 <span class="add_text">Add to basket</span>
                             </button>
+
                         </li>
                     </ul>
                 </div>
                 </li>
 
                 <!--Add other carousel slides here-->
-
+                </ul>
             </div>
             <!--Right carousel button-->
             <button class="carousel_button_right">
-                <img src="images\Icon ionic-ios-arrow-forward.svg" alt="Forward button">
+                <img src="images\Icon ionic-ios-arrow-forward.svg" alt="">
             </button>
         </div>
     </div>
+
+
     <!--Item added-->
     <div class="item_added" id="item_added">
         <div class="overlay"></div>
@@ -108,8 +118,10 @@
             </div>
         </div>
     </div>
+
     <!--Basket icon-->
     <i class="basket-icon"></i>
+
     <!--Basket-->
     <div class="basket_container" id="basket_toggle">
         <div class="overlay"></div>
@@ -126,27 +138,36 @@
                     <span id="total" class="price_calculation">10</span>
                 </div>
             </div>
-            <div class="basket_item">
-                <div class="basket_item_details">
-                    <button class="delete" type="button">x</button>
-                    <!--<i class="fa-solid fa-xmark-large"></i>!-->
-                    <img src="images\pizza.png" alt="Margherita pizza">
-                    <span class="pizza_name">Margherita
-                </div>
-                <span class="item_basket_price">$10</span>
-                <div class="change_basket_quantity">
-                    <button class="basket_minus" type="button" onclick="decrement(this)">-</button>
-                    <input class="quantity_input" type="number" value="1" onblur="quantityChanged(this)">
-                    <button class="basket_plus" type="button" onclick="increment(this)">+</button>
+            <div id="basket_items">
+                <div class="basket_item">
+                    <div class="basket_item_details">
+                        <button class="delete" type="button">x</button>
+                        <!--<i class="fa-solid fa-xmark-large"></i>!-->
+                        <img src="images\pizza.png" alt="Margherita pizza">
+                        <span class="pizza_name">Margherita
+                    </div>
+                    <span class="item_basket_price">$10</span>
+                    <div class="change_basket_quantity">
+                        <button class="basket_minus" type="button" onclick="decrement(this)">-</button>
+                        <input class="quantity_input" type="number" value="1" onblur="quantityChanged(this)">
+                        <button class="basket_plus" type="button" onclick="increment(this)">+</button>
+                    </div>
                 </div>
             </div>
             <a class="place_order" href="confirmOrder.html">PLACE ORDER</a>
         </div>
     </div>
+
+
+
+
     <!--Blur the background-->
     <div class="blur_filter"></div>
-    <!--Loads Javascript-->
+
+
     <script type="text/javascript" src="styles\js\mustTry.js" async></script>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+
 </body>
+
 </html>

@@ -110,7 +110,6 @@ $basketZ: 18;
     z-index: $basketZ;
     font-family: $primaryFont;
     color: $primaryYellow;
-    @include centre();
     padding-top: 10px;
     font-size: 29px;
     letter-spacing: 0.12px;
@@ -123,8 +122,7 @@ $basketZ: 18;
 .item_basket_price {
     z-index: $basketZ;
     color: white;
-    @include centre();
-    top: 390px;
+    top: 58px;
     font-size: 24px;
     letter-spacing: 0.12px;
     padding-left: 0px;
