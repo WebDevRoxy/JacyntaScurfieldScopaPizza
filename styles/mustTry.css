@@ -117,6 +117,10 @@ body {
   padding-right: 1rem;
   position: relative;
   top: 180px;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 
 .grabbing {

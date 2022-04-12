@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.commentBox {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 500px;
+}
+
+.commentBox input {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid red;
+}
+
+.commentBox input:focus {
+  border: 1px solid #0000;
+  outline: 0;
+}
+
+.commentBox textarea {
+  width: 100%;
+  height: 150px;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 1em;
+  border: 1px solid grey;
+}
+
+.commentBox textarea:focus {
+  border: 1px solid #000;
+  outline: 0;
+}
+
+.commentBox button {
+  border: 0px;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.commentBox button:hover {
+  background: blue;
+}
+/*# sourceMappingURL=feedback.css.map */
