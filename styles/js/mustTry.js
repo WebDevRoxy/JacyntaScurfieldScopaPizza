@@ -26,7 +26,7 @@ if (document.readyState == 'loading') {
 //item added
 //display item added pop up when "add" button is clicked
 function toggleItemAdded() {
-  document.getElementById('item_added').classList.toggle('active');
+  document.getElementById('item_selected').classList.toggle('active');
 }
 
 //basket
@@ -34,7 +34,7 @@ function toggleItemAdded() {
 function toggleBasket() {
   document.getElementById('basket_toggle').classList.toggle('active');
   //hides item added pop up
-  document.getElementById('item_added').style.display = "none";
+  document.getElementById('item_selected').style.display = "none";
 }
 
 //runs code when everything on the page is loaded
@@ -129,8 +129,8 @@ function addItemToCart(title, price, imageSrc) {
   var cartRow = document.createElement('div');
   //adds "basket_item"
   cartRow.classList.add('basket_item');
-  //makes casousel_track_container a variable
-  var cartItems = document.getElementsByClassName('casousel_track_container')[0];
+  //makes carousel_track_container a variable
+  var cartItems = document.getElementsByClassName('carousel_track_container')[0];
   //makes pizza_name a variable
   var cartItemNames = cartItems.getElementsByClassName('pizza_name');
   //if item is already in basket, shows an alert
@@ -193,94 +193,92 @@ function updateCartTotal(quantity) {
 
 
 
-
 //carousel 
 
-const slider = document.querySelector('.casousel_track_container'),
-  slides = Array.from(document.querySelectorAll('.casousel_slide'));
+const slider = document.querySelector('.carousel_container'),
+  slides = Array.from(document.querySelectorAll('.carousel_slide'));
 
 let isDragging = false,
   startPos = 0,
   currentTranslate = 0,
   prevTranslate = 0,
   animationID = 0,
-  currentIndex = 0
+  currentIndex = 0;
 
 slides.forEach((slide, index) => {
-  const slideImage = slide.querySelector('img')
-  slideImage.addEventListener('dragstart', (e) => e.preventDefault())
+  const slideImage = slide.querySelector('img');
+  slideImage.addEventListener('dragstart', (e) => e.preventDefault());
 
   //touch events
-  slide.addEventListener('touchstart', touchStart(index))
-  slide.addEventListener('touchstart', touchEnd)
-  slide.addEventListener('touchstart', touchMove)
+  slide.addEventListener('touchstart', touchStart(index));
+  slide.addEventListener('touchend', touchEnd);
+  slide.addEventListener('touchmove', touchMove);
 
   //mouse events
-  slide.addEventListener('mousedown', touchStart(index))
-  slide.addEventListener('mouseup', touchEnd)
-  slide.addEventListener('mouseleave', touchEnd)
-  slide.addEventListener('mousemove', touchMove)
+  slide.addEventListener('mousedown', touchStart(index));
+  slide.addEventListener('mouseup', touchEnd);
+  slide.addEventListener('mouseleave', touchEnd);
+  slide.addEventListener('mousemove', touchMove);
 })
 
-//disable content
-window.oncontentmenu = function(event) {
-  event.preventDefault()
-  event.stopPropagation()
-  return false
+//disable context menu
+window.oncontextmenu = function(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  return false;
 }
 
 function touchStart(index) {
   return function(event) {
-    currentIndex = index
-    startPos = getPositionX(event)
+    currentIndex = index;
+    startPos = getPositionX(event);
     isDragging = true;
 
-    animationID = requestAnimationFrame(animation)
-    slider.classList.add('grabbing')
+    animationID = requestAnimationFrame(animation);
+    slider.classList.add('grabbing');
   }
 }
 
 function touchEnd() {
-  isDragging = false
-  cancelAnimationFrame(animatonID)
+  isDragging = false;
+  cancelAnimationFrame(animationID);
 
-  const movedBy = currentTranslate - prevTranslate
+  const movedBy = currentTranslate - prevTranslate;
 
-  if(movedBy < -100 && currentIndex < slides.length -1) currentIndex += 1
+  if (movedBy < -100 && currentIndex < slides.length -1) currentIndex += 1;
 
-  if(movedBy > 100 && currentIndex > 0) currentIndex -= 1
+  if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
 
-  setPositionByIndex()
+  setPositionByIndex();
 
-  slider.classList.remove('grabbing')
+  slider.classList.remove('grabbing');
 }
 
 function touchMove(event) {
-  if(isDragging) {
-    const currentPosition = getPositionX(event)
-    currentTranslate = prevTranslate + currentPosition - startPos
+  if (isDragging) {
+    const currentPosition = getPositionX(event);
+    currentTranslate = prevTranslate + currentPosition - startPos;
   }
 }
 
 function getPositionX(event) {
   return event.type.includes('mouse')
-  ? event.pageX :
-  event.touches[0].clientX
+    ? event.pageX :
+    event.touches[0].clientX;
 }
 
 function animation() {
   setSliderPosition();
-  if(isDragging) requestAnimationFrame(animation)
+  if (isDragging) requestAnimationFrame(animation);
 }
 
 function setSliderPosition() {
-  slider.style.transform = `translateX(${currentTranslate}px)
-  `
+  slider.style.transform = `translateX(${currentTranslate}px)`
 }
 
 function setPositionByIndex() {
   //CHECK IF INNER WINDOW IS THE CORRECT VALUE TO PUT HERE
-  currentTranslate = currentIndex * -window.innerWidth
-  prevTranslate = currentTranslate
-  setSliderPosition()
+  currentTranslate = currentIndex * -window.innerWidth;
+  prevTranslate = currentTranslate;
+  setSliderPosition();
 }

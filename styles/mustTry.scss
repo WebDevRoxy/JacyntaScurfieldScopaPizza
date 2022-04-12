@@ -118,7 +118,7 @@ body {
     top: 24px;
 }
 
-.casousel_track_container {
+.carousel_container {
     height: 1024px;
     width: 768px;
     overflow: hidden;
@@ -130,12 +130,13 @@ body {
 
 //main image of food position
 @mixin mainFoodImage {
+    max-width: 100%;
+    max-height: 60%;
     padding-left: 1rem;
     padding-right: 1rem;
-    position:relative;
 }
 
-.casousel_slide {
+.carousel_slide {
     max-height:100vh;
     width: 100vw;
     align-items: center;
@@ -148,16 +149,15 @@ body {
 
 .item_img {
     @include mainFoodImage;
-    top:180px;
     transition: transform 0.3s ease-out;
 }
 
 .grabbing {
-    cursor: grabbing;;
+    cursor: grabbing;
 }
 
 .grabbing {
-    .casousel_slide{
+    .item_img {
         transform: scale(0.9);
     }
 }
@@ -239,7 +239,6 @@ $averageBorder: 10px;
 //change quantity of item container
 .change_quantity {
     @include mainFoodImage;
-    left: 346px;
     height: 68px;
     width: 183px;
     border: none;
@@ -436,6 +435,12 @@ $orderBorder: 20px;
 //item added pop up
 .item_added {
     //item added header text
+    display: none;
+    transform: (-50%, -50%) scale(0);
+
+    .overlay {
+        @include overlay();
+    }
     h2 {
         color: $primaryYellow;
         top: 45px;
@@ -477,6 +482,37 @@ $orderBorder: 20px;
         }
     }
 }
+//content inside the item added pop up
+.item_added_content {
+    position: fixed;
+    top: 212px;
+    @include centre();
+    width: 561px;
+    height: 600px;
+    border-radius: 48px;
+    z-index: 15;
+    background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
+}
+//white background
+.white_background {
+    @include centre();
+    position: absolute;
+    top: 212px;
+    width: 561px;
+    height: 600px;
+    border-radius: 48px;
+    background: white;
+    z-index: 14;
+}
+
+//pop up transition !!!!!!!!!!!!!!!
+.item_added.active {
+    display: block;
+    transition:all 300ms ease-in-out;
+    transform: (-50%, -50%) scale(1);
+}
+
+
 
 //style for return and go to basket buttons
 @mixin backNavBtns {
@@ -512,47 +548,6 @@ $orderBorder: 20px;
 
 
 //Item added pop up
-
-.item_added {
-    display: none;
-    transform: (-50%, -50%) scale(0);
-
-    .overlay {
-        @include overlay();
-    }
-}
-//content inside the item added pop up
-.item_added_content {
-    position: fixed;
-    top: 212px;
-    @include centre();
-    width: 561px;
-    height: 600px;
-    border-radius: 48px;
-    z-index: 15;
-    background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
-}
-//white background
-.white_background {
-    @include centre();
-    position: absolute;
-    top: 212px;
-    width: 561px;
-    height: 600px;
-    border-radius: 48px;
-    background: white;
-    z-index: 14;
-}
-
-//pop up transition !!!!!!!!!!!!!!!
-.item_added.active {
-    display: block;
-    transition:all 300ms ease-in-out;
-    transform: (-50%, -50%) scale(1);
-}
-
-
-
 
 
 
