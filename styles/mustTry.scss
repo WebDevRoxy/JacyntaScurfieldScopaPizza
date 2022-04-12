@@ -149,6 +149,7 @@ body {
 .item_img {
     @include mainFoodImage;
     top:180px;
+    transition: transform 0.3s ease-out;
 }
 
 .grabbing {
