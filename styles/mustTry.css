@@ -5,9 +5,13 @@
 
 body {
   font-family: calibri;
-  position: absolute;
-  padding-left: 116px;
   color: #0A1F30;
+  overflow: hidden;
+}
+
+.main_content {
+  background: radial-gradient(112% 555px at 50% -30px, #0A1F30 75%, transparent 75%);
+  padding-left: 116px;
 }
 
 .sidebar {
@@ -38,21 +42,15 @@ body {
   display: block;
 }
 
-.background_design {
-  position: inline-block;
-}
-
 .header_text {
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
   top: 128px;
-  position: absolute;
   font-style: italic;
   font-size: 45px;
   color: white;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 165px;
 }
 
 .logo {
@@ -63,16 +61,17 @@ body {
   position: absolute;
 }
 
-.basket {
-  top: 32px;
-  position: absolute;
-  right: 64px;
-  top: 24px;
+.go_basket_icon {
+  float: right;
+  background-color: #0A1F30;
+  margin-right: 54px;
+  margin-top: 20px;
+  border: none;
 }
 
 .carousel_container {
-  height: 1024px;
-  width: 768px;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -96,10 +95,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-width: 100%;
-  max-height: 60%;
-  padding-left: 1rem;
-  padding-right: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,9 +110,7 @@ body {
 
 .item_img {
   max-width: 100%;
-  max-height: 60%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  max-height: 40%;
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
@@ -134,91 +127,49 @@ body {
           transform: scale(0.9);
 }
 
-h3 {
-  top: 483px;
-  /* padding-left: 116px; */
-  /* left: 50%; */
-  -webkit-transform: translate(-50%);
-          /* transform: translate(-50%); */
-  /* position: absolute; */
-  /* position: absolute; */
+.item_title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
   color: #FFDA5D;
   font-family: britannic;
-  font-size: 38px;
-  max-width: 100%;
-  max-height: 60%;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .item_price {
   color: white;
-  top: 532px;
   font-size: 29px;
   font-weight: lighter;
-  padding-left: 116px;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  position: absolute;
 }
 
 .presale {
-  left: 343px;
-  max-width: 100%;
-  max-height: 60%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  top: 538px;
-  position: absolute;
   color: #F05A35;
   font-size: 20px;
   text-decoration: line-through;
 }
 
 .item_description {
-  font-size: 29px;
-  max-width: 100%;
-  max-height: 60%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  top: 617px;
+  font-size: 1.5rem;
   white-space: nowrap;
+  margin-bottom: 0.5rem;
 }
 
 .diet_details {
-  max-width: 100%;
-  max-height: 60%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  top: 647px;
   color: #555758;
   font-size: 22px;
   font-weight: lighter;
 }
 
 .quantity {
-  max-width: 100%;
-  max-height: 60%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  top: 701px;
   font-size: 27px;
+  margin-bottom: 1rem;
 }
 
 .change_quantity {
-  max-width: 100%;
-  max-height: 60%;
-  padding-left: 1rem;
-  padding-right: 1rem;
   height: 68px;
   width: 183px;
   border: none;
   -webkit-box-shadow: 0em 0.15em 0.35em #555758;
           box-shadow: 0em 0.15em 0.35em #555758;
-  top: 741px;
   border-radius: 20px;
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,6 +179,7 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .minus {
@@ -252,10 +204,6 @@ h3 {
 }
 
 .quantity_input {
-  max-width: 100%;
-  max-height: 60%;
-  padding-left: 1rem;
-  padding-right: 1rem;
   background: #FFDA5D;
   border-radius: 10px;
   display: inline-block;
@@ -278,10 +226,6 @@ h3 {
 }
 
 .add {
-  max-width: 100%;
-  max-height: 60%;
-  padding-left: 1rem;
-  padding-right: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -293,8 +237,6 @@ h3 {
           justify-content: center;
   color: #0A1F30;
   padding-left: 0px;
-  left: 434px;
-  top: 866px;
   border-radius: 20px;
   background: #0A1F30;
   width: 300px;
@@ -335,10 +277,7 @@ h3 {
 
 .deal {
   background-color: #F05A35;
-  width: 176px;
-  height: 42px;
-  position: absolute;
-  font-size: 36px;
+  font-size: 2rem;
   letter-spacing: 0.14px;
   font-weight: bold;
   font-style: italic;
@@ -347,8 +286,6 @@ h3 {
   text-align: center;
   -webkit-transform: rotate(9deg);
           transform: rotate(9deg);
-  top: 200px;
-  left: 416px;
   z-index: 10;
 }
 
@@ -554,9 +491,8 @@ h3 {
 }
 
 .go_basket {
-  right: 50px;
+  float: right;
   background-color: #FFDA5D;
-  position: absolute;
   border-radius: 20px;
   width: 183px;
   height: 68px;

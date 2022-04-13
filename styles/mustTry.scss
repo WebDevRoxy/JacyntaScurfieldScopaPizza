@@ -19,9 +19,16 @@ $selected: #F4C938;
 //body style
 body {
     font-family: calibri;
-    position: absolute;
-    padding-left: 116px;
     color: $primaryBlue;
+    overflow: hidden;
+}
+
+.page {
+}
+
+.main_content {
+    background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
+    padding-left: 116px;
 }
 
 //centres items
@@ -75,16 +82,6 @@ body {
 
 
 
-
-
-//background
-//blue background shape
-.background_design {
-    position: inline-block;
-}
-
-
-
 //positions header elements
 @mixin header {
     top: 32px;
@@ -93,12 +90,14 @@ body {
 
 //title of page
 .header_text {
-    @include centre();
     top: 128px;
-    position: absolute;
     font-style: italic;
     font-size: 45px;
     color: white;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 165px;
 }
 
 // header icons
@@ -112,15 +111,17 @@ body {
 }
 
 //basket icon in header
-.basket {
-    @include header();
-    right: 64px;
-    top: 24px;
+.go_basket_icon{
+    float: right;
+    background-color: $primaryBlue;   
+    margin-right: 54px;
+    margin-top: 20px;   
+    border: none; 
 }
 
 .carousel_container {
-    height: 1024px;
-    width: 768px;
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
     display: inline-flex;
     transform: translateX(0);
@@ -128,27 +129,19 @@ body {
     cursor: grab;
 }
 
-//main image of food position
-@mixin mainFoodImage {
-    max-width: 100%;
-    max-height: 60%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
 .carousel_slide {
     max-height:100vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
-    @include mainFoodImage;
     display: flex;
     flex-direction: column;
     user-select: none;
 }
 
 .item_img {
-    @include mainFoodImage;
+    max-width: 100%;
+    max-height: 40%;
     transition: transform 0.3s ease-out;
 }
 
@@ -166,31 +159,23 @@ body {
 //food info
 
 //food name
-h3 {
-    top: 483px;
-    @include centre();
-    position: absolute;
+.item_title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
     color: $primaryYellow;
     font-family: $primaryFont;
-    font-size: 38px;
-    @include mainFoodImage;
 }
 
 
 //food price
 .item_price {
     color: white;
-    top: 532px;
     font-size: 29px;
     font-weight: $lightFont;
-    @include centre();
 }
 
 //food price pre sale
 @mixin presalePrice {
-    @include mainFoodImage;
-    top: 538px;
-    position: absolute;
     color: $primaryRed;
     font-size: 20px;
     text-decoration: line-through;
@@ -198,28 +183,24 @@ h3 {
 
 //price brefore sale
 .presale {
-    left: 343px;
     @include presalePrice();
 }
 
 //decription of food item
 @mixin bigDescription {
-    font-size: 29px;
-    @include mainFoodImage;
+    font-size: 1.5rem;
 }
 
 
 //!!!!!!!!!!!! leave this in file
 .item_description {
     @include bigDescription();
-    top: 617px;
     white-space: nowrap;
+    margin-bottom: 0.5rem;
 }
 
 //dietary information
 .diet_details {
-    @include mainFoodImage;
-    top: 647px;
     color: $primaryDarkGrey;
     font-size: 22px;
     font-weight: $lightFont;
@@ -227,9 +208,8 @@ h3 {
 
 //quantity
 .quantity {
-    @include mainFoodImage;
-    top: 701px;
     font-size: 27px;
+    margin-bottom: 1rem;
 }
 
 $dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
@@ -238,17 +218,15 @@ $averageBorder: 10px;
 
 //change quantity of item container
 .change_quantity {
-    @include mainFoodImage;
     height: 68px;
     width: 183px;
     border: none;
     box-shadow: $dropShadow;
-    top: 741px;
     border-radius: 20px;
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2rem;
 }
 
 //quantity plus and minus buttons
@@ -275,7 +253,6 @@ $averageBorder: 10px;
 
 //quantity input
 .quantity_input {
-    @include mainFoodImage;
     @include quantityButtons();
     background: none;
     text-align: center;
@@ -290,14 +267,11 @@ $orderBorder: 20px;
 
 //add to cart button
 .add {
-    @include mainFoodImage;
     display: flex;
     align-items: center;
     justify-content: center;
     color: $primaryBlue;
     padding-left: 0px;
-    left: 434px;
-    top: 866px;
     border-radius: $orderBorder;
     background: $primaryBlue;
     width: 300px;
@@ -328,10 +302,7 @@ $orderBorder: 20px;
 //deal text
 .deal {
     background-color: $primaryRed;
-    width: 176px;
-    height: 42px;
-    position: absolute;
-    font-size: 36px;
+    font-size: 2rem;
     letter-spacing: 0.14px;
     font-weight: bold;
     font-style: italic;
@@ -339,8 +310,6 @@ $orderBorder: 20px;
     border-radius: $averageBorder;
     text-align: center;
     transform: rotate(9deg);
-    top: 200px;
-    left: 416px;
     z-index: 10;
 }
 
@@ -537,9 +506,8 @@ $orderBorder: 20px;
 
 //go to basket style
 .go_basket {
-    right: 50px;
+    float:right;
     background-color: $primaryYellow;
-    position: absolute;
     @include backNavBtns();
 }
 
