@@ -24,35 +24,19 @@ body {
 }
 
 .page {
+
 }
-
-.main_content {
-    background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
-    padding-left: 116px;
-}
-
-//centres items
-@mixin centre {
-    padding-left: 116px;
-    left: 50%;
-    transform: translate(-50%);
-    position: absolute;
-}
-
-
-
 
 .sidebar {
     left: 0;
     top: 0;
     width: 116px;
     height: 1024px;
-    position: fixed;
     background: $primaryYellow;
     text-align: center;
     line-height: 90px;
+    position: fixed;
 }
-
 
 @mixin navOptions {
     vertical-align: top;
@@ -79,35 +63,18 @@ body {
     }
 }
 
-
-
-
-//positions header elements
-@mixin header {
-    top: 32px;
-    position: absolute
-}
-
-//title of page
-.header_text {
-    top: 128px;
-    font-style: italic;
-    font-size: 45px;
-    color: white;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    width: 165px;
+.main_content {
+    background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
+    padding-left: 58px;
 }
 
 // header icons
 
 //logo
 .logo {
-    @include header();
-    left: 158px;
+    left: 100px;
     top: 40px;
-    position: absolute;
+    position: relative;
 }
 
 //basket icon in header
@@ -119,14 +86,26 @@ body {
     border: none; 
 }
 
+//title of page
+.header_text {
+    top: 75px;
+    font-style: italic;
+    font-size: 45px;
+    color: white;
+    position: relative;
+    width: 165px;
+    padding-left: 58px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .carousel_container {
-    height: 100vh;
-    width: 100vw;
     overflow: hidden;
     display: inline-flex;
-    transform: translateX(0);
     transition: transform 0.3s ease-out;
     cursor: grab;
+    position: relative;
+    top: 100px;
 }
 
 .carousel_slide {
@@ -310,6 +289,7 @@ $orderBorder: 20px;
     border-radius: $averageBorder;
     text-align: center;
     transform: rotate(9deg);
+    margin-left: 200px;
     z-index: 10;
 }
 
@@ -399,6 +379,15 @@ $orderBorder: 20px;
     height: 1024px;
     background: rgba(0, 0, 0, 0.7);
     z-index: 10;
+}
+
+
+//centres items
+@mixin centre {
+    padding-left: 116px;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
 }
 
 //item added pop up
