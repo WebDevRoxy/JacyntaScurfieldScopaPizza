@@ -31,7 +31,7 @@ body {
     left: 0;
     top: 0;
     width: 116px;
-    height: 1024px;
+    height: 100%;
     background: $primaryYellow;
     text-align: center;
     line-height: 90px;
@@ -65,14 +65,14 @@ body {
 
 .main_content {
     background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
-    padding-left: 58px;
+    padding-left: 116px;
 }
 
 // header icons
 
 //logo
 .logo {
-    left: 100px;
+    left: 50px;
     top: 40px;
     position: relative;
 }
@@ -102,15 +102,16 @@ body {
 .carousel_container {
     overflow: hidden;
     display: inline-flex;
+    transform: translateX(0);
     transition: transform 0.3s ease-out;
     cursor: grab;
     position: relative;
-    top: 100px;
+    top: 75px;
 }
 
 .carousel_slide {
     max-height:100vh;
-    width: 100vw;
+    width: 87vw;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -289,7 +290,11 @@ $orderBorder: 20px;
     border-radius: $averageBorder;
     text-align: center;
     transform: rotate(9deg);
-    margin-left: 200px;
+    position: relative;
+    top: 55px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 180px;
     z-index: 10;
 }
 

@@ -13,7 +13,7 @@ body {
   left: 0;
   top: 0;
   width: 116px;
-  height: 1024px;
+  height: 100%;
   background: #FFDA5D;
   text-align: center;
   line-height: 90px;
@@ -39,11 +39,11 @@ body {
 
 .main_content {
   background: radial-gradient(112% 555px at 50% -30px, #0A1F30 75%, transparent 75%);
-  padding-left: 58px;
+  padding-left: 116px;
 }
 
 .logo {
-  left: 100px;
+  left: 50px;
   top: 40px;
   position: relative;
 }
@@ -73,6 +73,8 @@ body {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
@@ -80,12 +82,12 @@ body {
   cursor: -webkit-grab;
   cursor: grab;
   position: relative;
-  top: 100px;
+  top: 75px;
 }
 
 .carousel_slide {
   max-height: 100vh;
-  width: 100vw;
+  width: 87vw;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -283,7 +285,11 @@ body {
   text-align: center;
   -webkit-transform: rotate(9deg);
           transform: rotate(9deg);
-  margin-left: 200px;
+  position: relative;
+  top: 55px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 180px;
   z-index: 10;
 }
 

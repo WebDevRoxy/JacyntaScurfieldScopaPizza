@@ -113,10 +113,18 @@ function addToCartClicked(event) {
   var shopItem = button.parentElement.parentElement;
   //makes inner text of "item_title" a variable
   var title = shopItem.getElementsByClassName('item_title')[0].innerText;
+
+  let foodItemName = document.getElementById("food_added_name");
+  foodItemName.innerText = title;
+
   //makes inner text of "item_price" a variable
   var price = shopItem.getElementsByClassName('item_price')[0].innerText;
   //makes source code of "item_img" a variable
   var imageSrc = shopItem.getElementsByClassName('item_img')[0].src;
+  
+  let foodItemImg = document.getElementById("food_item_added_img");
+  foodItemImg.src = imageSrc;
+  
   console.log(title, price, imageSrc);
   addItemToCart(title, price, imageSrc);
   //calls to update the cart total
@@ -129,8 +137,8 @@ function addItemToCart(title, price, imageSrc) {
   var cartRow = document.createElement('div');
   //adds "basket_item"
   cartRow.classList.add('basket_item');
-  //makes carousel_track_container a variable
-  var cartItems = document.getElementsByClassName('carousel_track_container')[0];
+  //makes carousel_container a variable
+  var cartItems = document.getElementsByClassName('carousel_container')[0];
   //makes pizza_name a variable
   var cartItemNames = cartItems.getElementsByClassName('pizza_name');
   //if item is already in basket, shows an alert
@@ -219,7 +227,7 @@ slides.forEach((slide, index) => {
   slide.addEventListener('mouseup', touchEnd);
   slide.addEventListener('mouseleave', touchEnd);
   slide.addEventListener('mousemove', touchMove);
-})
+});
 
 //disable context menu
 window.oncontextmenu = function(event) {
@@ -230,6 +238,7 @@ window.oncontextmenu = function(event) {
 
 function touchStart(index) {
   return function(event) {
+    console.log('start');
     currentIndex = index;
     startPos = getPositionX(event);
     isDragging = true;
@@ -240,6 +249,7 @@ function touchStart(index) {
 }
 
 function touchEnd() {
+  console.log('end');
   isDragging = false;
   cancelAnimationFrame(animationID);
 
@@ -255,6 +265,7 @@ function touchEnd() {
 }
 
 function touchMove(event) {
+  console.log('move');
   if (isDragging) {
     const currentPosition = getPositionX(event);
     currentTranslate = prevTranslate + currentPosition - startPos;
@@ -278,7 +289,8 @@ function setSliderPosition() {
 
 function setPositionByIndex() {
   //CHECK IF INNER WINDOW IS THE CORRECT VALUE TO PUT HERE
-  currentTranslate = currentIndex * -window.innerWidth;
+  // currentTranslate = currentIndex * -window.innerWidth;
+  currentTranslate = currentIndex * -parseInt(slider.offsetWidth / 3);
   prevTranslate = currentTranslate;
   setSliderPosition();
 }
