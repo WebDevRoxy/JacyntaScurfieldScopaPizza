@@ -18,6 +18,7 @@ body {
   text-align: center;
   line-height: 90px;
   position: fixed;
+  z-index: 10;
 }
 
 .nav_option {
@@ -38,7 +39,7 @@ body {
 }
 
 .main_content {
-  background: radial-gradient(112% 555px at 50% -30px, #0A1F30 75%, transparent 75%);
+  background: radial-gradient(100% 820px at 50% -30px, #0A1F30 75%, transparent 75%);
   padding-left: 116px;
 }
 
@@ -309,7 +310,7 @@ body {
   left: 251px;
 }
 
-.nav_option_selected_top {
+.nav_option_selected {
   background-color: #F4C938;
   border-radius: 14px;
 }

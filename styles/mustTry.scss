@@ -23,10 +23,6 @@ body {
     overflow: hidden;
 }
 
-.page {
-
-}
-
 .sidebar {
     left: 0;
     top: 0;
@@ -36,6 +32,7 @@ body {
     text-align: center;
     line-height: 90px;
     position: fixed;
+    z-index: 10;
 }
 
 @mixin navOptions {
@@ -64,7 +61,7 @@ body {
 }
 
 .main_content {
-    background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
+    background: radial-gradient(100% 820px at 50% -30px, $primaryBlue 75%, transparent 75%);
     padding-left: 116px;
 }
 
@@ -345,7 +342,7 @@ $orderBorder: 20px;
 }
 
 //top navigation option
-.nav_option_selected_top {
+.nav_option_selected {
     background-color: $selected;
     border-radius: 14px;
 }
