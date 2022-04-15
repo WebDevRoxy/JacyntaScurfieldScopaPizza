@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,16 +10,17 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <title>Scopa Pizzeria -- Drinks</title>
 </head>
+
 <body>
     <div class="page">
         <!--Sidebar navigation-->
         <ul class="sidebar">
-            <li class="nav_option_selected nav_option"><a href="mustTry.html"><img src="images\Icon material-favorite.svg"
-                        alt="Heart icon"></i>
+            <li class="nav_option"><a href="mustTry.html"><img
+                        src="images\Icon material-favorite.svg" alt="Heart icon"></i>
                     <span class="nav_text">Must Try</span></a></li>
             <li class="nav_option"><a href="pizza.html"><img src="images\Icon ionic-ios-pizza.svg" alt="Pizza icon"></i>
                     <span class="nav_text">Pizza</span></a></li>
-            <li class="nav_option"><a href="drinks.html"><img src="images\Icon ionic-ios-wine.svg" alt="Wine icon"></i>
+            <li class="nav_option_selected nav_option"><a href="drinks.html"><img src="images\Icon ionic-ios-wine.svg" alt="Wine icon"></i>
                     <span class="nav_text">Drinks</span></a></li>
             <li class="nav_option"><a href="dessert.html"><img src="images\Icon ionic-ios-ice-cream.svg"
                         alt="Ice cream icon"></i>
@@ -26,8 +28,9 @@
             <li class="nav_option"><a href="others.html"><img src="images\Icon awesome-hamburger.svg"
                         alt="Hamburger icon"></i>
                     <span class="nav_text">Others</span></a></li>
-            <li class="nav_option"><a href="feedback.html"><span class="nav_text_feedback">Feedback</span></a></li>
-            <li class="nav_option"><a href="help.html"><span class="nav_text_help">Help</span></a></li>
+            <li class="nav_option"><a href="feedback.html"><img src="images\Icon material-comment.svg"
+                        alt="Comment icon"></i>
+                    <span class="nav_text">Feedback</span></a></li>
         </ul>
         <div class="main_content">
             <!--Logo-->
@@ -38,60 +41,60 @@
             </button>
             <!--Page name-->
             <h2 class="header_text">Drinks</h2>
-                <!--Carousel items-->
-                <div class="carousel_container">
-                    <div class="carousel_slide">
-                        <img class="item_img" src="images\beer.png" alt="Beer">
-                        <h3 class="item_title">ParrotDog Yellowhammer</h3>
-                        <span class="item_price">$13</span>
-                        <span class="diet_details">4.8% Hazy Pale Ale</span>
-                        <span class="quantity">Quantity</span>
-                        <div class="change_quantity">
-                            <button class="minus" type="button" onclick="decrement()">-</button>
-                            <input class="quantity_input" type="number" value="1">
-                            <button class="plus" type="button" onclick="increment()">+</button>
-                        </div>
-                        <!--Add to basket button-->
-                        <button class="add" onclick="toggleItemAdded()">
-                            <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-                            <span class="add_text">Add to basket</span>
-                        </button>
+            <!--Carousel items-->
+            <div class="carousel_container">
+                <div class="carousel_slide">
+                    <img class="item_img" src="images\beer.png" alt="Beer">
+                    <h3 class="item_title">ParrotDog Yellowhammer</h3>
+                    <span class="item_price">$13</span>
+                    <span class="diet_details">4.8% Hazy Pale Ale</span>
+                    <span class="quantity">Quantity</span>
+                    <div class="change_quantity">
+                        <button class="minus" type="button" onclick="decrement()">-</button>
+                        <input class="quantity_input" type="number" value="1">
+                        <button class="plus" type="button" onclick="increment()">+</button>
                     </div>
-                    <div class="carousel_slide">
-                        <img class="item_img" src="images\hotChocolate.png" alt="Hot chocolate">
-                        <h3 class="item_title">Hot Chocolate</h3>
-                        <span class="item_price">$4</span>
-                        <span class="quantity">Quantity</span>
-                        <div class="change_quantity">
-                            <button class="minus" type="button" onclick="decrement()">-</button>
-                            <input class="quantity_input" type="number" value="1">
-                            <button class="plus" type="button" onclick="increment()">+</button>
-                        </div>
-                        <!--Add to basket button-->
-                        <button class="add" onclick="toggleItemAdded()">
-                            <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-                            <span class="add_text">Add to basket</span>
-                        </button>
+                    <!--Add to basket button-->
+                    <button class="add" onclick="toggleItemAdded()">
+                        <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                        <span class="add_text">Add to basket</span>
+                    </button>
+                </div>
+                <div class="carousel_slide">
+                    <img class="item_img" src="images\hotChocolate.png" alt="Hot chocolate">
+                    <h3 class="item_title">Hot Chocolate</h3>
+                    <span class="item_price">$4</span>
+                    <span class="quantity">Quantity</span>
+                    <div class="change_quantity">
+                        <button class="minus" type="button" onclick="decrement()">-</button>
+                        <input class="quantity_input" type="number" value="1">
+                        <button class="plus" type="button" onclick="increment()">+</button>
                     </div>
-                    <div class="carousel_slide">
-                        <img class="item_img" src="images\aperolSpritz.png" alt="Aperol spritz">
-                        <h3 class="item_title">Aperol Spritz</h3>
-                        <span class="item_price">$22</span>
-                        <span class="diet_details">Aperol, Prosecco, Orange & Olive</span>
-                        <span class="quantity">Quantity</span>
-                        <div class="change_quantity">
-                            <button class="minus" type="button" onclick="decrement()">-</button>
-                            <input class="quantity_input" type="number" value="1">
-                            <button class="plus" type="button" onclick="increment()">+</button>
-                        </div>
-                        <!--Add to basket button-->
-                        <button class="add" onclick="toggleItemAdded()">
-                            <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-                            <span class="add_text">Add to basket</span>
-                        </button>
+                    <!--Add to basket button-->
+                    <button class="add" onclick="toggleItemAdded()">
+                        <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                        <span class="add_text">Add to basket</span>
+                    </button>
+                </div>
+                <div class="carousel_slide">
+                    <img class="item_img" src="images\aperolSpritz.png" alt="Aperol spritz">
+                    <h3 class="item_title">Aperol Spritz</h3>
+                    <span class="item_price">$22</span>
+                    <span class="diet_details">Aperol, Prosecco, Orange & Olive</span>
+                    <span class="quantity">Quantity</span>
+                    <div class="change_quantity">
+                        <button class="minus" type="button" onclick="decrement()">-</button>
+                        <input class="quantity_input" type="number" value="1">
+                        <button class="plus" type="button" onclick="increment()">+</button>
                     </div>
+                    <!--Add to basket button-->
+                    <button class="add" onclick="toggleItemAdded()">
+                        <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                        <span class="add_text">Add to basket</span>
+                    </button>
                 </div>
             </div>
+        </div>
     </div>
     <!--Item added-->
     <div class="item_added" id="item_selected">
@@ -158,4 +161,5 @@
     <!--Loads Javascript-->
     <script type="text/javascript" src="styles\js\mustTry.js" async></script>
 </body>
+
 </html>

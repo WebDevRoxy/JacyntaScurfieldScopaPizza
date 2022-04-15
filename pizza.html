@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +10,7 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <title>Scopa Pizzeria -- Pizza</title>
 </head>
+
 <body>
     <div class="page">
         <!--Sidebar navigation-->
@@ -16,7 +18,8 @@
             <li class="nav_option"><a href="mustTry.html"><img src="images\Icon material-favorite.svg"
                         alt="Heart icon"></i>
                     <span class="nav_text">Must Try</span></a></li>
-            <li class="nav_option_selected nav_option"><a href="pizza.html"><img src="images\Icon ionic-ios-pizza.svg" alt="Pizza icon"></i>
+            <li class="nav_option_selected nav_option"><a href="pizza.html"><img src="images\Icon ionic-ios-pizza.svg"
+                        alt="Pizza icon"></i>
                     <span class="nav_text">Pizza</span></a></li>
             <li class="nav_option"><a href="drinks.html"><img src="images\Icon ionic-ios-wine.svg" alt="Wine icon"></i>
                     <span class="nav_text">Drinks</span></a></li>
@@ -26,8 +29,9 @@
             <li class="nav_option"><a href="others.html"><img src="images\Icon awesome-hamburger.svg"
                         alt="Hamburger icon"></i>
                     <span class="nav_text">Others</span></a></li>
-            <li class="nav_option"><a href="feedback.html"><span class="nav_text_feedback">Feedback</span></a></li>
-            <li class="nav_option"><a href="help.html"><span class="nav_text_help">Help</span></a></li>
+            <li class="nav_option"><a href="feedback.html"><img src="images\Icon material-comment.svg"
+                        alt="Comment icon"></i>
+                    <span class="nav_text">Feedback</span></a></li>
         </ul>
         <div class="main_content">
             <!--Logo-->
@@ -38,66 +42,66 @@
             </button>
             <!--Page name-->
             <h2 class="header_text">Pizza</h2>
-                <!--Carousel items-->
-                <div class="carousel_container">
-                    <div class="carousel_slide">
-                        <span class="deal">DEAL!</span>
-                        <img class="item_img" src="images\margherita.png" alt="Margherita pizza">
-                        <h3 class="item_title">Marghertia</h3>
-                        <span class="presale">$20</span><span class="item_price">$16</span>
-                        <p class="item_description">Tomato, mozzarella, basil.</p>
-                        <span class="diet_details">*nut free, vegetarian, vegan</span>
-                        <span class="quantity">Quantity</span>
-                        <div class="change_quantity">
-                            <button class="minus" type="button" onclick="decrement()">-</button>
-                            <input class="quantity_input" type="number" value="1">
-                            <button class="plus" type="button" onclick="increment()">+</button>
-                        </div>
-                        <!--Add to basket button-->
-                        <button class="add" onclick="toggleItemAdded()">
-                            <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-                            <span class="add_text">Add to basket</span>
-                        </button>
+            <!--Carousel items-->
+            <div class="carousel_container">
+                <div class="carousel_slide">
+                    <span class="deal">DEAL!</span>
+                    <img class="item_img" src="images\margherita.png" alt="Margherita pizza">
+                    <h3 class="item_title">Marghertia</h3>
+                    <span class="presale">$20</span><span class="item_price">$16</span>
+                    <p class="item_description">Tomato, mozzarella, basil.</p>
+                    <span class="diet_details">*nut free, vegetarian, vegan</span>
+                    <span class="quantity">Quantity</span>
+                    <div class="change_quantity">
+                        <button class="minus" type="button" onclick="decrement()">-</button>
+                        <input class="quantity_input" type="number" value="1">
+                        <button class="plus" type="button" onclick="increment()">+</button>
                     </div>
-                    <div class="carousel_slide">
-                        <img class="item_img" src="images\pepperoni.png" alt="Pepperoni pizza">
-                        <h3 class="item_title">Pepperoni</h3>
-                        <span class="item_price">$22</span>
-                        <p class="item_description">Tomato, mozzarella, pepperoni, parmesan.</p>
-                        <span class="diet_details">*nut free</span>
-                        <span class="quantity">Quantity</span>
-                        <div class="change_quantity">
-                            <button class="minus" type="button" onclick="decrement()">-</button>
-                            <input class="quantity_input" type="number" value="1">
-                            <button class="plus" type="button" onclick="increment()">+</button>
-                        </div>
-                        <!--Add to basket button-->
-                        <button class="add" onclick="toggleItemAdded()">
-                            <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-                            <span class="add_text">Add to basket</span>
-                        </button>
+                    <!--Add to basket button-->
+                    <button class="add" onclick="toggleItemAdded()">
+                        <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                        <span class="add_text">Add to basket</span>
+                    </button>
+                </div>
+                <div class="carousel_slide">
+                    <img class="item_img" src="images\pepperoni.png" alt="Pepperoni pizza">
+                    <h3 class="item_title">Pepperoni</h3>
+                    <span class="item_price">$22</span>
+                    <p class="item_description">Tomato, mozzarella, pepperoni, parmesan.</p>
+                    <span class="diet_details">*nut free</span>
+                    <span class="quantity">Quantity</span>
+                    <div class="change_quantity">
+                        <button class="minus" type="button" onclick="decrement()">-</button>
+                        <input class="quantity_input" type="number" value="1">
+                        <button class="plus" type="button" onclick="increment()">+</button>
                     </div>
-                    <div class="carousel_slide">
-                        <img class="item_img" src="images\chorizo.png" alt="Chorizo pizza">
-                        <h3 class="item_title">Chorizo</h3>
-                        <span class="item_price">$22</span>
-                        <p class="item_description">Tomato, mozzarella, chorizo, kalamata olives, mushrooms, 
-                            sweet garlic, chilli, oregano.</p>
-                        <span class="diet_details">*nut free</span>
-                        <span class="quantity">Quantity</span>
-                        <div class="change_quantity">
-                            <button class="minus" type="button" onclick="decrement()">-</button>
-                            <input class="quantity_input" type="number" value="1">
-                            <button class="plus" type="button" onclick="increment()">+</button>
-                        </div>
-                        <!--Add to basket button-->
-                        <button class="add" onclick="toggleItemAdded()">
-                            <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-                            <span class="add_text">Add to basket</span>
-                        </button>
+                    <!--Add to basket button-->
+                    <button class="add" onclick="toggleItemAdded()">
+                        <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                        <span class="add_text">Add to basket</span>
+                    </button>
+                </div>
+                <div class="carousel_slide">
+                    <img class="item_img" src="images\chorizo.png" alt="Chorizo pizza">
+                    <h3 class="item_title">Chorizo</h3>
+                    <span class="item_price">$22</span>
+                    <p class="item_description">Tomato, mozzarella, chorizo, kalamata olives, mushrooms,
+                        sweet garlic, chilli, oregano.</p>
+                    <span class="diet_details">*nut free</span>
+                    <span class="quantity">Quantity</span>
+                    <div class="change_quantity">
+                        <button class="minus" type="button" onclick="decrement()">-</button>
+                        <input class="quantity_input" type="number" value="1">
+                        <button class="plus" type="button" onclick="increment()">+</button>
                     </div>
+                    <!--Add to basket button-->
+                    <button class="add" onclick="toggleItemAdded()">
+                        <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                        <span class="add_text">Add to basket</span>
+                    </button>
                 </div>
             </div>
+        </div>
     </div>
     <!--Item added-->
     <div class="item_added" id="item_selected">
@@ -164,4 +168,5 @@
     <!--Loads Javascript-->
     <script type="text/javascript" src="styles\js\mustTry.js" async></script>
 </body>
+
 </html>

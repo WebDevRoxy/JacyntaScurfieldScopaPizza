@@ -142,7 +142,7 @@ body {
         text-decoration: line-through;
     }
 
-    //!!!!!!!!!!!! leave this in file
+    //Item description
     .item_description {
         font-size: 1.4rem;
         white-space: nowrap;
@@ -295,18 +295,6 @@ $orderBorder: 20px;
     padding-bottom: 70px;
     font-size: 25px;
     letter-spacing: 0.17px;
-}
-
-//navigations options text for feedback and help
-@mixin lowerNavText {
-    font-style: italic;
-    text-decoration: underline;
-    letter-spacing: 0.03px;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-bottom: 0px;
 }
 
 //top navigation option
