@@ -61,7 +61,7 @@ body {
 }
 
 .main_content {
-    background: radial-gradient(100% 820px at 50% -30px, $primaryBlue 75%, transparent 75%);
+    background: radial-gradient(100% 985px at 55% -80px, #0A1F30 75%, transparent 75%);
     padding-left: 116px;
 }
 
@@ -85,7 +85,7 @@ body {
 
 //title of page
 .header_text {
-    top: 75px;
+    top: 65px;
     font-style: italic;
     font-size: 45px;
     color: white;
@@ -102,8 +102,6 @@ body {
     transform: translateX(0);
     transition: transform 0.3s ease-out;
     cursor: grab;
-    position: relative;
-    top: 75px;
 }
 
 .carousel_slide {
@@ -149,6 +147,7 @@ body {
     color: white;
     font-size: 29px;
     font-weight: $lightFont;
+    margin-left: 1rem;
 }
 
 //food price pre sale
@@ -165,7 +164,7 @@ body {
 
 //decription of food item
 @mixin bigDescription {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 
@@ -173,20 +172,20 @@ body {
 .item_description {
     @include bigDescription();
     white-space: nowrap;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
 }
 
 //dietary information
 .diet_details {
     color: $primaryDarkGrey;
-    font-size: 22px;
+    font-size: 0.8rem;
     font-weight: $lightFont;
 }
 
 //quantity
 .quantity {
-    font-size: 27px;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
 }
 
 $dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
@@ -195,7 +194,7 @@ $averageBorder: 10px;
 
 //change quantity of item container
 .change_quantity {
-    height: 68px;
+    height: 2.5rem;
     width: 183px;
     border: none;
     box-shadow: $dropShadow;
@@ -203,7 +202,7 @@ $averageBorder: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 //quantity plus and minus buttons
@@ -211,7 +210,6 @@ $averageBorder: 10px;
     background: $primaryYellow;
     border-radius: $averageBorder;
     display: inline-block;
-    height: 51px;
     width: 51px;
     border: none;
     font-size: 32px;

@@ -65,23 +65,29 @@ function removeCartItem(event) {
 
 //decrements item quantity
 function decrement(event) {
-  //makes basket_container a variable
-  var cartItemContainer = document.getElementsByClassName('basket_container')[0];
-  //makes basket_item a variable
-  var cartRows = cartItemContainer.getElementsByClassName('basket_item');
-  //makes quantity_input a variable
-  var quantityElement = cartRows.getElementsByClassName('quantity_input')[0];
-  //lowers quantity amount
 
-  //LOOK AT THE VAR QUANTITY BELOW
-  var quantity = quantityElement.value - 1;
-  //calls to update the cart total
+  var quantityElement = event.parentElement.getElementsByClassName('quantity_input')[0];
+  quantity = parseInt(quantityElement.value);
+
+  //lowers quantity amount
+  quantity -= 1;
+  if(quantity < 0) quantity = 0;
+
+  quantityElement.value = quantity;
+
   updateCartTotal();
 }
 
 //increases item quantity
 function increment(event) {  
-  //calls to update the cart total
+  var quantityElement = event.parentElement.getElementsByClassName('quantity_input')[0];
+  quantity = parseInt(quantityElement.value);
+
+  //increase quantity amount
+  quantity += 1;
+
+  quantityElement.value = quantity;
+
   updateCartTotal();
 }
 

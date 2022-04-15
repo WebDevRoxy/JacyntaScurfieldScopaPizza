@@ -39,7 +39,7 @@ body {
 }
 
 .main_content {
-  background: radial-gradient(100% 820px at 50% -30px, #0A1F30 75%, transparent 75%);
+  background: radial-gradient(100% 985px at 55% -80px, #0A1F30 75%, transparent 75%);
   padding-left: 116px;
 }
 
@@ -58,7 +58,7 @@ body {
 }
 
 .header_text {
-  top: 75px;
+  top: 65px;
   font-style: italic;
   font-size: 45px;
   color: white;
@@ -82,8 +82,6 @@ body {
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   cursor: -webkit-grab;
   cursor: grab;
-  position: relative;
-  top: 75px;
 }
 
 .carousel_slide {
@@ -138,6 +136,7 @@ body {
   color: white;
   font-size: 29px;
   font-weight: lighter;
+  margin-left: 1rem;
 }
 
 .presale {
@@ -147,24 +146,24 @@ body {
 }
 
 .item_description {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   white-space: nowrap;
-  margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 
 .diet_details {
   color: #555758;
-  font-size: 22px;
+  font-size: 0.8rem;
   font-weight: lighter;
 }
 
 .quantity {
-  font-size: 27px;
-  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
 }
 
 .change_quantity {
-  height: 68px;
+  height: 2.5rem;
   width: 183px;
   border: none;
   -webkit-box-shadow: 0em 0.15em 0.35em #555758;
@@ -179,14 +178,13 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .minus {
   background: #FFDA5D;
   border-radius: 10px;
   display: inline-block;
-  height: 51px;
   width: 51px;
   border: none;
   font-size: 32px;
@@ -197,7 +195,6 @@ body {
   background: #FFDA5D;
   border-radius: 10px;
   display: inline-block;
-  height: 51px;
   width: 51px;
   border: none;
   font-size: 32px;
@@ -207,7 +204,6 @@ body {
   background: #FFDA5D;
   border-radius: 10px;
   display: inline-block;
-  height: 51px;
   width: 51px;
   border: none;
   font-size: 32px;
@@ -259,7 +255,6 @@ body {
   background: #FFDA5D;
   border-radius: 10px;
   display: inline-block;
-  height: 51px;
   width: 51px;
   border: none;
   font-size: 32px;
