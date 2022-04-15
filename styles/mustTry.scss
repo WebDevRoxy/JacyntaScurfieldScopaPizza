@@ -416,6 +416,8 @@ $orderBorder: 20px;
         position: absolute;
         @include centre();
         padding-left: 0px;
+        max-height: 50%;
+        max-width: 50%;
     }
     //name of food
     .added_name {
@@ -470,7 +472,10 @@ $orderBorder: 20px;
     transform: (-50%, -50%) scale(1);
 }
 
-
+.back_nav {
+    position: relative;
+    top: 480px;
+}
 
 //style for return and go to basket buttons
 @mixin backNavBtns {
@@ -479,7 +484,6 @@ $orderBorder: 20px;
     height: 68px;
     box-shadow: drop-shadow(.5rem .5rem 1rem $primaryDarkGrey);
     border: none;
-    top: 490px;
     font-weight: bold;
     font-size: 24px;
     letter-spacing: 0.11px;
@@ -489,7 +493,6 @@ $orderBorder: 20px;
 .return {
     left: 50px;
     background-color: $primaryLightGrey;
-    position: absolute;
     @include backNavBtns();
 }
 

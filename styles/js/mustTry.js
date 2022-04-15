@@ -75,7 +75,7 @@ function decrement(event) {
 
   quantityElement.value = quantity;
 
-  updateCartTotal();
+  updateCartTotal(quantity);
 }
 
 //increases item quantity
@@ -88,20 +88,13 @@ function increment(event) {
 
   quantityElement.value = quantity;
 
-  updateCartTotal();
+  updateCartTotal(quantity);
 }
 
 //checks if quantity is below one and resets it
 function quantityChanged(event) {
-  //converts string to int
-  var input = parseInt(event.value);
-  //if the input is not a number or is less than or equal to zero, resets to one
-  if (isNaN(input.value) || input.value <= 0) {
-    input.value = 1;
-  }
-  event.value = input;
   //calls to update the cart total
-  updateCartTotal();
+  updateCartTotal(event.value);
 }
 
 //makes "add" a variable

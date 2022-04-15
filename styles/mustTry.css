@@ -404,6 +404,8 @@ body {
           transform: translate(-50%);
   position: absolute;
   padding-left: 0px;
+  max-height: 50%;
+  max-width: 50%;
 }
 
 .item_added .added_name {
@@ -474,17 +476,20 @@ body {
           transform: -50%, -50% scale(1);
 }
 
+.back_nav {
+  position: relative;
+  top: 480px;
+}
+
 .return {
   left: 50px;
   background-color: #EFEFEF;
-  position: absolute;
   border-radius: 20px;
   width: 183px;
   height: 68px;
   -webkit-box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
           box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
   border: none;
-  top: 490px;
   font-weight: bold;
   font-size: 24px;
   letter-spacing: 0.11px;
@@ -499,7 +504,6 @@ body {
   -webkit-box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
           box-shadow: drop-shadow(0.5rem 0.5rem 1rem #555758);
   border: none;
-  top: 490px;
   font-weight: bold;
   font-size: 24px;
   letter-spacing: 0.11px;
