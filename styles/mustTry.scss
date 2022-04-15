@@ -717,3 +717,70 @@ $basketZ: 18;
     color: $primaryBlue;
     padding-left: 0px;
 }
+
+
+
+
+
+//feedback
+
+
+.main_feedback_text {
+    background: radial-gradient(100% 820px at 50% -30px, $primaryBlue 75%, transparent 75%);
+    padding-left: 116px;
+}
+
+#feedback_header {
+    color: $primaryYellow;
+    letter-spacing: 0.81px;
+    font-size: 50px;
+    display: flex;
+    font-family: $primaryFont;
+    position: relative;
+    padding-top: 100px;
+    text-align: center;
+    left: 50px;
+}
+
+#feedback_text {
+    color: white;
+    letter-spacing: 0.87px;
+    font-size: 29px;
+    display: flex;
+    position: relative;
+    padding-top: 10px;
+    left: 50px;
+}
+
+.commentBox {
+    top: 200px;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    padding-left: 50px;
+    textarea {
+        width: 554px;
+        height: 528px;
+        padding: 15px 20px;
+        margin-bottom: 10px;
+        border-radius: 1em;
+        border:1px solid grey;
+        box-shadow: $dropShadow;
+        font-size: 27px;
+        font-family: calibri;
+        color: $primaryDarkGrey;
+        font-style: italic;
+    }
+    button {
+        border:0px;
+        padding: 10px 30px;
+        border-radius: $averageBorder;
+        background: $primaryYellow;
+        font-weight: bold;
+        letter-spacing: 0.11px;
+    }
+    button:hover {
+        background: $selected;
+    }
+}
