@@ -69,9 +69,9 @@ function decrement(event) {
   var quantityElement = event.parentElement.getElementsByClassName('quantity_input')[0];
   quantity = parseInt(quantityElement.value);
 
-  //lowers quantity amount
+  //lower quantity amount
   quantity -= 1;
-  if(quantity < 0) quantity = 0;
+  if (quantity < 0) quantity = 0;
 
   quantityElement.value = quantity;
 
@@ -107,23 +107,29 @@ for (var i = 0; i < addToCartButtons.length; i++) {
 //adds item to basket
 function addToCartClicked(event) {
   //makes event target a variable button
-  var button = event.target;
+  let button = event.target;
   //makes the parent of the parent of the event target a variable
-  var shopItem = button.parentElement.parentElement;
-  //makes inner text of "item_title" a variable
-  var title = shopItem.getElementsByClassName('item_title')[0].innerText;
-
+  let shopItem = button.parentElement.parentElement;
+  
+  //get title for the popup from the carousel slide
+  let title = shopItem.getElementsByClassName('item_title')[0].innerText;
   let foodItemName = document.getElementById("food_added_name");
   foodItemName.innerText = title;
 
-  //makes inner text of "item_price" a variable
-  var price = shopItem.getElementsByClassName('item_price')[0].innerText;
-  //makes source code of "item_img" a variable
-  var imageSrc = shopItem.getElementsByClassName('item_img')[0].src;
-  
+  //get quantity for the popup from the carousel slide
+  let quantity = shopItem.getElementsByClassName("quantity_input")[0].value;
+  let quantityAdded = document.getElementById("quantity_added");
+  quantityAdded.innerText = quantity;
+
+
+  //get image for the popuo from the carousel slide
+  let imageSrc = shopItem.getElementsByClassName('item_img')[0].src;
   let foodItemImg = document.getElementById("food_item_added_img");
   foodItemImg.src = imageSrc;
-  
+
+    //makes inner text of "item_price" a variable
+  let price = document.getElementsByClassName('item_price')[0].innerText;
+
   console.log(title, price, imageSrc);
   addItemToCart(title, price, imageSrc);
   //calls to update the cart total
@@ -148,19 +154,21 @@ function addItemToCart(title, price, imageSrc) {
     }
   }
   //div content
-  var cartRowContents = `  
-        <div class="basket_item_details">
-            <button class="delete" type="button">x</button>
-            <!--<i class="fa-solid fa-xmark-large"></i>!-->
-            <img src="${imageSrc}">
-            <span class="pizza_name">${title}
+  var cartRowContents = ` 
+      <div class="basket_item">
+        <button class="delete" type="button">x</button>
+        <!--<i class="fa-solid fa-xmark-large"></i>!-->
+        <img src="${imageSrc}">
+        <div>
+          <span class="pizza_name">${title}
+          <span class="item_basket_price">${price}</span>
         </div>
-        <span class="item_basket_price">${price}</span>
-        <div class="change_basket_quantity">
-            <button class="basket_minus" type="button" onclick="decrement(this)">-</button>
-            <input class="quantity_input" type="number" value="1" onblur="quantityChanged(this)">
-            <button class="basket_plus" type="button" onclick="increment(this)">+</button>
-        </div>`
+        <div class="change_quantity">
+            <button class="minus" type="button" onclick="decrement(this)">-</button>
+            <input class="quantity_input" type="number" value="1" min="0" onblur="quantityChanged(this)">
+            <button class="plus" type="button" onclick="increment(this)">+</button>
+        </div>
+      </div>`
   cartRow.innerHTML = cartRowContents;
   //makes basket_item the new div
   var basketItems = document.getElementById('basket_items');
@@ -182,10 +190,6 @@ function updateCartTotal(quantity) {
   var total = 0;
   for (var i = 0; i < cartRows.length; i++) {
     var cartRows = cartRows[i];
-
-
-    //!!!!!!!!!!
-
     var priceElement = cartRows.getElementsByClassName('item_basket_price')[0];
     var quantityElement = cartRows.getElementsByClassName('quantity_input')[0];
     //replaces $ with empty text
@@ -194,8 +198,12 @@ function updateCartTotal(quantity) {
     //calculates total price based on item quantity and price 
     total = total + (price * quantity);
   }
-  //changes "total" text to total calculated value
-  document.getElementById('total').innerText = total;
+  //change the text of all the "total" elements to total calculated value
+  const totalElements = document.getElementsByClassName('price_calculation');
+  var totals = Array.from(totalElements);
+  totals.forEach(
+    t => t.innerText = total
+  );
 }
 
 
@@ -237,7 +245,6 @@ window.oncontextmenu = function(event) {
 
 function touchStart(index) {
   return function(event) {
-    console.log('start');
     currentIndex = index;
     startPos = getPositionX(event);
     isDragging = true;
@@ -248,7 +255,6 @@ function touchStart(index) {
 }
 
 function touchEnd() {
-  console.log('end');
   isDragging = false;
   cancelAnimationFrame(animationID);
 
@@ -264,7 +270,6 @@ function touchEnd() {
 }
 
 function touchMove(event) {
-  console.log('move');
   if (isDragging) {
     const currentPosition = getPositionX(event);
     currentTranslate = prevTranslate + currentPosition - startPos;

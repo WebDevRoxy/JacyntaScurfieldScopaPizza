@@ -46,7 +46,7 @@
                         <h3 class="item_title">Kale Caesar</h3>
                         <div>
                             <span class="presale">$15 </span>
-                            <span class="item_price">Now $10</span>
+                            Now <span class="item_price">$10</span>
                         </div>
                         <p class="item_description">Toasted bread crumbs, Caesar dressing, parmesan.</p>
                         <span class="diet_details">*nut free, vegetarian</span>
@@ -68,7 +68,7 @@
                         <h3 class="item_title">Calamari</h3>
                         <div>
                             <span class="presale">$14</span>
-                            <span class="item_price">Now $12</span>
+                            Now <span class="item_price">$12</span>
                         </div>
                         <p class="item_description">Salsa Verde Aioli, lemon.</p>
                         <span class="diet_details">*gluten free, nut free</span>
@@ -89,8 +89,8 @@
                         <img class="item_img" src="images\cannoli.png" alt="Cannoli">
                         <h3 class="item_title">Cannoli</h3>
                         <div>
-                            <span class="presale">$25</span>
-                            <span class="item_price">Now $21</span>
+                            <span class="dollar">$</span><span class="presale">25</span>
+                            Now <span class="dollar">$</span><span class="item_price">21</span>
                         </div>
                         <p class="item_description">Spinach & ricotta filled pasta, tomato passata,
                             whipped ricotta, parmesan, basil.</p>
@@ -119,13 +119,13 @@
             <h2>Item Added!</h2>
             <img id="food_item_added_img" src="images\pizza.png">
             <div class="add_quantity">
-                <input class="quantity_input" type="number" value="1">
+                x<span id="quantity_added" class="quantity_input">1</span>
                 <span id="food_added_name" class="added_name">Margheritta Pizza</span>
             </div>
             <div class="price">
                 <span class="total">Basket Total:</span>
                 <span class="dollar">$</span>
-                <div class="price_calculation"></div>
+                <span class="price_calculation"></span>
             </div>
             <div class="back_nav">
                 <button class="return" onclick="toggleItemAdded()" type="button">Return</button>
@@ -148,24 +148,11 @@
                 </div>
                 <div class="price_count">
                     <span class="total_amount">TOTAL: </span>
-                    <span id="total" class="price_calculation">10</span>
+                    <span class="dollar">$</span>
+                    <span class="price_calculation">10</span>
                 </div>
             </div>
             <div id="basket_items">
-                <div class="basket_item">
-                    <div class="basket_item_details">
-                        <button class="delete" type="button">x</button>
-                        <!--<i class="fa-solid fa-xmark-large"></i>!-->
-                        <img src="images\pizza.png" alt="Margherita pizza">
-                        <span class="pizza_name">Margherita
-                    </div>
-                    <span class="item_basket_price">$10</span>
-                    <div class="change_basket_quantity">
-                        <button class="basket_minus" type="button" onclick="decrement(this)">-</button>
-                        <input class="quantity_input" type="number" value="1" onblur="quantityChanged(this)">
-                        <button class="basket_plus" type="button" onclick="increment(this)">+</button>
-                    </div>
-                </div>
             </div>
             <a class="place_order" href="confirmOrder.html">PLACE ORDER</a>
         </div>
