@@ -26,6 +26,7 @@ if (document.readyState == 'loading') {
 //item added
 //display item added pop up when "add" button is clicked
 function toggleItemAdded() {
+  document.getElementById('item_selected').style.display = '';
   document.getElementById('item_selected').classList.toggle('active');
 }
 

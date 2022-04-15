@@ -289,22 +289,6 @@ body {
   z-index: 10;
 }
 
-.carousel_button_right {
-  top: 331px;
-  position: absolute;
-  border: none;
-  background-color: #0A1F30;
-  right: 135px;
-}
-
-.carousel_button_left {
-  top: 331px;
-  position: absolute;
-  border: none;
-  background-color: #0A1F30;
-  left: 251px;
-}
-
 .nav_option_selected {
   background-color: #F4C938;
   border-radius: 14px;
@@ -373,8 +357,8 @@ body {
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 768px;
-  height: 1024px;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
 }
@@ -516,8 +500,8 @@ body {
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 768px;
-  height: 1024px;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
   display: none;
@@ -555,6 +539,31 @@ body {
   letter-spacing: 1.45px;
   z-index: 18;
   position: absolute;
+  /*
+    color: white;
+    padding: 20px;
+    float: left;
+    left: 36px;
+    font-size: 33px;
+    letter-spacing: 1.45px;
+    z-index: 18;
+
+    */
+}
+
+.basket {
+  color: white;
+  top: 39px;
+  padding-left: 0px;
+  color: #F05A35;
+  font-size: 50px;
+  background: none;
+  border: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  float: right;
 }
 
 .item_amount {

@@ -75,12 +75,12 @@ body {
 }
 
 //basket icon in header
-.go_basket_icon{
+.go_basket_icon {
     float: right;
-    background-color: $primaryBlue;   
+    background-color: $primaryBlue;
     margin-right: 54px;
-    margin-top: 20px;   
-    border: none; 
+    margin-top: 20px;
+    border: none;
 }
 
 //title of page
@@ -105,18 +105,20 @@ body {
 }
 
 .carousel_slide {
-    max-height:100vh;
+    max-height: 100vh;
     width: 87vw;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
     user-select: none;
+
     .item_img {
         max-width: 100%;
         max-height: 40%;
         transition: transform 0.3s ease-out;
     }
+
     //food name
     .item_title {
         font-size: 2rem;
@@ -124,6 +126,7 @@ body {
         color: $primaryYellow;
         font-family: $primaryFont;
     }
+
     //food price
     .item_price {
         color: white;
@@ -131,12 +134,14 @@ body {
         font-weight: $lightFont;
         margin-left: 1rem;
     }
+
     //price brefore sale
     .presale {
         color: $primaryRed;
         font-size: 20px;
         text-decoration: line-through;
     }
+
     //!!!!!!!!!!!! leave this in file
     .item_description {
         font-size: 1.4rem;
@@ -233,6 +238,7 @@ $orderBorder: 20px;
     height: 78px;
     border: none;
     box-shadow: $dropShadow;
+
     //basket icon
     .basket {
         align-items: center;
@@ -244,6 +250,7 @@ $orderBorder: 20px;
         height: 65px;
         width: 65px;
     }
+
     //add to basket text
     .add_text {
         font-size: 27px;
@@ -273,23 +280,6 @@ $orderBorder: 20px;
     z-index: 10;
 }
 
-//carousel arrow buttons
-@mixin arrows {
-    top: 331px;
-    position: absolute;
-    border: none;
-    background-color: $primaryBlue;
-}
-
-.carousel_button_right {
-    @include arrows();
-    right: 135px;
-}
-
-.carousel_button_left {
-    @include arrows();
-    left: 251px;
-}
 
 
 //sidebar
@@ -332,18 +322,21 @@ $orderBorder: 20px;
     .nav_text {
         @include navText();
     }
+
     //positions feedback nav option
     .nav_text_feedback {
         @include navText();
         @include lowerNavText();
         top: 140px;
     }
+
     //positions help nav option
     .nav_text_help {
         @include navText();
         @include lowerNavText();
         top: 200px;
     }
+
     //colour of selected nav option
     .selected {
         color: #F05A35;
@@ -355,8 +348,8 @@ $orderBorder: 20px;
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 768px;
-    height: 1024px;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.7);
     z-index: 10;
 }
@@ -378,6 +371,7 @@ $orderBorder: 20px;
     .overlay {
         @include overlay();
     }
+
     h2 {
         color: $primaryYellow;
         top: 45px;
@@ -389,6 +383,7 @@ $orderBorder: 20px;
         position: absolute;
         padding-left: 0px;
     }
+
     //food image
     img {
         top: 115px;
@@ -397,11 +392,13 @@ $orderBorder: 20px;
         max-height: 25%;
         max-width: 25%;
     }
+
     //name of food
     .add_quantity {
         top: 300px;
         @include centre();
     }
+
     //name of food
     .added_name {
         color: white;
@@ -409,12 +406,14 @@ $orderBorder: 20px;
         letter-spacing: 0.14px;
         padding-left: 0px;
     }
+
     .quantity_input {
         color: white;
         font-size: 24px;
         letter-spacing: 0.14px;
         padding-left: 0px;
     }
+
     //price calculation
     .price {
         top: 420px;
@@ -435,7 +434,7 @@ $orderBorder: 20px;
     top: 212px;
     width: 561px;
     height: 600px;
-    border-radius: 48px;    
+    border-radius: 48px;
 }
 
 //white background
@@ -443,7 +442,9 @@ $orderBorder: 20px;
     @include popup();
     background: white;
     z-index: 14;
-}//content inside the item added pop up
+}
+
+//content inside the item added pop up
 
 .item_added_content {
     @include popup();
@@ -454,7 +455,7 @@ $orderBorder: 20px;
 //pop up transition !!!!!!!!!!!!!!!
 .item_added.active {
     display: block;
-    transition:all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
     transform: (-50%, -50%) scale(1);
 }
 
@@ -486,7 +487,7 @@ $orderBorder: 20px;
 
 //go to basket style
 .go_basket {
-    float:right;
+    float: right;
     background-color: $primaryYellow;
     @include backNavBtns();
 }
@@ -554,7 +555,31 @@ $basketMargin: 36px;
     letter-spacing: 1.45px;
     z-index: 18;
     position: absolute;
+
+    /*
+    color: white;
+    padding: 20px;
+    float: left;
+    left: 36px;
+    font-size: 33px;
+    letter-spacing: 1.45px;
+    z-index: 18;
+
+    */
 }
+
+//basket close button
+.basket {
+    @include basketHeader();
+    color: $primaryRed;
+    font-size: 50px;
+    background: none;
+    border: none;
+    flex-direction: column;
+    float: right;
+
+}
+
 
 //basket z index
 $basketZ: 18;
@@ -594,20 +619,24 @@ $basketZ: 18;
     justify-content: center;
     display: flex;
     flex-direction: column;
+
     //food image
     img {
         max-height: 40%;
         max-width: 40%;
     }
+
     .delete {
         position: relative;
         color: $primaryRed;
-        font-size: 40px;;
+        font-size: 40px;
+        ;
         top: 15px;
         border: none;
         background: none;
-        left:135px;
+        left: 135px;
     }
+
     //food name
     .pizza_name {
         z-index: $basketZ;
@@ -618,6 +647,7 @@ $basketZ: 18;
         letter-spacing: 0.12px;
         padding-left: 0px;
     }
+
     //price
     .item_basket_price {
         z-index: $basketZ;
@@ -627,6 +657,7 @@ $basketZ: 18;
         letter-spacing: 0.12px;
         padding-left: 0px;
     }
+
     //item quantity
     .change_quantity {
         background: white;
@@ -694,27 +725,30 @@ $basketZ: 18;
     transform: translate(-50%, -50%);
     width: 70%;
     padding-left: 50px;
+
     textarea {
         width: 554px;
         height: 528px;
         padding: 15px 20px;
         margin-bottom: 10px;
         border-radius: 1em;
-        border:1px solid grey;
+        border: 1px solid grey;
         box-shadow: $dropShadow;
         font-size: 27px;
         font-family: calibri;
         color: $primaryDarkGrey;
         font-style: italic;
     }
+
     button {
-        border:0px;
+        border: 0px;
         padding: 10px 30px;
         border-radius: $averageBorder;
         background: $primaryYellow;
         font-weight: bold;
         letter-spacing: 0.11px;
     }
+
     button:hover {
         background: $selected;
     }
