@@ -21,12 +21,17 @@ body {
   overflow: hidden;
 }
 
+.background {
+  background-image: url("./../images/progressBackground.png");
+  background-size: cover;
+  height: 100vh;
+}
 
 .orderPlacedContainer {
-  background-image: url("images/progressBackgroundPizza.jpg");
   left: 0px;
   bottom: 0px;
   background: radial-gradient(100% 910px at 55% -80px, #0A1F30 75%, transparent 75%);
+  height: 100vh;
 }
 
 .orderPlaced {

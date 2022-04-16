@@ -9,19 +9,21 @@
     <title>Scopa Pizzeria -- Order Progress</title>
 </head>
 <body>
-    <div class="orderPlacedContainer">
-        <div class="orderPlaced">
-            <a class="close" href="index.html"><img src="images\Icon ionic-ios-close-circle-outline.svg" alt="Close cross"></a>
-            <h3>Ota Whakatakotoria</h3>
-            <div class="mainText">
-                <h2>Your Order Has Been Placed!</h2>
-                <img id="checkmark" src="images\Icon ionic-ios-checkmark-circle-outline.svg">
+    <div class="background">
+        <div class="orderPlacedContainer">
+            <div class="orderPlaced">
+                <a class="close" href="index.html"><img src="images\Icon ionic-ios-close-circle-outline.svg" alt="Close cross"></a>
+                <h3>Ota Whakatakotoria</h3>
+                <div class="mainText">
+                    <h2>Your Order Has Been Placed!</h2>
+                    <img id="checkmark" src="images\Icon ionic-ios-checkmark-circle-outline.svg">
+                </div>
+                <p>Your order will be delivered to your table in about</p>
+                <p class="timer">15 minutes</p>
             </div>
-            <p>Your order will be delivered to your table in about</p>
-            <p class="timer">15 minutes</p>
+            <div class="progressBar" style="--width: 10"
+            data-label="Order completion"></div>
         </div>
-        <div class="progressBar" style="--width: 10"
-        data-label="Order completion"></div>
     </div>
 
 

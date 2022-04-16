@@ -22,10 +22,9 @@ body {
 }
 
 .nav_option {
-  vertical-align: top;
-  display: block;
-  text-align: center;
   line-height: 16px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 .sidebar a {
@@ -295,12 +294,10 @@ body {
 }
 
 .nav_option {
-  top: 40px;
   position: relative;
 }
 
 .nav_option .nav_text {
-  padding-bottom: 70px;
   font-size: 25px;
   letter-spacing: 0.17px;
 }
@@ -641,6 +638,7 @@ body {
 .main_feedback_text {
   background: radial-gradient(100% 820px at 50% -30px, #0A1F30 75%, transparent 75%);
   padding-left: 116px;
+  height: 100vh;
 }
 
 #feedback_header {
@@ -670,11 +668,11 @@ body {
 }
 
 .commentBox {
-  top: 200px;
+  top: 365px;
   left: 50%;
-  position: relative;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  position: absolute;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
   width: 70%;
   padding-left: 50px;
 }

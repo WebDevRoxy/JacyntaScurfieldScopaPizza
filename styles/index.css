@@ -13,9 +13,11 @@ a {
 }
 
 .indexContainer {
-  background-image: url("imageshomeBackground.png");
+  background-image: url("./../images/homeBackground.png");
   left: 0px;
   bottom: 0px;
+  background-size: cover;
+  height: 100vh;
 }
 
 .textContainer {
