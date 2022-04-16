@@ -34,6 +34,7 @@ function ready() {
   }
 }
 
+//code for cart functionality based on "JavaScript Shopping Cart Tutorial for Beginners" from the Web Dev Simplified YouTube channel
 //removes cart item
 function removeCartItem(event) {
   //targets item that has had its delete button clicked
