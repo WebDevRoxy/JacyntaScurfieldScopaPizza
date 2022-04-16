@@ -676,7 +676,7 @@ $basketZ: 18;
 }
 
 .commentBox {
-    top: 365px;
+    top: 35%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -0%);
@@ -684,8 +684,8 @@ $basketZ: 18;
     padding-left: 50px;
 
     textarea {
-        width: 554px;
-        height: 528px;
+        width: 50vw;
+        height: 50vh;
         padding: 15px 20px;
         margin-bottom: 10px;
         border-radius: 1em;

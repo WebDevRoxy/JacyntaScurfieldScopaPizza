@@ -1,21 +1,3 @@
-//itemBasketPrice instead of cart-price
-
-//basketItem instead of cart-row
-
-//basket_container instead of cart-items
-
-//quantity_input instead of cart-quantity-input
-
-//price_calculation for cart-total-price
-
-//add = shop-item-button
-//item_title = shop-item-title
-//item_price = shop-item-price
-//item_img = shop-item-image
-
-
-
-
 //wait for page to be loaded before running script
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready)
@@ -47,7 +29,7 @@ function ready() {
     button.addEventListener('click', removeCartItem);
   }
   var quantityInputs = document.getElementsByClassName('quantityInput');
-  for (var i = 0; i <removeCartItemButtons.length; i++) {
+  for (var i = 0; i < removeCartItemButtons.length; i++) {
     let input = quantityInputs[i];
     input.addEventListener('change', quantityChanged);
   }
@@ -79,7 +61,7 @@ function decrement(event) {
 }
 
 //increases item quantity
-function increment(event) {  
+function increment(event) {
   const quantityElement = event.parentElement.getElementsByClassName('quantityInput')[0];
   quantity = parseInt(quantityElement.value);
 
@@ -110,7 +92,7 @@ function addToCartClicked(event) {
   let button = event.target;
   //makes the parent of the parent of the event target a variable
   let shopItem = button.parentElement.parentElement;
-  
+
   //get title for the popup from the carousel slide
   let title = shopItem.getElementsByClassName('itemTitle')[0].innerText;
   let foodItemName = document.getElementById("foodAddedName");
@@ -126,7 +108,7 @@ function addToCartClicked(event) {
   let foodItemImg = document.getElementById("foodItemAddedImg");
   foodItemImg.src = imageSrc;
 
-    //makes inner text of "itemPrice" a variable
+  //makes inner text of "itemPrice" a variable
   let price = document.getElementsByClassName('itemPrice')[0].innerText;
 
   console.log(title, price, imageSrc);
@@ -152,7 +134,7 @@ function addItemToCart(title, price, quantity, imageSrc) {
   //create new basket item div
   var basketItem = document.createElement('div');
   basketItem.classList.add('basketItem');
- 
+
   //div content
   var basketItemContents = ` 
         <button class="delete" type="button" onclick="removeCartItem(this)">x</button>
@@ -173,7 +155,6 @@ function addItemToCart(title, price, quantity, imageSrc) {
   var basketItems = document.getElementById('basketItems');
   basketItems.append(basketItem);
 }
-
 
 //updates the calculations
 function updateCartTotal(quantity) {
@@ -199,10 +180,7 @@ function updateCartTotal(quantity) {
   );
 }
 
-
-
 //carousel 
-
 const slider = document.querySelector('.carouselContainer'),
   slides = Array.from(document.querySelectorAll('.carouselSlide'));
 
@@ -230,14 +208,14 @@ slides.forEach((slide, index) => {
 });
 
 //disable context menu
-window.oncontextmenu = function(event) {
+window.oncontextmenu = function (event) {
   event.preventDefault();
   event.stopPropagation();
   return false;
 }
 
 function touchStart(index) {
-  return function(event) {
+  return function (event) {
     currentIndex = index;
     startPos = getPositionX(event);
     isDragging = true;
@@ -253,7 +231,7 @@ function touchEnd() {
 
   const movedBy = currentTranslate - prevTranslate;
 
-  if (movedBy < -100 && currentIndex < slides.length -1) currentIndex += 1;
+  if (movedBy < -100 && currentIndex < slides.length - 1) currentIndex += 1;
 
   if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
 

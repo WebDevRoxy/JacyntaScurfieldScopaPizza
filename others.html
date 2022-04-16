@@ -25,9 +25,10 @@
             <li class="navOption"><a href="dessert.html"><img src="images\Icon ionic-ios-ice-cream.svg"
                         alt="Ice cream icon"></i>
                     <span class="navText">Dessert</span></a></li>
-            <li class="navOption"><a href="others.html"><img src="images\Icon awesome-hamburger.svg"
+            <li class="navOptionSelected navOption"><a href="others.html"><img src="images\Icon awesome-hamburger.svg"
                         alt="Hamburger icon"></i>
-                    <span class="nav_text navOptionSelected navOption">Others</span></a></li>
+                    <span class="navText">Others</span></a></li>
+
             <li class="navOption"><a href="feedback.html"><img src="images\Icon material-comment.svg"
                         alt="Comment icon"></i>
                     <span class="navText">Feedback</span></a></li>
@@ -52,9 +53,9 @@
                     <span class="dietDetails">*nut free</span>
                     <span class="quantity">Quantity</span>
                     <div class="changeQuantity">
-                        <button class="minus" type="button" onclick="decrement()">-</button>
-                        <input class="quantityInput" type="number" value="1">
-                        <button class="plus" type="button" onclick="increment()">+</button>
+                        <button class="minus" type="button" onclick="decrement(this)">-</button>
+                        <input class="quantityInput" type="number" value="1" min="0">
+                        <button class="plus" type="button" onclick="increment(this)">+</button>
                     </div>
                     <!--Add to basket button-->
                     <button class="add" onclick="toggleItemAdded()">
@@ -70,9 +71,9 @@
                     <span class="dietDetails">*dairy free, nut free, vegetarian, vegan</span>
                     <span class="quantity">Quantity</span>
                     <div class="changeQuantity">
-                        <button class="minus" type="button" onclick="decrement()">-</button>
-                        <input class="quantityInput" type="number" value="1">
-                        <button class="plus" type="button" onclick="increment()">+</button>
+                        <button class="minus" type="button" onclick="decrement(this)">-</button>
+                        <input class="quantityInput" type="number" value="1" min="0">
+                        <button class="plus" type="button" onclick="increment(this)">+</button>
                     </div>
                     <!--Add to basket button-->
                     <button class="add" onclick="toggleItemAdded()">
@@ -88,9 +89,9 @@
                     <span class="dietDetails">*gluten free, nut free, vegetarian, vegan</span>
                     <span class="quantity">Quantity</span>
                     <div class="changeQuantity">
-                        <button class="minus" type="button" onclick="decrement()">-</button>
-                        <input class="quantityInput" type="number" value="1">
-                        <button class="plus" type="button" onclick="increment()">+</button>
+                        <button class="minus" type="button" onclick="decrement(this)">-</button>
+                        <input class="quantityInput" type="number" value="1" min="0">
+                        <button class="plus" type="button" onclick="increment(this)">+</button>
                     </div>
                     <!--Add to basket button-->
                     <button class="add" onclick="toggleItemAdded()">
@@ -101,8 +102,8 @@
             </div>
         </div>
     </div>
-    <!--Item added-->
-    <div class="itemAdded" id="itemSelected">
+       <!--Item added-->
+       <div class="itemAdded" id="itemSelected">
         <div class="overlay"></div>
         <div class="blurFilter"></div>
         <div class="whiteBackground"></div>
@@ -110,15 +111,15 @@
             <h2>Item Added!</h2>
             <img id="foodItemAddedImg" src="images\pizza.png">
             <div class="addQuantity">
-                <input class="quantityInput" type="number" value="1">
-                <span id="foodAddedName" class="added_name">Margheritta Pizza</span>
+                <span class="whiteText">x</span><span id="quantityAdded" class="whiteText"></span>
+                <span id="foodAddedName" class="whiteText"></span>
             </div>
             <div class="price">
                 <span class="total">Basket Total:</span>
                 <span class="dollar">$</span>
-                <div class="priceCalculation"></div>
+                <span class="priceCalculation"></span>
             </div>
-            <div class="backNav" id="itemAdded">
+            <div class="backNav">
                 <button class="return" onclick="toggleItemAdded()" type="button">Return</button>
                 <button class="goBasket" onclick="toggleBasket()" type="button">Go to basket</button>
             </div>
@@ -130,8 +131,11 @@
     <div class="basketContainer" id="basketToggle">
         <div class="overlay"></div>
         <div class="basketContent">
-            <span class="basketName">BASKET</span>
-            <button class="basket" onclick="toggleBasket()"><i class="fa-light fa-circle-x"></i></button>
+            <div>
+                <span class="basketName">BASKET</span>
+                <button class="basket" onclick="toggleBasket()"><img
+                        src="images\Icon ionic-ios-close-circle-outline.svg"></button>
+            </div>
             <div class="itemDetails">
                 <div class="itemCount">
                     <div class="quantityCalculation"></div>
@@ -139,30 +143,15 @@
                 </div>
                 <div class="priceCount">
                     <span class="totalAmount">TOTAL: </span>
-                    <span id="total" class="priceCalculation">10</span>
+                    <span class="dollar">$</span>
+                    <span class="priceCalculation">10</span>
                 </div>
             </div>
             <div id="basketItems">
-                <div class="basketItem">
-                    <div class="basketItemDetails">
-                        <button class="delete" type="button">x</button>
-                        <!--<i class="fa-solid fa-xmark-large"></i>!-->
-                        <img src="images\pizza.png" alt="Margherita pizza">
-                        <span class="pizzaName">Margherita
-                    </div>
-                    <span class="itemBasketPrice">$10</span>
-                    <div class="change_basket_quantity">
-                        <button class="basket_minus" type="button" onclick="decrement(this)">-</button>
-                        <input class="quantityInput" type="number" value="1" onblur="quantityChanged(this)">
-                        <button class="basket_plus" type="button" onclick="increment(this)">+</button>
-                    </div>
-                </div>
             </div>
             <a class="placeOrder" href="progress.html">PLACE ORDER</a>
         </div>
     </div>
-    <!--Blur the background-->
-    <div class="blurFilter"></div>
     <!--Loads Javascript-->
     <script type="text/javascript" src="styles\js\mustTry.js" async></script>
 </body>

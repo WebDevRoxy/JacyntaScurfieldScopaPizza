@@ -658,7 +658,7 @@ body {
 }
 
 .commentBox {
-  top: 365px;
+  top: 35%;
   left: 50%;
   position: absolute;
   -webkit-transform: translate(-50%, 0%);
@@ -668,8 +668,8 @@ body {
 }
 
 .commentBox textarea {
-  width: 554px;
-  height: 528px;
+  width: 50vw;
+  height: 50vh;
   padding: 15px 20px;
   margin-bottom: 10px;
   border-radius: 1em;
