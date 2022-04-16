@@ -47,7 +47,7 @@
                         <h3 class="item_title">Kale Caesar</h3>
                         <div>
                             <span class="presale">$15 </span>
-                            Now <span class="item_price">$10</span>
+                            <span class="item_price">$10</span>
                         </div>
                         <p class="item_description">Toasted bread crumbs, Caesar dressing, parmesan.</p>
                         <span class="diet_details">*nut free, vegetarian</span>
@@ -69,7 +69,7 @@
                         <h3 class="item_title">Calamari</h3>
                         <div>
                             <span class="presale">$14</span>
-                            Now <span class="item_price">$12</span>
+                            <span class="item_price">$12</span>
                         </div>
                         <p class="item_description">Salsa Verde Aioli, lemon.</p>
                         <span class="diet_details">*gluten free, nut free</span>
@@ -91,7 +91,7 @@
                         <h3 class="item_title">Cannoli</h3>
                         <div>
                             <span class="dollar">$</span><span class="presale">25</span>
-                            Now <span class="dollar">$</span><span class="item_price">21</span>
+                            <span class="dollar">$</span><span class="item_price">21</span>
                         </div>
                         <p class="item_description">Spinach & ricotta filled pasta, tomato passata,
                             whipped ricotta, parmesan, basil.</p>
@@ -120,8 +120,8 @@
             <h2>Item Added!</h2>
             <img id="food_item_added_img" src="images\pizza.png">
             <div class="add_quantity">
-                x<span id="quantity_added" class="quantity_input">1</span>
-                <span id="food_added_name" class="added_name">Margheritta Pizza</span>
+                <span class="white-text">x</span><span id="quantity_added" class="white-text"></span>
+                <span id="food_added_name" class="white-text"></span>
             </div>
             <div class="price">
                 <span class="total">Basket Total:</span>
@@ -140,8 +140,10 @@
     <div class="basket_container" id="basket_toggle">
         <div class="overlay"></div>
         <div class="basket_content">
-            <span class="basket_name">BASKET</span>
-            <button class="basket" onclick="toggleBasket()">x</button>
+            <div>
+                <span class="basket_name">BASKET</span>
+                <button class="basket" onclick="toggleBasket()">x</button>
+            </div>
             <div class="item_details">
                 <div class="item_count">
                     <div class="quantity_calculation"></div>

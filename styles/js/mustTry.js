@@ -26,7 +26,6 @@ if (document.readyState == 'loading') {
 //item added
 //display item added pop up when "add" button is clicked
 function toggleItemAdded() {
-  document.getElementById('item_selected').style.display = '';
   document.getElementById('item_selected').classList.toggle('active');
 }
 
@@ -35,7 +34,7 @@ function toggleItemAdded() {
 function toggleBasket() {
   document.getElementById('basket_toggle').classList.toggle('active');
   //hides item added pop up
-  document.getElementById('item_selected').style.display = "none";
+  document.getElementById('item_selected').classList.remove('active');
 }
 
 //runs code when everything on the page is loaded
@@ -44,12 +43,12 @@ function ready() {
   var removeCartItemButtons = document.getElementsByClassName('delete')
   //console.log(removeCartItemButtons);
   for (var i = 0; i < removeCartItemButtons.length; i++) {
-    var button = removeCartItemButtons[i];
+    let button = removeCartItemButtons[i];
     button.addEventListener('click', removeCartItem);
   }
   var quantityInputs = document.getElementsByClassName('quantity_input');
   for (var i = 0; i <removeCartItemButtons.length; i++) {
-    var input = quantityInputs[i];
+    let input = quantityInputs[i];
     input.addEventListener('change', quantityChanged);
   }
 }
@@ -57,9 +56,9 @@ function ready() {
 //removes cart item
 function removeCartItem(event) {
   //targets item that has had its delete button clicked
-  var buttonClicked = event.target;
+  var buttonClicked = event;
   //removes the parent of the parent of the child item AKA removes basket item
-  buttonClicked.parentElement.parentElement.remove();
+  buttonClicked.parentElement.remove();
   //calls to update the cart total
   updateCartTotal();
 }
@@ -67,7 +66,7 @@ function removeCartItem(event) {
 //decrements item quantity
 function decrement(event) {
 
-  var quantityElement = event.parentElement.getElementsByClassName('quantity_input')[0];
+  const quantityElement = event.parentElement.getElementsByClassName('quantity_input')[0];
   quantity = parseInt(quantityElement.value);
 
   //lower quantity amount
@@ -81,7 +80,7 @@ function decrement(event) {
 
 //increases item quantity
 function increment(event) {  
-  var quantityElement = event.parentElement.getElementsByClassName('quantity_input')[0];
+  const quantityElement = event.parentElement.getElementsByClassName('quantity_input')[0];
   quantity = parseInt(quantityElement.value);
 
   //increase quantity amount
@@ -99,7 +98,7 @@ function quantityChanged(event) {
 }
 
 //makes "add" a variable
-var addToCartButtons = document.getElementsByClassName('add');
+const addToCartButtons = document.getElementsByClassName('add');
 for (var i = 0; i < addToCartButtons.length; i++) {
   var button = addToCartButtons[i];
   button.addEventListener('click', addToCartClicked);
@@ -122,7 +121,6 @@ function addToCartClicked(event) {
   let quantityAdded = document.getElementById("quantity_added");
   quantityAdded.innerText = quantity;
 
-
   //get image for the popuo from the carousel slide
   let imageSrc = shopItem.getElementsByClassName('item_img')[0].src;
   let foodItemImg = document.getElementById("food_item_added_img");
@@ -132,21 +130,17 @@ function addToCartClicked(event) {
   let price = document.getElementsByClassName('item_price')[0].innerText;
 
   console.log(title, price, imageSrc);
-  addItemToCart(title, price, imageSrc);
+  addItemToCart(title, price, quantity, imageSrc);
   //calls to update the cart total
   updateCartTotal();
 }
 
 //adds item style to basket
-function addItemToCart(title, price, imageSrc) {
-  //creates a new div
-  var cartRow = document.createElement('div');
-  //adds "basket_item"
-  cartRow.classList.add('basket_item');
+function addItemToCart(title, price, quantity, imageSrc) {
   //makes carousel_container a variable
-  var cartItems = document.getElementsByClassName('carousel_container')[0];
+  var carouselItems = document.getElementsByClassName('carousel_container')[0];
   //makes pizza_name a variable
-  var cartItemNames = cartItems.getElementsByClassName('pizza_name');
+  var cartItemNames = carouselItems.getElementsByClassName('pizza_name');
   //if item is already in basket, shows an alert
   for (var i = 0; i < cartItemNames.length; i++) {
     if (cartItemNames[i].innerText == title) {
@@ -154,10 +148,14 @@ function addItemToCart(title, price, imageSrc) {
       return;
     }
   }
+
+  //create new basket item div
+  var basketItem = document.createElement('div');
+  basketItem.classList.add('basket_item');
+ 
   //div content
-  var cartRowContents = ` 
-      <div class="basket_item">
-        <button class="delete" type="button">x</button>
+  var basketItemContents = ` 
+        <button class="delete" type="button" onclick="removeCartItem(this)">x</button>
         <!--<i class="fa-solid fa-xmark-large"></i>!-->
         <img src="${imageSrc}">
         <div>
@@ -166,42 +164,37 @@ function addItemToCart(title, price, imageSrc) {
         </div>
         <div class="change_quantity">
             <button class="minus" type="button" onclick="decrement(this)">-</button>
-            <input class="quantity_input" type="number" value="1" min="0" onblur="quantityChanged(this)">
+            <input class="quantity_input" type="number" value="${quantity}" min="0" onblur="quantityChanged(this)">
             <button class="plus" type="button" onclick="increment(this)">+</button>
-        </div>
-      </div>`
-  cartRow.innerHTML = cartRowContents;
-  //makes basket_item the new div
+        </div>`;
+
+  basketItem.innerHTML = basketItemContents;
+
+  //add the basket item to the basket
   var basketItems = document.getElementById('basket_items');
-  basketItems.append(cartRow);
-  //allows delete function to be used
-  cartRow.getElementsByClassName('delete')[0].addEventListener('click',removeCartItem);
-  //allows quatity changed function to be used
-  cartRow.getElementsByClassName('quantity_input')[0].addEventListener('change', quantityChanged);
+  basketItems.append(basketItem);
 }
 
 
 //updates the calculations
 function updateCartTotal(quantity) {
-  //makes "basket_container" a variable
-  var cartItemContainer = document.getElementsByClassName('basket_container')[0];
-  //makes "basket_item" a variable
-  var cartRows = cartItemContainer.getElementsByClassName('basket_item');
-  //sets total to 0
+  const cartItems = Array.from(document.querySelectorAll('.basket_item'));
+
   var total = 0;
-  for (var i = 0; i < cartRows.length; i++) {
-    var cartRows = cartRows[i];
-    var priceElement = cartRows.getElementsByClassName('item_basket_price')[0];
-    var quantityElement = cartRows.getElementsByClassName('quantity_input')[0];
+  //loop through items in the cart to calculate total price
+  cartItems.forEach((cartItem, index) => {
+    const priceElement = cartItem.getElementsByClassName('item_basket_price')[0];
+    const quantityElement = cartItem.getElementsByClassName('quantity_input')[0];
     //replaces $ with empty text
-    var price = parseFloat(priceElement.innerText.replace('$', ''));
-    var quantity = quantityElement.value;
+    let price = parseFloat(priceElement.innerText.replace('$', ''));
+    let quantity = quantityElement.value;
     //calculates total price based on item quantity and price 
     total = total + (price * quantity);
-  }
+  });
+
   //change the text of all the "total" elements to total calculated value
   const totalElements = document.getElementsByClassName('price_calculation');
-  var totals = Array.from(totalElements);
+  const totals = Array.from(totalElements);
   totals.forEach(
     t => t.innerText = total
   );
