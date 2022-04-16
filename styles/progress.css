@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: calibri;
+  color: #0A1F30;
+  overflow: hidden;
+}
+
+.orderPlacedContainer {
+  background-image: url("images/progressBackgroundPizza.jpg");
+  left: 0px;
+  bottom: 0px;
+  background: radial-gradient(100% 910px at 55% -80px, #0A1F30 75%, transparent 75%);
+}
+
+.orderPlaced {
+  padding: 40px;
+}
+
+.mainText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: britannic;
+  font-size: 54px;
+}
+
+h3 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #EFEFEF;
+  font-size: 30px;
+}
+
+p {
+  color: white;
+  font-size: 29px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.timer {
+  font-size: 48px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.close {
+  float: right;
+  background-color: #0A1F30;
+}
+
+h2 {
+  color: #FFDA5D;
+}
+
+/*#myBar {
+    width: 10%;
+    height: 30px;
+    background-color: #04AA6D;
+    text-align: center; /* To center it horizontally (if you want) 
+    line-height: 30px; /* To center it vertically 
+    color: white;
+  }*/
+*::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.progressBar {
+  top: 85%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  position: absolute;
+  width: 500px;
+  height: 3em;
+  background-color: #FFDA5D;
+  border-radius: 1.5em;
+  color: white;
+}
+
+.progressBar::before {
+  content: attr(data-label);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: .5em;
+  top: .5em;
+  bottom: .5em;
+  width: calc(var(--width, 0) * 1%);
+  min-width: 2rem;
+  max-width: calc(100% - 1em);
+  background-color: #0A1F30;
+  border-radius: 1em;
+  padding: 1em;
+}
+/*# sourceMappingURL=progress.css.map */

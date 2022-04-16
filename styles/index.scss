@@ -1,0 +1,66 @@
+//resets page style
+* {
+    margin: 0;
+    padding: 0;
+}
+
+//common styles
+$primaryRed: #F05A35;
+$primaryYellow: #FFDA5D;
+$primaryBlue: #0A1F30;
+$primaryLightGrey: #EFEFEF;
+$primaryDarkGrey: #555758;
+$primaryFont: britannic;
+$lightFont: lighter;
+$selected: #F4C938;
+
+//centres items
+@mixin centre {
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+}
+
+//body style
+body {
+    font-family: calibri;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.indexContainer {
+    background-image: url("images\homeBackground.png");
+    left: 0px;
+    bottom: 0px;
+}
+
+.textContainer {
+    padding: 40px;
+    text-align: center;
+}
+
+
+h2 {
+    flex: 1;
+    color: $primaryYellow;
+    font-size: 50px;
+    letter-spacing: 1.5px;
+}
+
+h1 {
+    font-family: $primaryFont;
+    letter-spacing: 1.8px;
+    font-size: 120px;
+    color: $primaryBlue;
+}
+
+.tapText {
+    font-size: 29px;
+    flex: 1;
+    text-decoration: underline;
+    letter-spacing: 0.12px;
+    color: $primaryBlue;
+}
