@@ -23,7 +23,6 @@ function toggleBasket() {
 function ready() {
   //basket functionality
   var removeCartItemButtons = document.getElementsByClassName('delete')
-  //console.log(removeCartItemButtons);
   for (var i = 0; i < removeCartItemButtons.length; i++) {
     let button = removeCartItemButtons[i];
     button.addEventListener('click', removeCartItem);
@@ -41,7 +40,6 @@ function removeCartItem(event) {
   var buttonClicked = event;
   //removes the parent of the parent of the child item AKA removes basket item
   buttonClicked.parentElement.remove();
-  //calls to update the cart total
   updateCartTotal();
 }
 
@@ -75,7 +73,6 @@ function increment(event) {
 
 //checks if quantity is below one and resets it
 function quantityChanged(event) {
-  //calls to update the cart total
   updateCartTotal(event.value);
 }
 
@@ -88,7 +85,6 @@ for (var i = 0; i < addToCartButtons.length; i++) {
 
 //adds item to basket
 function addToCartClicked(event) {
-  //makes event target a variable button
   let button = event.target;
   //makes the parent of the parent of the event target a variable
   let shopItem = button.parentElement.parentElement;
@@ -113,23 +109,13 @@ function addToCartClicked(event) {
 
   console.log(title, price, imageSrc);
   addItemToCart(title, price, quantity, imageSrc);
-  //calls to update the cart total
   updateCartTotal();
 }
 
 //adds item style to basket
 function addItemToCart(title, price, quantity, imageSrc) {
-  //makes carousel_container a variable
   var carouselItems = document.getElementsByClassName('carouselContainer')[0];
-  //makes pizzaName a variable
   var cartItemNames = carouselItems.getElementsByClassName('pizzaName');
-  //if item is already in basket, shows an alert
-  for (var i = 0; i < cartItemNames.length; i++) {
-    if (cartItemNames[i].innerText == title) {
-      alert('This item is already in your basket');
-      return;
-    }
-  }
 
   //create new basket item div
   var basketItem = document.createElement('div');
@@ -161,7 +147,6 @@ function updateCartTotal(quantity) {
   const cartItems = Array.from(document.querySelectorAll('.basketItem'));
 
   var total = 0;
-  //loop through items in the cart to calculate total price
   cartItems.forEach((cartItem, index) => {
     const priceElement = cartItem.getElementsByClassName('itemBasketPrice')[0];
     const quantityElement = cartItem.getElementsByClassName('quantityInput')[0];
@@ -214,6 +199,7 @@ window.oncontextmenu = function (event) {
   return false;
 }
 
+//carousel start position
 function touchStart(index) {
   return function (event) {
     currentIndex = index;
@@ -225,6 +211,7 @@ function touchStart(index) {
   }
 }
 
+//carousel end position
 function touchEnd() {
   isDragging = false;
   cancelAnimationFrame(animationID);
@@ -240,6 +227,7 @@ function touchEnd() {
   slider.classList.remove('grabbing');
 }
 
+//calculates slide translation
 function touchMove(event) {
   if (isDragging) {
     const currentPosition = getPositionX(event);

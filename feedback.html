@@ -57,8 +57,11 @@
     <div class="basketContainer" id="basketToggle">
         <div class="overlay"></div>
         <div class="basketContent">
-            <span class="basketName">BASKET</span>
-            <button class="basket" onclick="toggleBasket()"><i class="fa-light fa-circle-x"></i></button>
+            <div>
+                <span class="basketName">BASKET</span>
+                <button class="basket" onclick="toggleBasket()"><img
+                        src="images\Icon ionic-ios-close-circle-outline.svg"></button>
+            </div>
             <div class="itemDetails">
                 <div class="itemCount">
                     <div class="quantityCalculation"></div>
@@ -66,32 +69,18 @@
                 </div>
                 <div class="priceCount">
                     <span class="totalAmount">TOTAL: </span>
-                    <span id="total" class="priceCalculation">10</span>
+                    <span class="dollar">$</span>
+                    <span class="priceCalculation">10</span>
                 </div>
             </div>
             <div id="basketItems">
-                <div class="basketItem">
-                    <div class="basketItemDetails">
-                        <button class="delete" type="button">x</button>
-                        <!--<i class="fa-solid fa-xmark-large"></i>!-->
-                        <img src="images\pizza.png" alt="Margherita pizza">
-                        <span class="pizzaName">Margherita
-                    </div>
-                    <span class="itemBasketPrice">$10</span>
-                    <div class="change_basket_quantity">
-                        <button class="basket_minus" type="button" onclick="decrement(this)">-</button>
-                        <input class="quantityInput" type="number" value="1" onblur="quantityChanged(this)">
-                        <button class="basket_plus" type="button" onclick="increment(this)">+</button>
-                    </div>
-                </div>
             </div>
             <a class="placeOrder" href="progress.html">PLACE ORDER</a>
         </div>
     </div>
-    <!--Blur the background-->
-    <div class="blurFilter"></div>
     <!--Loads Javascript-->
     <script type="text/javascript" src="styles\js\mustTry.js" async></script>
 </body>
+
 
 </html>

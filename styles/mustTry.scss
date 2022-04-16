@@ -23,6 +23,7 @@ body {
     overflow: hidden;
 }
 
+//sidebar
 .sidebar {
     left: 0;
     top: 0;
@@ -59,6 +60,7 @@ body {
     }
 }
 
+//background design
 .mainContent {
     background: radial-gradient(100% 910px at 55% -80px, #0A1F30 75%, transparent 75%);
     padding-left: 116px;
@@ -95,6 +97,7 @@ body {
     margin-right: auto;
 }
 
+//carousel
 .carouselContainer {
     overflow: hidden;
     display: inline-flex;
@@ -119,7 +122,7 @@ body {
     }
 
     //food name
-    .item_title {
+    .itemTitle {
         font-size: 2rem;
         margin-bottom: 0.5rem;
         color: $primaryYellow;
@@ -132,6 +135,9 @@ body {
         font-size: 29px;
         font-weight: $lightFont;
         margin-left: 1rem;
+        .dollar {
+            color: white;
+        }
     }
 
     //price brefore sale
@@ -139,13 +145,16 @@ body {
         color: $primaryRed;
         font-size: 20px;
         text-decoration: line-through;
+        .dollar {
+            color: $primaryRed
+        }
     }
 
     //Item description
     .itemDescription {
         font-size: 1.4rem;
         white-space: nowrap;
-        margin-top: 1rem;
+        margin-top: 5rem;
     }
 
     //dietary information
@@ -169,8 +178,10 @@ body {
     }
 }
 
+//drop shadow
 $dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
 
+//border
 $averageBorder: 10px;
 
 //change quantity of item container
@@ -277,7 +288,6 @@ $orderBorder: 20px;
 }
 
 
-
 //sidebar
 
 //navigation option positions and
@@ -321,7 +331,6 @@ $orderBorder: 20px;
     background: rgba(0, 0, 0, 0.7);
     z-index: 10;
 }
-
 
 //centres items
 @mixin centre {
@@ -375,6 +384,7 @@ $orderBorder: 20px;
         padding-left: 0.5rem;
     }
 
+    //quantity input
     .quantityInput {
         color: white;
         font-size: 24px;
@@ -420,7 +430,7 @@ $orderBorder: 20px;
     background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
 }
 
-//pop up transition !!!!!!!!!!!!!!!
+//pop up transition
 .itemAdded.active {
     display: block;
     transition: all 300ms ease-in-out;
@@ -459,13 +469,6 @@ $orderBorder: 20px;
     background-color: $primaryYellow;
     @include backNavBtns();
 }
-
-
-
-
-
-//Item added pop up
-
 
 
 //basket pop up
@@ -641,18 +644,16 @@ $basketZ: 18;
 }
 
 
+//feedback page
 
-
-
-//feedback
-
-
+//feedback background design
 .mainFeedbackText {
     background: radial-gradient(100% 820px at 50% -30px, $primaryBlue 75%, transparent 75%);
     padding-left: 116px;
     height: 100vh;
 }
 
+//header text
 #feedbackHeader {
     color: $primaryYellow;
     letter-spacing: 0.81px;
@@ -665,6 +666,7 @@ $basketZ: 18;
     left: 50px;
 }
 
+//span text
 #feedbackText {
     color: white;
     letter-spacing: 0.87px;

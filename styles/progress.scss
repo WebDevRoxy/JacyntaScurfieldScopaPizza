@@ -21,12 +21,14 @@ body {
   overflow: hidden;
 }
 
+//background image
 .background {
   background-image: url("./../images/progressBackground.png");
   background-size: cover;
   height: 100vh;
 }
 
+//blue background design
 .orderPlacedContainer {
   left: 0px;
   bottom: 0px;
@@ -38,6 +40,7 @@ body {
   padding: 40px;
 }
 
+//text
 .mainText {
   display:flex;
   font-family: $primaryFont;
@@ -56,38 +59,22 @@ p {
   flex: 1;
 }
 
+//minutes styling
 .timer {
   font-size: 48px;
   font-style: italic;
   font-weight: bold;
 }
 
-
+//close cross icon
 .close {
   float:right;
   background-color: $primaryBlue;
 }
 
-
-//background image
-
 h2 {
   color: $primaryYellow;
 }
-
-
-
-
-
-//progress bar
-/*#myBar {
-    width: 10%;
-    height: 30px;
-    background-color: #04AA6D;
-    text-align: center; /* To center it horizontally (if you want) 
-    line-height: 30px; /* To center it vertically 
-    color: white;
-  }*/
 
   //centres items
 @mixin centre {
@@ -100,13 +87,8 @@ h2 {
     box-sizing: border-box;
 }
 
-body {
-    padding: 0;
-    margin: 0;
-}
-
+//progress bar
 .progressBar {
-
     top: 85%;
     @include centre();
     width: 500px;

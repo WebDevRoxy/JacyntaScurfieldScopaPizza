@@ -114,7 +114,7 @@ body {
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 
-.carouselSlide .item_title {
+.carouselSlide .itemTitle {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   color: #FFDA5D;
@@ -128,16 +128,24 @@ body {
   margin-left: 1rem;
 }
 
+.carouselSlide .itemPrice .dollar {
+  color: white;
+}
+
 .carouselSlide .presale {
   color: #F05A35;
   font-size: 20px;
   text-decoration: line-through;
 }
 
+.carouselSlide .presale .dollar {
+  color: #F05A35;
+}
+
 .carouselSlide .itemDescription {
   font-size: 1.4rem;
   white-space: nowrap;
-  margin-top: 1rem;
+  margin-top: 5rem;
 }
 
 .carouselSlide .dietDetails {
