@@ -37,6 +37,10 @@ body {
   display: block;
 }
 
+.basketName, .totalAmount, .priceCalculation, .deal, .placeOrder {
+  text-transform: uppercase;
+}
+
 .mainContent {
   background: radial-gradient(100% 910px at 55% -80px, #0A1F30 75%, transparent 75%);
   padding-left: 116px;

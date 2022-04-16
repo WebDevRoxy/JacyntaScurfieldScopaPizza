@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-    <link rel="stylesheet" href="styles\mustTry.css" />
+    <link rel="stylesheet" href="styles/mustTry.css" />
     <script src="https://kit.fontawesome.com/82be183e51.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <title>Scopa Pizzeria -- Others</title>
@@ -15,37 +15,37 @@
     <div class="page">
         <!--Sidebar navigation-->
         <ul class="sidebar">
-            <li class="navOption"><a href="mustTry.html"><img src="images\Icon material-favorite.svg"
-                        alt="Heart icon"></i>
+            <li class="navOption"><a href="mustTry.html"><img src="images/Icon%20material-favorite.svg"
+                        alt="Heart icon">
                     <span class="navText">Must Try</span></a></li>
-            <li class="navOption"><a href="pizza.html"><img src="images\Icon ionic-ios-pizza.svg" alt="Pizza icon"></i>
+            <li class="navOption"><a href="pizza.html"><img src="images/Icon%20ionic-ios-pizza.svg" alt="Pizza icon">
                     <span class="navText">Pizza</span></a></li>
-            <li class="navOption"><a href="drinks.html"><img src="images\Icon ionic-ios-wine.svg" alt="Wine icon"></i>
+            <li class="navOption"><a href="drinks.html"><img src="images/Icon%20ionic-ios-wine.svg" alt="Wine icon">
                     <span class="navText">Drinks</span></a></li>
-            <li class="navOption"><a href="dessert.html"><img src="images\Icon ionic-ios-ice-cream.svg"
-                        alt="Ice cream icon"></i>
+            <li class="navOption"><a href="dessert.html"><img src="images/Icon%20ionic-ios-ice-cream.svg"
+                        alt="Ice cream icon">
                     <span class="navText">Dessert</span></a></li>
-            <li class="navOptionSelected navOption"><a href="others.html"><img src="images\Icon awesome-hamburger.svg"
-                        alt="Hamburger icon"></i>
+            <li class="navOptionSelected navOption"><a href="others.html"><img src="images/Icon%20awesome-hamburger.svg"
+                        alt="Hamburger icon">
                     <span class="navText">Others</span></a></li>
 
-            <li class="navOption"><a href="feedback.html"><img src="images\Icon material-comment.svg"
-                        alt="Comment icon"></i>
+            <li class="navOption"><a href="feedback.html"><img src="images/Icon%20material-comment.svg"
+                        alt="Comment icon">
                     <span class="navText">Feedback</span></a></li>
         </ul>
         <div class="mainContent">
             <!--Logo-->
-            <img class="logo" src="images\logo.svg" alt="Scopa Pizzeria logo">
+            <img class="logo" src="images/logo.svg" alt="Scopa Pizzeria logo">
             <!--Header basket-->
             <button id="goBasket" class="goBasketIcon" onclick="toggleBasket()" type="button">
-                <img src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                <img src="images/Icon%20awesome-shopping-basket.svg" alt="Basket icon">
             </button>
             <!--Page name-->
             <h2 class="headerText">Others</h2>
             <!--Carousel items-->
             <div class="carouselContainer">
                 <div class="carouselSlide">
-                    <img class="itemImg" src="images\burger.png" alt="Margherita pizza">
+                    <img class="itemImg" src="images/burger.png" alt="Margherita pizza">
                     <h3 class="itemTitle">Burger</h3>
                     <span class="itemPrice">$28</span>
                     <p class="itemDescription">Fried chicken, crumbled mozzarella, prosciutto with sexy fries & aioli.</p>
@@ -58,12 +58,12 @@
                     </div>
                     <!--Add to basket button-->
                     <button class="add" onclick="toggleItemAdded()">
-                        <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                        <img class="basket" src="images/Icon%20awesome-shopping-basket.svg" alt="Basket icon">
                         <span class="addText">Add to basket</span>
                     </button>
                 </div>
                 <div class="carouselSlide">
-                    <img class="itemImg" src="images\salad.png" alt="Pepperoni pizza">
+                    <img class="itemImg" src="images/salad.png" alt="Pepperoni pizza">
                     <h3 class="itemTitle">Rocket Salad</h3>
                     <span class="itemPrice">$14</span>
                     <p class="itemDescription">Fennel, toasted walnuts, balsamic dressing.</p>
@@ -76,12 +76,12 @@
                     </div>
                     <!--Add to basket button-->
                     <button class="add" onclick="toggleItemAdded()">
-                        <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                        <img class="basket" src="images/Icon%20awesome-shopping-basket.svg" alt="Basket icon">
                         <span class="addText">Add to basket</span>
                     </button>
                 </div>
                 <div class="carouselSlide">
-                    <img class="itemImg" src="images\fries.png" alt="Chorizo pizza">
+                    <img class="itemImg" src="images/fries.png" alt="Chorizo pizza">
                     <h3 class="itemTitle">Sexy Fries</h3>
                     <span class="itemPrice">$11</span>
                     <p class="itemDescription">Tomato salt, aioli.</p>
@@ -94,7 +94,7 @@
                     </div>
                     <!--Add to basket button-->
                     <button class="add" onclick="toggleItemAdded()">
-                        <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
+                        <img class="basket" src="images/Icon%20awesome-shopping-basket.svg" alt="Basket icon">
                         <span class="addText">Add to basket</span>
                     </button>
                 </div>
@@ -108,7 +108,7 @@
         <div class="whiteBackground"></div>
         <div class="itemAddedContent">
             <h2>Item Added!</h2>
-            <img id="foodItemAddedImg" src="images\pizza.png">
+            <img id="foodItemAddedImg" src="images/pizza.png">
             <div class="addQuantity">
                 <span class="whiteText">x</span><span id="quantityAdded" class="whiteText"></span>
                 <span id="foodAddedName" class="whiteText"></span>
@@ -124,16 +124,15 @@
             </div>
         </div>
     </div>
-    <!--Basket icon-->
-    <i class="basketIcon"></i>
+
     <!--Basket-->
     <div class="basketContainer" id="basketToggle">
         <div class="overlay"></div>
         <div class="basketContent">
             <div>
-                <span class="basketName">BASKET</span>
+                <span class="basketName">Basket</span>
                 <button class="basket" onclick="toggleBasket()"><img
-                        src="images\Icon ionic-ios-close-circle-outline.svg"></button>
+                        src="images/Icon%20ionic-ios-close-circle-outline.svg"></button>
             </div>
             <div class="itemDetails">
                 <div class="itemCount">
@@ -141,18 +140,18 @@
                     <span class="itemAmount">Items</span>
                 </div>
                 <div class="priceCount">
-                    <span class="totalAmount">TOTAL: </span>
+                    <span class="totalAmount">Total: </span>
                     <span class="dollar">$</span>
                     <span class="priceCalculation">10</span>
                 </div>
             </div>
             <div id="basketItems">
             </div>
-            <a class="placeOrder" href="progress.html">PLACE ORDER</a>
+            <a class="placeOrder" href="progress.html">Place Order</a>
         </div>
     </div>
     <!--Loads Javascript-->
-    <script type="text/javascript" src="styles\js\mustTry.js" async></script>
+    <script type="text/javascript" src="styles/js/mustTry.js" async></script>
 </body>
 
 

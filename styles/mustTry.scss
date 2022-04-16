@@ -60,6 +60,11 @@ body {
     }
 }
 
+//uppercase
+.basketName, .totalAmount, .priceCalculation, .deal, .placeOrder {
+    text-transform: uppercase;
+}
+
 //background design
 .mainContent {
     background: radial-gradient(100% 910px at 55% -80px, #0A1F30 75%, transparent 75%);
