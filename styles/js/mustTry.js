@@ -1,6 +1,6 @@
-//item_basket_price instead of cart-price
+//itemBasketPrice instead of cart-price
 
-//basket_item instead of cart-row
+//basketItem instead of cart-row
 
 //basket_container instead of cart-items
 
@@ -26,15 +26,15 @@ if (document.readyState == 'loading') {
 //item added
 //display item added pop up when "add" button is clicked
 function toggleItemAdded() {
-  document.getElementById('item_selected').classList.toggle('active');
+  document.getElementById('itemSelected').classList.toggle('active');
 }
 
 //basket
-//display basket pop up when "go_basket" button is clicked
+//display basket pop up when "goBasket" button is clicked
 function toggleBasket() {
-  document.getElementById('basket_toggle').classList.toggle('active');
+  document.getElementById('basketToggle').classList.toggle('active');
   //hides item added pop up
-  document.getElementById('item_selected').classList.remove('active');
+  document.getElementById('itemSelected').classList.remove('active');
 }
 
 //runs code when everything on the page is loaded
@@ -46,7 +46,7 @@ function ready() {
     let button = removeCartItemButtons[i];
     button.addEventListener('click', removeCartItem);
   }
-  var quantityInputs = document.getElementsByClassName('quantity_input');
+  var quantityInputs = document.getElementsByClassName('quantityInput');
   for (var i = 0; i <removeCartItemButtons.length; i++) {
     let input = quantityInputs[i];
     input.addEventListener('change', quantityChanged);
@@ -66,7 +66,7 @@ function removeCartItem(event) {
 //decrements item quantity
 function decrement(event) {
 
-  const quantityElement = event.parentElement.getElementsByClassName('quantity_input')[0];
+  const quantityElement = event.parentElement.getElementsByClassName('quantityInput')[0];
   quantity = parseInt(quantityElement.value);
 
   //lower quantity amount
@@ -80,7 +80,7 @@ function decrement(event) {
 
 //increases item quantity
 function increment(event) {  
-  const quantityElement = event.parentElement.getElementsByClassName('quantity_input')[0];
+  const quantityElement = event.parentElement.getElementsByClassName('quantityInput')[0];
   quantity = parseInt(quantityElement.value);
 
   //increase quantity amount
@@ -112,22 +112,22 @@ function addToCartClicked(event) {
   let shopItem = button.parentElement.parentElement;
   
   //get title for the popup from the carousel slide
-  let title = shopItem.getElementsByClassName('item_title')[0].innerText;
-  let foodItemName = document.getElementById("food_added_name");
+  let title = shopItem.getElementsByClassName('itemTitle')[0].innerText;
+  let foodItemName = document.getElementById("foodAddedName");
   foodItemName.innerText = title;
 
   //get quantity for the popup from the carousel slide
-  let quantity = shopItem.getElementsByClassName("quantity_input")[0].value;
-  let quantityAdded = document.getElementById("quantity_added");
+  let quantity = shopItem.getElementsByClassName("quantityInput")[0].value;
+  let quantityAdded = document.getElementById("quantityAdded");
   quantityAdded.innerText = quantity;
 
   //get image for the popuo from the carousel slide
-  let imageSrc = shopItem.getElementsByClassName('item_img')[0].src;
-  let foodItemImg = document.getElementById("food_item_added_img");
+  let imageSrc = shopItem.getElementsByClassName('itemImg')[0].src;
+  let foodItemImg = document.getElementById("foodItemAddedImg");
   foodItemImg.src = imageSrc;
 
-    //makes inner text of "item_price" a variable
-  let price = document.getElementsByClassName('item_price')[0].innerText;
+    //makes inner text of "itemPrice" a variable
+  let price = document.getElementsByClassName('itemPrice')[0].innerText;
 
   console.log(title, price, imageSrc);
   addItemToCart(title, price, quantity, imageSrc);
@@ -138,9 +138,9 @@ function addToCartClicked(event) {
 //adds item style to basket
 function addItemToCart(title, price, quantity, imageSrc) {
   //makes carousel_container a variable
-  var carouselItems = document.getElementsByClassName('carousel_container')[0];
-  //makes pizza_name a variable
-  var cartItemNames = carouselItems.getElementsByClassName('pizza_name');
+  var carouselItems = document.getElementsByClassName('carouselContainer')[0];
+  //makes pizzaName a variable
+  var cartItemNames = carouselItems.getElementsByClassName('pizzaName');
   //if item is already in basket, shows an alert
   for (var i = 0; i < cartItemNames.length; i++) {
     if (cartItemNames[i].innerText == title) {
@@ -151,40 +151,39 @@ function addItemToCart(title, price, quantity, imageSrc) {
 
   //create new basket item div
   var basketItem = document.createElement('div');
-  basketItem.classList.add('basket_item');
+  basketItem.classList.add('basketItem');
  
   //div content
   var basketItemContents = ` 
         <button class="delete" type="button" onclick="removeCartItem(this)">x</button>
-        <!--<i class="fa-solid fa-xmark-large"></i>!-->
         <img src="${imageSrc}">
         <div>
-          <span class="pizza_name">${title}
-          <span class="item_basket_price">${price}</span>
+          <span class="pizzaName">${title}
+          <span class="itemBasketPrice">${price}</span>
         </div>
-        <div class="change_quantity">
+        <div class="changeQuantity">
             <button class="minus" type="button" onclick="decrement(this)">-</button>
-            <input class="quantity_input" type="number" value="${quantity}" min="0" onblur="quantityChanged(this)">
+            <input class="quantityInput" type="number" value="${quantity}" min="0" onblur="quantityChanged(this)">
             <button class="plus" type="button" onclick="increment(this)">+</button>
         </div>`;
 
   basketItem.innerHTML = basketItemContents;
 
   //add the basket item to the basket
-  var basketItems = document.getElementById('basket_items');
+  var basketItems = document.getElementById('basketItems');
   basketItems.append(basketItem);
 }
 
 
 //updates the calculations
 function updateCartTotal(quantity) {
-  const cartItems = Array.from(document.querySelectorAll('.basket_item'));
+  const cartItems = Array.from(document.querySelectorAll('.basketItem'));
 
   var total = 0;
   //loop through items in the cart to calculate total price
   cartItems.forEach((cartItem, index) => {
-    const priceElement = cartItem.getElementsByClassName('item_basket_price')[0];
-    const quantityElement = cartItem.getElementsByClassName('quantity_input')[0];
+    const priceElement = cartItem.getElementsByClassName('itemBasketPrice')[0];
+    const quantityElement = cartItem.getElementsByClassName('quantityInput')[0];
     //replaces $ with empty text
     let price = parseFloat(priceElement.innerText.replace('$', ''));
     let quantity = quantityElement.value;
@@ -193,7 +192,7 @@ function updateCartTotal(quantity) {
   });
 
   //change the text of all the "total" elements to total calculated value
-  const totalElements = document.getElementsByClassName('price_calculation');
+  const totalElements = document.getElementsByClassName('priceCalculation');
   const totals = Array.from(totalElements);
   totals.forEach(
     t => t.innerText = total
@@ -204,8 +203,8 @@ function updateCartTotal(quantity) {
 
 //carousel 
 
-const slider = document.querySelector('.carousel_container'),
-  slides = Array.from(document.querySelectorAll('.carousel_slide'));
+const slider = document.querySelector('.carouselContainer'),
+  slides = Array.from(document.querySelectorAll('.carouselSlide'));
 
 let isDragging = false,
   startPos = 0,
@@ -286,8 +285,6 @@ function setSliderPosition() {
 }
 
 function setPositionByIndex() {
-  //CHECK IF INNER WINDOW IS THE CORRECT VALUE TO PUT HERE
-  // currentTranslate = currentIndex * -window.innerWidth;
   currentTranslate = currentIndex * -parseInt(slider.offsetWidth / 3);
   prevTranslate = currentTranslate;
   setSliderPosition();

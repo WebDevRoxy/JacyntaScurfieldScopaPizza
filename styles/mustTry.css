@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: calibri;
+  font-family: calibri, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #0A1F30;
   overflow: hidden;
 }
@@ -21,7 +21,7 @@ body {
   z-index: 10;
 }
 
-.nav_option {
+.navOption {
   line-height: 16px;
   padding-top: 35px;
   padding-bottom: 35px;
@@ -33,11 +33,11 @@ body {
   letter-spacing: 0.7px;
 }
 
-.sidebar a .nav_text {
+.sidebar a .navText {
   display: block;
 }
 
-.main_content {
+.mainContent {
   background: radial-gradient(100% 910px at 55% -80px, #0A1F30 75%, transparent 75%);
   padding-left: 116px;
 }
@@ -48,7 +48,7 @@ body {
   position: relative;
 }
 
-.go_basket_icon {
+.goBasketIcon {
   float: right;
   background-color: #0A1F30;
   margin-right: 54px;
@@ -56,7 +56,7 @@ body {
   border: none;
 }
 
-.header_text {
+.headerText {
   top: 65px;
   font-style: italic;
   font-size: 45px;
@@ -68,7 +68,7 @@ body {
   margin-right: auto;
 }
 
-.carousel_container {
+.carouselContainer {
   overflow: hidden;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -83,7 +83,7 @@ body {
   cursor: grab;
 }
 
-.carousel_slide {
+.carouselSlide {
   max-height: 90vh;
   width: 87vw;
   -webkit-box-align: center;
@@ -105,7 +105,7 @@ body {
           user-select: none;
 }
 
-.carousel_slide .item_img {
+.carouselSlide .itemImg {
   max-width: 100%;
   max-height: 40%;
   -webkit-transition: -webkit-transform 0.3s ease-out;
@@ -114,39 +114,39 @@ body {
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 
-.carousel_slide .item_title {
+.carouselSlide .item_title {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   color: #FFDA5D;
   font-family: britannic;
 }
 
-.carousel_slide .item_price {
+.carouselSlide .itemPrice {
   color: white;
   font-size: 29px;
   font-weight: lighter;
   margin-left: 1rem;
 }
 
-.carousel_slide .presale {
+.carouselSlide .presale {
   color: #F05A35;
   font-size: 20px;
   text-decoration: line-through;
 }
 
-.carousel_slide .item_description {
+.carouselSlide .itemDescription {
   font-size: 1.4rem;
   white-space: nowrap;
   margin-top: 1rem;
 }
 
-.carousel_slide .diet_details {
+.carouselSlide .dietDetails {
   color: #555758;
   font-size: 0.8rem;
   font-weight: lighter;
 }
 
-.carousel_slide .quantity {
+.carouselSlide .quantity {
   font-size: 1.4rem;
   margin-top: 0.5rem;
 }
@@ -156,12 +156,12 @@ body {
   cursor: grabbing;
 }
 
-.grabbing .item_img {
+.grabbing .itemImg {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
 
-.change_quantity {
+.changeQuantity {
   height: 2.5rem;
   width: 183px;
   border: none;
@@ -199,7 +199,7 @@ body {
   font-size: 32px;
 }
 
-.quantity_input {
+.quantityInput {
   background: #FFDA5D;
   border-radius: 10px;
   display: inline-block;
@@ -261,7 +261,7 @@ body {
   width: 65px;
 }
 
-.add .add_text {
+.add .addText {
   font-size: 27px;
   color: white;
   padding-left: 27px;
@@ -288,31 +288,31 @@ body {
   z-index: 10;
 }
 
-.nav_option_selected {
+.navOptionSelected {
   background-color: #F4C938;
   border-radius: 14px;
 }
 
-.nav_option {
+.navOption {
   position: relative;
 }
 
-.nav_option .nav_text {
+.navOption .navText {
   font-size: 25px;
   letter-spacing: 0.17px;
 }
 
-.nav_option .selected {
+.navOption .selected {
   color: #F05A35;
 }
 
-.item_added {
+.itemAdded {
   display: none;
   -webkit-transform: -50%, -50% scale(0);
           transform: -50%, -50% scale(0);
 }
 
-.item_added .overlay {
+.itemAdded .overlay {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -322,7 +322,7 @@ body {
   z-index: 10;
 }
 
-.item_added h2 {
+.itemAdded h2 {
   color: #FFDA5D;
   top: 45px;
   left: 50%;
@@ -337,7 +337,7 @@ body {
   padding-left: 0px;
 }
 
-.item_added img {
+.itemAdded img {
   top: 115px;
   left: 50%;
   -webkit-transform: translate(-50%);
@@ -348,7 +348,7 @@ body {
   max-width: 25%;
 }
 
-.item_added .add_quantity {
+.itemAdded .addQuantity {
   top: 300px;
   left: 50%;
   -webkit-transform: translate(-50%);
@@ -359,21 +359,21 @@ body {
   display: inline-flex;
 }
 
-.item_added .white-text {
+.itemAdded .whiteText {
   color: white;
   font-size: 24px;
   letter-spacing: 0.14px;
   padding-left: 0.5rem;
 }
 
-.item_added .quantity_input {
+.itemAdded .quantityInput {
   color: white;
   font-size: 24px;
   letter-spacing: 0.14px;
   padding-left: 0px;
 }
 
-.item_added .price {
+.itemAdded .price {
   top: 420px;
   left: 50%;
   -webkit-transform: translate(-50%);
@@ -385,11 +385,11 @@ body {
   padding-left: 0px;
 }
 
-.item_added .price .total {
+.itemAdded .price .total {
   padding-right: 51px;
 }
 
-.white_background {
+.whiteBackground {
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -402,7 +402,7 @@ body {
   z-index: 14;
 }
 
-.item_added_content {
+.itemAddedContent {
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
@@ -415,7 +415,7 @@ body {
   background: radial-gradient(112% 555px at 50% -30px, #0A1F30 75%, transparent 75%);
 }
 
-.item_added.active {
+.itemAdded.active {
   display: block;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -423,7 +423,7 @@ body {
           transform: -50%, -50% scale(1);
 }
 
-.back_nav {
+.backNav {
   position: relative;
   top: 480px;
   padding-left: 1rem;
@@ -444,7 +444,7 @@ body {
   letter-spacing: 0.11px;
 }
 
-.go_basket {
+.goBasket {
   float: right;
   background-color: #FFDA5D;
   border-radius: 20px;
@@ -458,7 +458,7 @@ body {
   letter-spacing: 0.11px;
 }
 
-.basket_container .overlay {
+.basketContainer .overlay {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -469,11 +469,11 @@ body {
   display: none;
 }
 
-.go_basket.active {
+.goBasket.active {
   right: 0px;
 }
 
-.basket_container .basket_content {
+.basketContainer .basketContent {
   top: 0px;
   right: -380px;
   position: absolute;
@@ -485,15 +485,15 @@ body {
   overflow-y: scroll;
 }
 
-.basket_container.active .overlay {
+.basketContainer.active .overlay {
   display: block;
 }
 
-.basket_container.active .basket_content {
+.basketContainer.active .basketContent {
   right: 0px;
 }
 
-.basket_name {
+.basketName {
   color: white;
   top: 39px;
   padding-left: 0px;
@@ -502,16 +502,6 @@ body {
   letter-spacing: 1.45px;
   z-index: 18;
   position: absolute;
-  /*
-    color: white;
-    padding: 20px;
-    float: left;
-    left: 36px;
-    font-size: 33px;
-    letter-spacing: 1.45px;
-    z-index: 18;
-
-    */
 }
 
 .basket {
@@ -529,7 +519,7 @@ body {
   float: right;
 }
 
-.item_amount {
+.itemAmount {
   left: 36px;
   top: 100px;
   font-size: 24px;
@@ -539,7 +529,7 @@ body {
   padding-left: 0px;
 }
 
-.price_count {
+.priceCount {
   right: 36px;
   top: 100px;
   font-size: 24px;
@@ -549,12 +539,12 @@ body {
   padding-left: 0px;
 }
 
-#basket_items {
+#basketItems {
   display: inline-block;
   padding-top: 50px;
 }
 
-.basket_item {
+.basketItem {
   z-index: 18;
   padding-left: 0px;
   -webkit-box-align: center;
@@ -572,12 +562,12 @@ body {
           flex-direction: column;
 }
 
-.basket_item img {
+.basketItem img {
   max-height: 40%;
   max-width: 40%;
 }
 
-.basket_item .delete {
+.basketItem .delete {
   position: relative;
   color: #F05A35;
   font-size: 40px;
@@ -587,7 +577,7 @@ body {
   left: 135px;
 }
 
-.basket_item .pizza_name {
+.basketItem .pizzaName {
   z-index: 18;
   font-family: britannic;
   color: #FFDA5D;
@@ -597,7 +587,7 @@ body {
   padding-left: 0px;
 }
 
-.basket_item .item_basket_price {
+.basketItem .itemBasketPrice {
   z-index: 18;
   color: white;
   top: 58px;
@@ -606,12 +596,12 @@ body {
   padding-left: 0px;
 }
 
-.basket_item .change_quantity {
+.basketItem .changeQuantity {
   background: white;
   margin-top: 1rem;
 }
 
-.place_order {
+.placeOrder {
   background: #FFDA5D;
   width: 218px;
   height: 68px;
@@ -635,13 +625,13 @@ body {
   margin-right: auto;
 }
 
-.main_feedback_text {
+.mainFeedbackText {
   background: radial-gradient(100% 820px at 50% -30px, #0A1F30 75%, transparent 75%);
   padding-left: 116px;
   height: 100vh;
 }
 
-#feedback_header {
+#feedbackHeader {
   color: #FFDA5D;
   letter-spacing: 0.81px;
   font-size: 50px;
@@ -655,7 +645,7 @@ body {
   left: 50px;
 }
 
-#feedback_text {
+#feedbackText {
   color: white;
   letter-spacing: 0.87px;
   font-size: 29px;

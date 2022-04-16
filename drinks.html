@@ -15,149 +15,149 @@
     <div class="page">
         <!--Sidebar navigation-->
         <ul class="sidebar">
-            <li class="nav_option"><a href="mustTry.html"><img
+            <li class="navOption"><a href="mustTry.html"><img
                         src="images\Icon material-favorite.svg" alt="Heart icon"></i>
-                    <span class="nav_text">Must Try</span></a></li>
-            <li class="nav_option"><a href="pizza.html"><img src="images\Icon ionic-ios-pizza.svg" alt="Pizza icon"></i>
-                    <span class="nav_text">Pizza</span></a></li>
-            <li class="nav_option_selected nav_option"><a href="drinks.html"><img src="images\Icon ionic-ios-wine.svg" alt="Wine icon"></i>
-                    <span class="nav_text">Drinks</span></a></li>
-            <li class="nav_option"><a href="dessert.html"><img src="images\Icon ionic-ios-ice-cream.svg"
+                    <span class="navText">Must Try</span></a></li>
+            <li class="navOption"><a href="pizza.html"><img src="images\Icon ionic-ios-pizza.svg" alt="Pizza icon"></i>
+                    <span class="navText">Pizza</span></a></li>
+            <li class="navOptionSelected navOption"><a href="drinks.html"><img src="images\Icon ionic-ios-wine.svg" alt="Wine icon"></i>
+                    <span class="navText">Drinks</span></a></li>
+            <li class="navOption"><a href="dessert.html"><img src="images\Icon ionic-ios-ice-cream.svg"
                         alt="Ice cream icon"></i>
-                    <span class="nav_text">Dessert</span></a></li>
-            <li class="nav_option"><a href="others.html"><img src="images\Icon awesome-hamburger.svg"
+                    <span class="navText">Dessert</span></a></li>
+            <li class="navOption"><a href="others.html"><img src="images\Icon awesome-hamburger.svg"
                         alt="Hamburger icon"></i>
-                    <span class="nav_text">Others</span></a></li>
-            <li class="nav_option"><a href="feedback.html"><img src="images\Icon material-comment.svg"
+                    <span class="navText">Others</span></a></li>
+            <li class="navOption"><a href="feedback.html"><img src="images\Icon material-comment.svg"
                         alt="Comment icon"></i>
-                    <span class="nav_text">Feedback</span></a></li>
+                    <span class="navText">Feedback</span></a></li>
         </ul>
-        <div class="main_content">
+        <div class="mainContent">
             <!--Logo-->
             <img class="logo" src="images\logo.svg" alt="Scopa Pizzeria logo">
             <!--Header basket-->
-            <button id="go_basket" class="go_basket_icon" onclick="toggleBasket()" type="button">
+            <button id="goBasket" class="goBasketIcon" onclick="toggleBasket()" type="button">
                 <img src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
             </button>
             <!--Page name-->
-            <h2 class="header_text">Drinks</h2>
+            <h2 class="headerText">Drinks</h2>
             <!--Carousel items-->
-            <div class="carousel_container">
-                <div class="carousel_slide">
-                    <img class="item_img" src="images\beer.png" alt="Beer">
-                    <h3 class="item_title">ParrotDog Yellowhammer</h3>
-                    <span class="item_price">$13</span>
-                    <span class="diet_details">4.8% Hazy Pale Ale</span>
+            <div class="carouselContainer">
+                <div class="carouselSlide">
+                    <img class="itemImg" src="images\beer.png" alt="Beer">
+                    <h3 class="itemTitle">ParrotDog Yellowhammer</h3>
+                    <span class="itemPrice">$13</span>
+                    <span class="dietDetails">4.8% Hazy Pale Ale</span>
                     <span class="quantity">Quantity</span>
-                    <div class="change_quantity">
+                    <div class="changeQuantity">
                         <button class="minus" type="button" onclick="decrement()">-</button>
-                        <input class="quantity_input" type="number" value="1">
+                        <input class="quantityInput" type="number" value="1">
                         <button class="plus" type="button" onclick="increment()">+</button>
                     </div>
                     <!--Add to basket button-->
                     <button class="add" onclick="toggleItemAdded()">
                         <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-                        <span class="add_text">Add to basket</span>
+                        <span class="addText">Add to basket</span>
                     </button>
                 </div>
-                <div class="carousel_slide">
-                    <img class="item_img" src="images\hotChocolate.png" alt="Hot chocolate">
-                    <h3 class="item_title">Hot Chocolate</h3>
-                    <span class="item_price">$4</span>
+                <div class="carouselSlide">
+                    <img class="itemImg" src="images\hotChocolate.png" alt="Hot chocolate">
+                    <h3 class="itemTitle">Hot Chocolate</h3>
+                    <span class="itemPrice">$4</span>
                     <span class="quantity">Quantity</span>
-                    <div class="change_quantity">
+                    <div class="changeQuantity">
                         <button class="minus" type="button" onclick="decrement()">-</button>
-                        <input class="quantity_input" type="number" value="1">
+                        <input class="quantityInput" type="number" value="1">
                         <button class="plus" type="button" onclick="increment()">+</button>
                     </div>
                     <!--Add to basket button-->
                     <button class="add" onclick="toggleItemAdded()">
                         <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-                        <span class="add_text">Add to basket</span>
+                        <span class="addText">Add to basket</span>
                     </button>
                 </div>
-                <div class="carousel_slide">
-                    <img class="item_img" src="images\aperolSpritz.png" alt="Aperol spritz">
-                    <h3 class="item_title">Aperol Spritz</h3>
-                    <span class="item_price">$22</span>
-                    <span class="diet_details">Aperol, Prosecco, Orange & Olive</span>
+                <div class="carouselSlide">
+                    <img class="itemImg" src="images\aperolSpritz.png" alt="Aperol spritz">
+                    <h3 class="itemTitle">Aperol Spritz</h3>
+                    <span class="itemPrice">$22</span>
+                    <span class="dietDetails">Aperol, Prosecco, Orange & Olive</span>
                     <span class="quantity">Quantity</span>
-                    <div class="change_quantity">
+                    <div class="changeQuantity">
                         <button class="minus" type="button" onclick="decrement()">-</button>
-                        <input class="quantity_input" type="number" value="1">
+                        <input class="quantityInput" type="number" value="1">
                         <button class="plus" type="button" onclick="increment()">+</button>
                     </div>
                     <!--Add to basket button-->
                     <button class="add" onclick="toggleItemAdded()">
                         <img class="basket" src="images\Icon awesome-shopping-basket.svg" alt="Basket icon">
-                        <span class="add_text">Add to basket</span>
+                        <span class="addText">Add to basket</span>
                     </button>
                 </div>
             </div>
         </div>
     </div>
     <!--Item added-->
-    <div class="item_added" id="item_selected">
+    <div class="itemAdded" id="itemSelected">
         <div class="overlay"></div>
-        <div class="blur_filter"></div>
-        <div class="white_background"></div>
-        <div class="item_added_content">
+        <div class="blurFilter"></div>
+        <div class="whiteBackground"></div>
+        <div class="itemAddedContent">
             <h2>Item Added!</h2>
-            <img id="food_item_added_img" src="images\pizza.png">
-            <div class="add_quantity">
-                <input class="quantity_input" type="number" value="1">
-                <span id="food_added_name" class="added_name">Margheritta Pizza</span>
+            <img id="foodItemAddedImg" src="images\pizza.png">
+            <div class="addQuantity">
+                <input class="quantityInput" type="number" value="1">
+                <span id="foodAddedName" class="added_name">Margheritta Pizza</span>
             </div>
             <div class="price">
                 <span class="total">Basket Total:</span>
                 <span class="dollar">$</span>
-                <div class="price_calculation"></div>
+                <div class="priceCalculation"></div>
             </div>
-            <div class="back_nav" id="item_added">
+            <div class="backNav" id="itemAdded">
                 <button class="return" onclick="toggleItemAdded()" type="button">Return</button>
-                <button class="go_basket" onclick="toggleBasket()" type="button">Go to basket</button>
+                <button class="goBasket" onclick="toggleBasket()" type="button">Go to basket</button>
             </div>
         </div>
     </div>
     <!--Basket icon-->
-    <i class="basket-icon"></i>
+    <i class="basketIcon"></i>
     <!--Basket-->
-    <div class="basket_container" id="basket_toggle">
+    <div class="basketContainer" id="basketToggle">
         <div class="overlay"></div>
-        <div class="basket_content">
-            <span class="basket_name">BASKET</span>
+        <div class="basketContent">
+            <span class="basketName">BASKET</span>
             <button class="basket" onclick="toggleBasket()"><i class="fa-light fa-circle-x"></i></button>
-            <div class="item_details">
-                <div class="item_count">
-                    <div class="quantity_calculation"></div>
-                    <span class="item_amount">Items</span>
+            <div class="itemDetails">
+                <div class="itemCount">
+                    <div class="quantityCalculation"></div>
+                    <span class="itemAmount">Items</span>
                 </div>
-                <div class="price_count">
-                    <span class="total_amount">TOTAL: </span>
-                    <span id="total" class="price_calculation">10</span>
+                <div class="priceCount">
+                    <span class="totalAmount">TOTAL: </span>
+                    <span id="total" class="priceCalculation">10</span>
                 </div>
             </div>
-            <div id="basket_items">
-                <div class="basket_item">
-                    <div class="basket_item_details">
+            <div id="basketItems">
+                <div class="basketItem">
+                    <div class="basketItemDetails">
                         <button class="delete" type="button">x</button>
                         <!--<i class="fa-solid fa-xmark-large"></i>!-->
                         <img src="images\pizza.png" alt="Margherita pizza">
-                        <span class="pizza_name">Margherita
+                        <span class="pizzaName">Margherita
                     </div>
-                    <span class="item_basket_price">$10</span>
+                    <span class="itemBasketPrice">$10</span>
                     <div class="change_basket_quantity">
                         <button class="basket_minus" type="button" onclick="decrement(this)">-</button>
-                        <input class="quantity_input" type="number" value="1" onblur="quantityChanged(this)">
+                        <input class="quantityInput" type="number" value="1" onblur="quantityChanged(this)">
                         <button class="basket_plus" type="button" onclick="increment(this)">+</button>
                     </div>
                 </div>
             </div>
-            <a class="place_order" href="progress.html">PLACE ORDER</a>
+            <a class="placeOrder" href="progress.html">PLACE ORDER</a>
         </div>
     </div>
     <!--Blur the background-->
-    <div class="blur_filter"></div>
+    <div class="blurFilter"></div>
     <!--Loads Javascript-->
     <script type="text/javascript" src="styles\js\mustTry.js" async></script>
 </body>

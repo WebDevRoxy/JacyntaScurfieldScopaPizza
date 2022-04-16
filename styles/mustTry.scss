@@ -18,7 +18,7 @@ $selected: #F4C938;
 
 //body style
 body {
-    font-family: calibri;
+    font-family: calibri, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: $primaryBlue;
     overflow: hidden;
 }
@@ -45,7 +45,7 @@ body {
     display: block;
 }
 
-.nav_option {
+.navOption {
     @include navOptions();
 }
 
@@ -54,12 +54,12 @@ body {
     color: $primaryBlue;
     letter-spacing: 0.7px;
 
-    .nav_text {
+    .navText {
         @include navText();
     }
 }
 
-.main_content {
+.mainContent {
     background: radial-gradient(100% 910px at 55% -80px, #0A1F30 75%, transparent 75%);
     padding-left: 116px;
 }
@@ -74,7 +74,7 @@ body {
 }
 
 //basket icon in header
-.go_basket_icon {
+.goBasketIcon {
     float: right;
     background-color: $primaryBlue;
     margin-right: 54px;
@@ -83,7 +83,7 @@ body {
 }
 
 //title of page
-.header_text {
+.headerText {
     top: 65px;
     font-style: italic;
     font-size: 45px;
@@ -95,7 +95,7 @@ body {
     margin-right: auto;
 }
 
-.carousel_container {
+.carouselContainer {
     overflow: hidden;
     display: inline-flex;
     transform: translateX(0);
@@ -103,7 +103,7 @@ body {
     cursor: grab;
 }
 
-.carousel_slide {
+.carouselSlide {
     max-height: 90vh;
     width: 87vw;
     align-items: center;
@@ -112,7 +112,7 @@ body {
     flex-direction: column;
     user-select: none;
 
-    .item_img {
+    .itemImg {
         max-width: 100%;
         max-height: 40%;
         transition: transform 0.3s ease-out;
@@ -127,7 +127,7 @@ body {
     }
 
     //food price
-    .item_price {
+    .itemPrice {
         color: white;
         font-size: 29px;
         font-weight: $lightFont;
@@ -142,14 +142,14 @@ body {
     }
 
     //Item description
-    .item_description {
+    .itemDescription {
         font-size: 1.4rem;
         white-space: nowrap;
         margin-top: 1rem;
     }
 
     //dietary information
-    .diet_details {
+    .dietDetails {
         color: $primaryDarkGrey;
         font-size: 0.8rem;
         font-weight: $lightFont;
@@ -164,7 +164,7 @@ body {
 
 .grabbing {
     cursor: grabbing;
-    .item_img {
+    .itemImg {
         transform: scale(0.9);
     }
 }
@@ -174,7 +174,7 @@ $dropShadow: 0em 0.15em 0.35em $primaryDarkGrey;
 $averageBorder: 10px;
 
 //change quantity of item container
-.change_quantity {
+.changeQuantity {
     height: 2.5rem;
     width: 183px;
     border: none;
@@ -208,7 +208,7 @@ $averageBorder: 10px;
 }
 
 //quantity input
-.quantity_input {
+.quantityInput {
     @include quantityButtons();
     background: none;
     text-align: center;
@@ -248,7 +248,7 @@ $orderBorder: 20px;
     }
 
     //add to basket text
-    .add_text {
+    .addText {
         font-size: 27px;
         color: white;
         padding-left: 27px;
@@ -292,16 +292,16 @@ $orderBorder: 20px;
 }
 
 //top navigation option
-.nav_option_selected {
+.navOptionSelected {
     background-color: $selected;
     border-radius: 14px;
 }
 
 //navigation options
-.nav_option {
+.navOption {
     @include navOption();
 
-    .nav_text {
+    .navText {
         @include navText();
     }
 
@@ -331,7 +331,7 @@ $orderBorder: 20px;
 }
 
 //item added pop up
-.item_added {
+.itemAdded {
     //item added header text
     display: none;
     transform: (-50%, -50%) scale(0);
@@ -362,20 +362,20 @@ $orderBorder: 20px;
     }
 
     //name of food
-    .add_quantity {
+    .addQuantity {
         top: 300px;
         @include centre();
         display: inline-flex;
     }
 
-    .white-text {
+    .whiteText {
         color: white;
         font-size: 24px;
         letter-spacing: 0.14px;
         padding-left: 0.5rem;
     }
 
-    .quantity_input {
+    .quantityInput {
         color: white;
         font-size: 24px;
         letter-spacing: 0.14px;
@@ -406,7 +406,7 @@ $orderBorder: 20px;
 }
 
 //white background
-.white_background {
+.whiteBackground {
     @include popup();
     background: white;
     z-index: 14;
@@ -414,20 +414,20 @@ $orderBorder: 20px;
 
 //content inside the item added pop up
 
-.item_added_content {
+.itemAddedContent {
     @include popup();
     z-index: 15;
     background: radial-gradient(112% 555px at 50% -30px, $primaryBlue 75%, transparent 75%);
 }
 
 //pop up transition !!!!!!!!!!!!!!!
-.item_added.active {
+.itemAdded.active {
     display: block;
     transition: all 300ms ease-in-out;
     transform: (-50%, -50%) scale(1);
 }
 
-.back_nav {
+.backNav {
     position: relative;
     top: 480px;
     padding-left: 1rem;
@@ -454,7 +454,7 @@ $orderBorder: 20px;
 }
 
 //go to basket style
-.go_basket {
+.goBasket {
     float: right;
     background-color: $primaryYellow;
     @include backNavBtns();
@@ -471,19 +471,19 @@ $orderBorder: 20px;
 //basket pop up
 
 //positions basket on screen when active
-.basket_container {
+.basketContainer {
     .overlay {
         @include overlay();
         display: none;
     }
 }
 
-.go_basket.active {
+.goBasket.active {
     right: 0px;
 }
 
-.basket_container {
-    .basket_content {
+.basketContainer {
+    .basketContent {
         top: 0px;
         right: -380px;
         position: absolute;
@@ -497,12 +497,12 @@ $orderBorder: 20px;
 }
 
 //overlay
-.basket_container.active {
+.basketContainer.active {
     .overlay {
         display: block;
     }
 
-    .basket_content {
+    .basketContent {
         right: 0px;
     }
 }
@@ -517,24 +517,13 @@ $basketMargin: 36px;
 }
 
 //basket title
-.basket_name {
+.basketName {
     @include basketHeader();
     left: $basketMargin;
     font-size: 33px;
     letter-spacing: 1.45px;
     z-index: 18;
     position: absolute;
-
-    /*
-    color: white;
-    padding: 20px;
-    float: left;
-    left: 36px;
-    font-size: 33px;
-    letter-spacing: 1.45px;
-    z-index: 18;
-
-    */
 }
 
 //basket close button
@@ -546,9 +535,7 @@ $basketMargin: 36px;
     border: none;
     flex-direction: column;
     float: right;
-
 }
-
 
 //basket z index
 $basketZ: 18;
@@ -564,24 +551,24 @@ $basketZ: 18;
 }
 
 //item amount text
-.item_amount {
+.itemAmount {
     left: $basketMargin;
     @include rowTwoBasket();
 }
 
 //calculate price in basket
-.price_count {
+.priceCount {
     right: $basketMargin;
     @include rowTwoBasket();
 }
 
 //basket item image
-#basket_items {
+#basketItems {
     display: inline-block;
     padding-top: 50px;
 }
 
-.basket_item {
+.basketItem {
     z-index: $basketZ;
     padding-left: 0px;
     align-items: center;
@@ -607,7 +594,7 @@ $basketZ: 18;
     }
 
     //food name
-    .pizza_name {
+    .pizzaName {
         z-index: $basketZ;
         font-family: $primaryFont;
         color: $primaryYellow;
@@ -618,7 +605,7 @@ $basketZ: 18;
     }
 
     //price
-    .item_basket_price {
+    .itemBasketPrice {
         z-index: $basketZ;
         color: white;
         top: 58px;
@@ -628,14 +615,14 @@ $basketZ: 18;
     }
 
     //item quantity
-    .change_quantity {
+    .changeQuantity {
         background: white;
         margin-top: 1rem;
     }
 }
 
 //place order button
-.place_order {
+.placeOrder {
     background: $primaryYellow;
     width: 218px;
     height: 68px;
@@ -660,13 +647,13 @@ $basketZ: 18;
 //feedback
 
 
-.main_feedback_text {
+.mainFeedbackText {
     background: radial-gradient(100% 820px at 50% -30px, $primaryBlue 75%, transparent 75%);
     padding-left: 116px;
     height: 100vh;
 }
 
-#feedback_header {
+#feedbackHeader {
     color: $primaryYellow;
     letter-spacing: 0.81px;
     font-size: 50px;
@@ -678,7 +665,7 @@ $basketZ: 18;
     left: 50px;
 }
 
-#feedback_text {
+#feedbackText {
     color: white;
     letter-spacing: 0.87px;
     font-size: 29px;
